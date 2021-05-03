@@ -22,7 +22,7 @@ class UserFixture implements FixtureInterface, OrderedFixtureInterface {
 		$user->addAccount($account);
 		$user->setState(User::STATE_ACTIVATED);
 		$user->setEmail('admin@sample.com');
-		$user->setPassword('$2b$10$uu.7ssB2nxVUMKG7fZShQOtwe3N8/2I0E5niOL5OzXotpW7TPcjE2'); // the password is: secret
+		$user->setPassword('$2b$10$fZG7Ry9vCbPj.rjZTCE9eeBav3l.GDRYW.GsvJlQM3bc2/VnD4XiW'); // the password is: secret
 		$user->setRole(User::ROLE_ADMIN);
 		$user->setFirstName('Test');
 		$user->setLastName('Tester');

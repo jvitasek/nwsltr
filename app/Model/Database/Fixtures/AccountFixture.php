@@ -15,7 +15,7 @@ class AccountFixture implements FixtureInterface, OrderedFixtureInterface {
 	 */
 	public function load(ObjectManager $manager): void {
 		$account = new Account();
-		$account->setTitle('Sample Account');
+		$account->setTitle('Sample');
 		$account->setWebsiteUrl('https://google.com');
 		$account->setShowResubscribeButton(true);
 		$account->setShowUnsubscribeFeedbackForm(true);

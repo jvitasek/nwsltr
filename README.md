@@ -24,7 +24,7 @@ $ git clone https://github.com/jvitasek/nwsltr.git
 Once you have the project files, do the following:
 1. Create an empty MySQL database
 2. Create a new file config/test.neon and copy the contents of config/test.sample.neon in there
-3. (Optional, only if on UNIX) Set the right permissions to the bin scripts: `chmod +x bin/*`
+3. (Optional, only if on UNIX) Set the right permissions to the init script: `chmod +x bin/init`
 4. Run `bin init` which takes care of all the necessary configuration
 
 ## Usage
