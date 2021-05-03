@@ -1,0 +1,243 @@
+{varType App\Model\Database\Entity\Mailing $mailing}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{$mailing->getSubject()}</title>
+    <style type="text/css" n:syntax="off">
+        p{font-size: 14px;color: #494948;} img {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+
+        ul {padding:0px 0px 0px 0px;margin: 0 0 0 15px; list-style: square;} li {margin:0px 0px 4px 0px; padding:0px 0px 0px 0px;} table td {
+            border: 0;
+            padding: 0;
+            color: #494948;
+        }
+
+        a {
+            color: #9c104c !important;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:visited {color: #9c104c !important;} a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* for Outlook.com */
+        .ExternalClass * {line-height: 100%} .ExternalClass p
+
+        {margin:0 !important;}
+
+        /* responsivity */
+        @media screen and (max-width: 700px) {
+            table[class="wrapper-table"] {
+                width: 100% !important;
+            }
+
+            table[class="wrapper-table-img"] {
+                width: 100% !important;
+                table-layout: fixed;
+            }
+
+            table[class="wrapper-table"] img,
+            table[class="wrapper-table-img"] img {
+                display: inline !important;
+                max-width: 100%;
+                height: auto;
+            }
+
+            td[class="mobile-cell"] {
+                width: 100% !important;
+                height: auto !important;
+                float: left !important;
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+                border: none !important;
+                box-sizing: border-box;
+            }
+
+            td[class="mobile-cell-center"] {
+                width: 100% !important;
+                text-align: center !important;
+                float: left !important;
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+                border: none !important;
+                box-sizing: border-box;
+            }
+
+            td[class="mobile-cell-center-padding"] {
+                width: 100% !important;
+                text-align: center !important;
+                float: left !important;
+                padding: 10px !important;
+                border: none !important;
+                box-sizing: border-box;
+            }
+
+            td[class="mobile-space"] {
+                height: 10px !important;
+                font-size: 10px !important;
+                line-height: 10px !important;
+            }
+
+            *[class="mobile-no"] {
+                display: none !important;
+            }
+
+            table.mobile-480-btn {
+                width: 49%;
+            }
+
+            table.mobile-480-btn td {
+                text-align: center;
+            }
+
+            table.mobile-480-no {
+                width: 2%;
+            }
+
+            td.mobile-cell-center table.mobile-480-btn {
+                margin: 0 auto;
+            }
+
+            td.mobile-cell-divider {
+                width: 100% !important;
+                height: 10px !important;
+                float: left !important;
+            }
+
+            td.mobile-footer-cell {
+                float: left;
+                min-width: 220px;
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            table.mobile-480-btn {
+                width: 100%;
+            }
+
+            table.mobile-480-no td {
+                height: 5px !important;
+                padding: 0 !important;
+            }
+
+            td.mobile-footer-cell {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            td.mobile-footer-cell td {
+                text-align: center !important;
+            }
+
+            td.mobile-footer-cell table {
+                width: 200px;
+                margin: 0 auto;
+            }
+
+            td.mobile-footer-cell:nth-child(2) {
+                padding: 0 10px !important;
+            }
+
+            td.mobile-footer-cell:nth-child(2) table {
+                width: 180px;
+            }
+        }
+    </style>
+    {if $backToEditLink}
+    <link rel="stylesheet" href="/FrontModule/dist/app.css">
+    {/if}
+</head>
+<body style="text-align:center;width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Arial, Helvetica, sans-serif; font-size: 12px; margin: 0; padding: 0; background: #f3f3f3 !important;"
+      bgcolor="#f3f3f3">
+    {if $backToEditLink}
+        <div class="preview__header">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="devices">
+                    <button class="devices-item" type="button" data-device="desktop">
+                        <svg class="icon"><use xlink:href="#desktop"></use></svg>
+                        <div class="heading">Desktop</div>
+                    </button>
+                    <button class="devices-item" type="button" data-device="tablet">
+                        <svg class="icon"><use xlink:href="#tablet"></use></svg>
+                        <div class="heading">Tablet</div>
+                    </button>
+                    <button class="devices-item" type="button" data-device="mobile">
+                        <svg class="icon"><use xlink:href="#mobile"></use></svg>
+                        <div class="heading">Mobile</div>
+                    </button>
+                </div>
+                <div class="d-flex">
+                    <a href="{$backToEditLink}" class="btn btn-primary me-2" style="color:#008ddf !important;">Edit</a>
+                    <a href="{$backToMailingsLink}" class="btn btn-secondary" style="color:#ff7878 !important;">Mailings</a>
+                </div>
+            </div>
+        </div>
+    {/if}
+
+    <div class="preview-wrapper preview-wrapper--mobile">
+        <div class="preview-wrapper-2">
+            <span id="body_style" style="padding:0; display:block; background:#f3f3f3;">
+                <table width="700" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff"
+                    style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #ffffff;"
+                    class="wrapper-table">
+                <tr>
+                    <td class="inner contents"
+                        style="padding-top:15px;padding-bottom:15px;padding-right:40px;padding-left:40px;width:100%;text-align:center; color: #ffffff;">
+                        <img src="{$domain}{$mailing->getAccount()->getLogo()}" width="400" alt="">
+                    </td>
+                </tr>
+                </table>
+                <table width="700" cellspacing="0" cellpadding="0" border="0"
+                    bgcolor="#{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX}"
+                    style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #ffffff;"
+                    class="wrapper-table">
+                <tr>
+                    <td class="inner contents"
+                        style="padding-top:15px;padding-bottom:15px;padding-right:40px;padding-left:40px;width:100%;text-align:center; color: #ffffff;">
+                    <span style="font-size:16px;margin-top:0;margin-bottom:0;background:#{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX}; color: #{$mailing->getAccount()->getSecondaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_TEXT_COLOR_HEX}; font-weight: 400;text-transform: uppercase; font-weight: 700;"
+                            target="_blank">{$mailing->getSubject()}</span>
+                    </td>
+                </tr>
+                </table> 
+                [[COMPONENTS]]
+                <table width="700" cellspacing="0" cellpadding="0" border="0" bgcolor="#f3f3f3"
+                    style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
+                    class="wrapper-table">
+                <tr>
+                    <td class="inner contents"
+                        style="padding-bottom:20px;padding-right:40px;padding-left:40px;width:100%;text-align:center;padding-top:15px;">
+                    <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:10px;line-height:18px;text-align:center;padding-top:10px;font-size:12px;">Pro odhlášení z odběru newsletteru klikněte <a
+                                href="{$unsubscribeLink}" style="color:# !important;text-decoration:underline;">ZDE</a>.</p>
+                    </td>
+                </tr>
+                </table>
+            </span>
+        </div>
+    </div>
+
+    {if $backToEditLink}
+    <script src="/FrontModule/dist/vendor.js"></script>
+    <script src="/FrontModule/dist/app.js"></script>
+    <script src="/FrontModule/dist/preview.js"></script>
+    {/if}
+</body>
+</html>

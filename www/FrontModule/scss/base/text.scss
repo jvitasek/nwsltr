@@ -1,0 +1,43 @@
+html, body {
+    color: $textColor;
+    background-color: #f8f8f8;
+    font-family: 'Red Hat Text', sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;   
+}
+
+// Text selection style
+::selection {
+	background: $primaryColor;
+	color: #fff;
+}
+::-moz-selection {
+	background: $primaryColor;
+	color: #fff;
+}
+::-webkit-selection {
+	background: $primaryColor;
+	color: #fff;
+}
+
+// Links 
+a {
+    text-decoration: none;
+    color: #262432;
+}
+
+// Titles
+h1 {
+    color: $textColor;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h2 {
+    color: $primaryColor;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}

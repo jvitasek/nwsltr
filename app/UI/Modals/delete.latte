@@ -1,0 +1,18 @@
+<div class="modal" tabindex="-1" id="modal" data-bs-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete <span class="remove-item-title"></span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete <strong class="remove-item-title">{$model->getTitle()}</strong>?</p>
+                <input type="hidden" class="remove-item-id">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                <a n:href="delete! $entityId, $entity" class="btn btn-secondary">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

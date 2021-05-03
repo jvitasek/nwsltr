@@ -1,0 +1,19 @@
+<div class="modal" tabindex="-1" id="modal" data-bs-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Import XLSX</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    The recipients will be imported into the group <strong
+                            class="remove-item-title">{$model->getTitle()}</strong>.
+                    <br>
+                    <small>Download a <a href="/www/sample-import-file.xlsx">sample import file</a></small>
+                </p>
+                {control importXlsForm}
+            </div>
+        </div>
+    </div>
+</div>

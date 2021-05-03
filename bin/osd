@@ -1,0 +1,21 @@
+#!/bin/bash
+# traverse to the root folder
+
+cd "$(dirname "$0")" || exit
+cd ..
+
+# go to temp dir
+
+cd temp || exit
+
+# delete all inside
+
+rm -rf *
+
+# go back to root
+
+cd ..
+
+# run the ORM schema command
+php bin/console orm:clear-cache:metadata
+php bin/console o:s:u --dump-sql

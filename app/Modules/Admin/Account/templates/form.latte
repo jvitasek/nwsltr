@@ -1,0 +1,28 @@
+{block #content}
+
+<section class="page-heading">
+    <div class="container-fluid">
+        <h1 n:block="title">Account Form</h1>
+    </div>
+</section>
+
+<section class="form">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card__body">
+                {if $accountEdit && $accountEdit->getLogo()}
+                    <h2 class="heading-primary">Logo:</h2>
+                    <div class="thumb">
+                        <a n:href="deleteLogo! $accountEdit->getId()" class="delete">x</a>
+                        <img src="{$accountEdit->getLogo()}" alt="" class="img-fluid">
+                    </div>
+                {/if}
+                {control accountForm}
+            </div>
+        </div>
+    </div>
+</section>
+
+{define scripts}
+    <script src="{$basePath}/FrontModule/dist/form.js"></script>
+{/define}

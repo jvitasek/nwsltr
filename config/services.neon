@@ -1,0 +1,41 @@
+services:
+    - App\Model\Router\RouterFactory
+    router:
+        class: Nette\Application\IRouter
+        factory: @App\Model\Router\RouterFactory::create
+
+    latte.templateFactory:
+        class: App\Model\Latte\TemplateFactory
+
+    nette.userStorage:
+        setup:
+            - setNamespace("Newsletter")
+
+    security.passwords: App\Model\Security\Passwords
+    security.user: App\Model\Security\SecurityUser
+    security.authenticator: App\Model\Security\Authenticator\UserAuthenticator
+
+    # form factories
+    - App\UI\Form\SignInFormFactory
+    - App\UI\Form\RecipientGroupFormFactory
+    - App\UI\Form\RecipientFormFactory
+    - App\UI\Form\ImportXlsFormFactory
+    - App\UI\Form\AccountFormFactory
+    - App\UI\Form\UserFormFactory
+    - App\UI\Form\UnsubscribeFormFactory
+    - App\UI\Form\SendTestFormFactory
+
+    # session
+    - App\Model\Session\AccountSession
+
+    # domain
+    - App\Domain\Import\ImportFromExcel
+    - App\Domain\Helper\Statistics
+    - App\Domain\Helper\FileUpload
+
+    # console
+    - {class: App\Model\Console\SendMailingsCommand, tags: {console.command: mailing:send}}
+
+latte:
+    macros:
+        - App\Model\Latte\Macros::register

@@ -1,0 +1,46 @@
+.charts {
+
+    canvas {
+        width: 100%;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+}
+
+.charts__number {
+    .chart-heading {
+        color: $textColorTint;
+        font-size: .75rem;
+        font-weight: 400;
+        margin-bottom: .5rem;
+    }
+
+    .number {
+        font-size: 2rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+
+        .icon {
+            @include svg-icon(30px, 30px);
+            margin-right: .75rem;
+        }
+    }
+
+    .green {
+        color: #00c292;
+    }
+
+    .orange {
+        color: #fec107
+    }
+
+    .blue {
+        color: #03a9f3;
+    }
+
+    .red {
+        color: #d9534f;
+    }
+}

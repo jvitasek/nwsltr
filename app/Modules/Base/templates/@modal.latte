@@ -1,0 +1,7 @@
+{if $openModal}
+    {snippet modalContent}{include $modalContent}{/snippet}
+
+    <script n:syntax="off">
+        new window.modal(document.getElementById('modal')).show()
+    </script>
+{/if}

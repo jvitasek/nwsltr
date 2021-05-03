@@ -1,0 +1,41 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.css.map
+www/package-lock.json
+www/yarn.lock
+www/.sass-cache/*
+www/node_modules/*
+log/*
+temp/*
+.idea
+
+# important to keep private
+config/test.neon
+config/production.neon
+config/deployment.ini
+
+# tests
+tests/codeception/_support/_generated
+tests/codeception/_output
+
+vendor/*
+www/uploads/*
+www/dist/*
+www/bower_components
+www/FrontModule/node_modules/*
+www/FrontModule/dist/*
+www/FrontModule/yarn.lock
+
+!.gitignore
+!.htaccess
+!www/uploads/.gitkeep
+!log/.gitkeep
+!temp/.gitkeep
+!web.config

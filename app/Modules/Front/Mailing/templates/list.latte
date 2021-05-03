@@ -1,0 +1,202 @@
+{block #content}
+{varType App\Model\Database\Entity\Mailing $mailing}
+
+<section class="page-heading">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <button class="sidebar-btn"><svg class="icon"><use xlink:href="#menu"></use></svg></button>
+                <h1 n:block="title">Mailings</h1>
+            </div>
+            <a n:href="Editor:default" class="btn btn-tertiary">Create Mailing</a>
+        </div>
+    </div>
+</section>
+
+<section class="datagrid" data-entity="{App\Model\Database\Entity\Mailing::class}">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card__body">
+                <div class="table-wrapper-2">
+                    <div class="table-wrapper-1">
+                        {if count($mailings) === 0}
+                            <p>Nothing here yet. Start by creating a mailing.</p>
+                            <a n:href="Editor:default" class="btn btn-tertiary">Create Mailing</a>
+                        {else}
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th class="d-flex align-items-center justify-content-between">
+                                        Title
+                                        <div class="sort">
+                                            <button class="sort-button{if $sortField === 'p.title' && $sortDirection === 'ASC'} active{/if}"
+                                                    data-field="p.title" data-direction="ASC">
+                                                <svg class="icon">
+                                                    <use xlink:href="#caretUp"></use>
+                                                </svg>
+                                            </button>
+                                            <button class="sort-button{if $sortField === 'p.title' && $sortDirection === 'DESC'} active{/if}"
+                                                    data-field="p.title" data-direction="DESC">
+                                                <svg class="icon">
+                                                    <use xlink:href="#caretDown"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            Sendout Date
+                                            <div class="sort">
+                                                <button class="sort-button{if $sortField === 'p.sendDate' && $sortDirection === 'ASC'} active{/if}"
+                                                        data-field="p.sendDate" data-direction="ASC">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#caretUp"></use>
+                                                    </svg>
+                                                </button>
+                                                <button class="sort-button{if $sortField === 'p.sendDate' && $sortDirection === 'DESC'} active{/if}"
+                                                        data-field="p.sendDate" data-direction="DESC">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#caretDown"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <div class="d-flex text-filter"><input type="text" placeholder="Title"
+                                                                               name="p.title"{if $filterField === 'p.title'} value="{$filterQuery}"{/if}>
+                                            <button class="btn btn-secondary btn-sm ms-2 flex-shrink-0">OK</button>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="d-flex text-filter custom-datepicker"><input type="text"
+                                                                                                 placeholder="Sendout Date"
+                                                                                                 name="p.sendDate"{if $filterField === 'p.sendDate'} value="{$filterQuery}"{/if}>
+                                            <button class="btn btn-secondary btn-sm ms-2 flex-shrink-0">OK</button>
+                                        </div>
+                                    </th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {foreach $mailings as $mailing}
+                                    {skipIf !$mailing->isFilled()}
+                                    <tr>
+                                        <td>{$mailing->getTitle()}</td>
+                                        <td>{$mailing->getSendDate()|date:'j.n.Y H:i'}</td>
+                                        <td>
+                                            {if in_array($mailing->getStatus(), App\Model\Database\Entity\Mailing::STATES_RETURNABLE)}
+                                                <div class="custom-select">
+                                                    <select name="status" id="status" class="status-change"
+                                                            data-field="Status" data-id="{$mailing->getId()}">
+                                                        {foreach App\Model\Database\Entity\Mailing::STATES as $statusId => $statusTitle}
+                                                            {skipIf !in_array($statusId, App\Model\Database\Entity\Mailing::STATES_RETURNABLE)}
+                                                            <option value="{$statusId}"{if $statusId === $mailing->getStatus()} selected{/if}>{$statusTitle}</option>
+                                                        {/foreach}
+                                                    </select>
+                                                    <svg class="arrow">
+                                                        <use xlink:href="#adown"></use>
+                                                    </svg>
+                                                </div>
+                                            {else}
+                                                <div class="custom-select custom-select--disabled">
+                                                    <select>
+                                                        <option selected>{$mailing->getStatusTitle()}</option>
+                                                    </select>
+                                                </div>
+                                            {/if}
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a n:href="openModal! 'sendTest', $mailing->getId(), App\Model\Database\Entity\Mailing::class"
+                                                        data-naja-history="off" class="ajax tool-item" title="Send Test"
+                                                        data-item-id="{$mailing->getId()}"
+                                                        data-item-title="{$mailing->getTitle()}">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#send"></use>
+                                                    </svg>
+                                                </a>
+                                                <a n:href="Editor:preview $mailing->getId()" class="tool-item"
+                                                                                             title="Preview">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#eye"></use>
+                                                    </svg>
+                                                </a>
+                                                <a n:href="Editor:default $mailing->getId()" class="tool-item"
+                                                                                             title="Edit">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#edit"></use>
+                                                    </svg>
+                                                </a>
+                                                <a n:href="openModal! 'delete', $mailing->getId(), App\Model\Database\Entity\Mailing::class"
+                                                        class="ajax tool-item btn-remove" title="Remove"
+                                                        data-item-id="{$mailing->getId()}"
+                                                        data-item-title="{$mailing->getTitle()}">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#trash"></use>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{define scripts}
+    <script src="{$basePath}/FrontModule/dist/datagrid.js"></script>
+    <script>
+        document.querySelectorAll('.status-change').forEach(readyCheckbox => {
+            readyCheckbox.addEventListener('change', function () {
+                var newValue = this.value;
+                var entity = document.querySelector('section.datagrid').dataset.entity;
+                var recordId = this.dataset.id;
+                var field = this.dataset.field;
+                window.location = {link 'changeStatus!'} +'&field=' + field + '&value=' + newValue + '&entity=' + entity + '&recordId=' + recordId;
+            })
+        });
+
+
+        document.querySelectorAll('.sort-button').forEach(readyCheckbox => {
+            readyCheckbox.addEventListener('click', function () {
+                var field = this.dataset.field;
+                var direction = this.dataset.direction;
+                window.location = {link 'sort!'} +'&sortField=' + field + '&sortDirection=' + direction;
+            })
+        });
+
+        document.querySelectorAll('.text-filter').forEach(textFilter => {
+            let input = textFilter.querySelector('input')
+            let btn = textFilter.querySelector('button')
+            let filterType = input.getAttribute('name')
+
+            btn.addEventListener('click', function () {
+                handleFilter(filterType, input)
+            })
+
+            input.addEventListener('keyup', function () {
+                if (event.keyCode === 13) {
+                    handleFilter(filterType, input)
+                }
+            })
+        })
+
+        function handleFilter(filterType, input) {
+            var field = filterType;
+            var query = input.value;
+            window.location = {link 'filter!'} +'&filterField=' + field + '&filterQuery=' + query;
+        }
+    </script>
+{/define}

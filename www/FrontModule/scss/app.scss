@@ -1,0 +1,49 @@
+// Core
+@import "core/variables";
+@import "core/helpers";
+
+// Vendor
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins"; 
+@import "~bootstrap/scss/reboot"; 
+@import "~bootstrap/scss/forms"; 
+@import "~bootstrap/scss/bootstrap-grid"; 
+@import "~bootstrap/scss/utilities"; 
+@import "~bootstrap/scss/utilities/api"; 
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/tooltip";
+@import "~noty/lib/noty.css";
+@import "~noty/lib/themes/bootstrap-v4.css";
+@import "~flatpickr/dist/flatpickr.min.css";
+@import "~flatpickr/dist/themes/dark.css";
+@import "~medium-editor/dist/css/medium-editor.css";
+@import "~choices.js/public/assets/styles/choices.css";
+
+// Typografická základna
+@import "base/text";
+
+// Formulare
+@import "base/forms";
+
+// UI komponenty
+@import "components/error";
+@import "components/breadcrumbs";
+@import "components/composer";
+@import "components/login";
+@import "components/sidebar";
+@import "components/page-heading";
+@import "components/card";
+@import "components/datagrid";
+@import "components/charts";
+@import "components/modal";
+@import "components/form";
+@import "components/preview";
+
+// Layout
+@import "layout/layout";

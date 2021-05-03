@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /
+
+
+RewriteRule ^(.*)$ www/$1 [L]
+
+# prevents files starting with dot to be viewed by browser
+RewriteRule /\.|^\. - [F]

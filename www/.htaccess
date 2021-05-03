@@ -1,0 +1,31 @@
+# Apache configuration file (see httpd.apache.org/docs/current/mod/quickreference.html)
+
+# disable directory listing
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# enable cool URL
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # prevents files starting with dot to be viewed by browser
+    RewriteRule /\.|^\.(?!well-known/) - [F]
+
+    # front controller
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule !\.(pdf|webp|js|woff2|woff|ttf|tif|svg|eot|ico|gif|jpg|jpeg|png|doc|docx|xls|xlsx|ppt|pptx|ods|odt|mp4|css|rar|zip|tar\.gz|map)$ index.php [L,NC]
+</IfModule>
+
+# enable gzip compression
+<IfModule mod_deflate.c>
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json application/xml image/svg+xml
+    </IfModule>
+</IfModule>
+
+# cropping + filling images
+RewriteRule ^images-(.*)/([0-9]+)x([0-9]+)/(.*)/([0-9]+)/(.*)$ /www/obr.php?method=$1&width=$2&height=$3&pom_dir=$4&pom_id=$5&soubor=$6 [NC,L]
+RewriteRule ^images/([0-9]+)x([0-9]+)/(.*)/([0-9]+)/(.*)$ /www/obr.php?method=auto&width=$1&height=$2&pom_dir=$3&pom_id=$4&soubor=$5 [NC,L]

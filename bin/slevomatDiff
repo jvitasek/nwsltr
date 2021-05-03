@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# traverse to the root folder
+
+cd "$(dirname "$0")" || exit
+cd ..
+
+# run phpcs on app directory
+
+vendor/bin/phpcs --standard=ruleset.xml --extensions=php --tab-width=4 -sp app

@@ -1,0 +1,26 @@
+{ifset $datagrid}
+    <script>
+        document.querySelectorAll('.ready-checkbox').forEach(readyCheckbox => {
+            readyCheckbox.addEventListener('change', function () {
+                var recordId = this.dataset.id;
+                var field = this.dataset.field;
+                var checked = this.checked;
+                var entity = document.querySelector('section.datagrid').dataset.entity;
+
+                naja.makeRequest(
+                    'POST',
+                    {link toggleField!},
+                    {
+                        field: field,
+                        checked: checked,
+                        recordId: recordId,
+                        entity: entity
+                    },
+                    {
+                        history: false,
+                    }
+                );
+            })
+        });
+    </script>
+{/ifset}

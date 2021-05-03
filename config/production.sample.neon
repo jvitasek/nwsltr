@@ -1,0 +1,28 @@
+parameters:
+    domain: https://nwsltr.jvitasek.cz
+    database:
+        driver: mysqli
+        charset: utf8
+        host: 127.0.0.1
+        database: example
+        username: example
+        password: example
+        lazy: TRUE
+
+application:
+    catchExceptions: true
+    debugger: false
+
+nettrine.orm:
+    configuration:
+        autoGenerateProxyClasses: ::constant(Doctrine\Common\Proxy\AbstractProxyFactory::AUTOGENERATE_FILE_NOT_EXISTS)
+
+nettrine.cache:
+    driver: Doctrine\Common\Cache\PredisCache
+
+mail:
+    smtp: true
+    host: 'mail.example.cz'
+    username: 'example@example.cz'
+    password: 'example'
+    secure: 'ssl'

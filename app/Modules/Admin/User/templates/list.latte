@@ -1,0 +1,66 @@
+{block #content}
+
+<section class="page-heading">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between">
+            <h1 n:block="title">Users</h1>
+            <a n:href="User:form" class="btn btn-tertiary">Create User</a>
+        </div>
+    </div>
+</section>
+
+<section class="datagrid" data-entity="{App\Model\Database\Entity\User::class}">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card__body">
+                <div class="table-wrapper-2">
+                    <div class="table-wrapper-1">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Created At</th>
+                                <th>E-mail</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {varType App\Model\Database\Entity\User $user}
+                                {foreach $users as $user}
+                                <tr>
+                                    <td>{$user->getId()}</td>
+                                    <td>{$user->getCreatedAt()|date:'j.n.Y H:i'}</td>
+                                    <td>{$user->getEmail()}</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a n:href="User:form $user->getId()" class="tool-item" title="Edit">
+                                                <svg class="icon">
+                                                    <use xlink:href="#edit"></use>
+                                                </svg>
+                                            </a>
+                                            {if $user->getId() !== $userEntity->getId()}
+                                                <a n:href="openModal! 'delete', $user->getId(), App\Model\Database\Entity\User::class"
+                                                        class="ajax tool-item btn-remove" title="Remove"
+                                                        data-item-id="{$user->getId()}"
+                                                        data-item-title="{$user->getEmail()}">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#trash"></use>
+                                                    </svg>
+                                                </a>
+                                            {/if}
+                                        </div>
+                                    </td>
+                                </tr>
+                            {/foreach}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{define scripts}
+    <script src="{$basePath}/FrontModule/dist/datagrid.js"></script>
+{/define}

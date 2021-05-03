@@ -1,0 +1,47 @@
+includes:
+    # app
+    - services.neon
+    - parameters.neon
+
+    # ext
+    - contributte.neon
+    - nettrine.neon
+    - extensions.neon
+
+php:
+    date.timezone: Europe/Prague
+    output_buffering: 4096
+
+session:
+    autoStart: smart
+    cookieHttponly: true
+    cookieSamesite: Lax
+    debugger: true
+    expiration: 14 days
+    name: SID
+    sidBitsPerCharacter: 6 # 4-6
+    sidLength: 128 # 22-250
+    useCookies: true
+    useOnlyCookies: true
+    useStrictMode: true
+
+application:
+    errorPresenter: %system.error.presenter%
+    mapping:
+        Admin: [App\Modules\Admin, *, *\*Presenter]
+        Api: [App\Modules\Api, *, *\*Presenter]
+        Front: [App\Modules\Front, *, *\*Presenter]
+
+di:
+    debugger: true
+    export:
+        parameters: no
+        tags: no
+
+http:
+    cookieSecure: auto
+
+tracy:
+    email: %system.error.email%
+    logSeverity: E_ALL
+    strictMode: true

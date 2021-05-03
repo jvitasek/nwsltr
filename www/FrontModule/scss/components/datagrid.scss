@@ -1,0 +1,111 @@
+.datagrid {
+    .tool-item {
+        border: 1px solid $primaryColor;
+        padding: 10px 16px;
+        margin: 0;
+        margin-right: .25rem;
+        margin-left: .25rem;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+        transition: all .3s;
+
+        .icon {
+            @include svg-icon(16px, 16px);
+            @include svg-icon-color($primaryColor);
+            @include svg-icon-transition(.3s);
+        }
+
+        &:hover {
+            background-color: $primaryColor;
+
+            .icon {
+                @include svg-icon-color(#fff);
+            }
+        }
+    }
+
+    .table {
+        td, th {
+            vertical-align: middle;
+        }
+
+        th {
+            border: 0;
+            background: rgb(248, 250, 252) !important; 
+        }
+
+        & > :not(:last-child) > :last-child > * {
+            background: rgb(248, 250, 252) !important; 
+            border-bottom: 1px solid rgb(204, 209, 212);
+        }
+    }
+
+    .sort {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        width: 15px;
+
+        .sort-button {
+            border: 0;
+            background: none;
+            display: block;
+            padding: 0;
+            margin: 0;
+            line-height: 1;
+
+            .icon {
+                @include svg-icon(14px, 14px);
+                @include svg-icon-color($textColorTint);
+                opacity: .25; 
+            }
+        }
+
+        .sort-button:hover {
+            .icon {
+                opacity: 1;
+            }
+        }
+
+        .sort-button.active {
+            .icon {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: $lg) {
+    .datagrid {
+        .table-wrapper-2 {
+            overflow-x: scroll; 
+        }
+        
+        .table-wrapper-1 {
+            position: relative;
+
+            &:after {
+                position: absolute;
+                top: 0;
+                bottom: 20px;
+                right: -20px;
+                width: 35%;
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0) 30%, #FFFFFF 100%);
+                content: "";
+                pointer-events: none;
+            }
+        }
+
+        .table-wrapper-2 {
+            overflow-x: scroll;
+        }
+
+        .table {
+            width: 970px;
+        }
+    }
+}

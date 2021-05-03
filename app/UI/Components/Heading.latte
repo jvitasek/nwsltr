@@ -1,0 +1,38 @@
+{varType App\Model\Database\Entity\Mailing $mailing}
+{varType array $data}
+{if isset($data['headingType']) && isset($data['content'])}
+    {if $data['headingType'] === 1}
+        <table width="700" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF"
+               style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: left;"
+               class="wrapper-table">
+            <tr>
+                <td valign="top" style="padding: 40px; padding-bottom: 15px; text-align: left;" class="mobile-cell">
+                    <div style="display: block; padding-bottom: 5px; font-weight: 700; color: #{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX} !important; font-size: 48px; text-align: left;">
+                        <span>{$data['content']}</span></div>
+                </td>
+            </tr>
+        </table>
+    {elseif $data['headingType'] === 2}
+        <table width="700" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF"
+               style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: left;"
+               class="wrapper-table">
+            <tr>
+                <td valign="top" style="padding: 40px; padding-bottom: 15px; text-align: left;" class="mobile-cell">
+                    <div style="display: block; padding-bottom: 5px; font-weight: 700; color: #{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX} !important; font-size: 36px; text-align: left;">
+                        <span>{$data['content']}</span></div>
+                </td>
+            </tr>
+        </table>
+    {elseif $data['headingType'] === 3}
+        <table width="700" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF"
+               style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: left;"
+               class="wrapper-table">
+            <tr>
+                <td valign="top" style="padding: 40px; padding-bottom: 15px; text-align: left;" class="mobile-cell">
+                    <div style="display: block; padding-bottom: 5px; font-weight: 700; color: #{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX} !important; font-size: 24px; text-align: left;">
+                        <span>{$data['content']}</span></div>
+                </td>
+            </tr>
+        </table>
+    {/if}
+{/if}

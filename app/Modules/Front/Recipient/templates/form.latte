@@ -1,0 +1,24 @@
+{block #content}
+
+<section class="page-heading">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center">
+            <button class="sidebar-btn"><svg class="icon"><use xlink:href="#menu"></use></svg></button>
+            <h1 n:block="title">Recipient Form</h1>
+        </div>
+    </div>
+</section>
+
+<section class="form">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card__body">
+                {control recipientForm}
+            </div>
+        </div>
+    </div>
+</section>
+
+{define scripts}
+    <script src="{$basePath}/FrontModule/dist/form.js"></script>
+{/define}

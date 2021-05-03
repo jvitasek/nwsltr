@@ -1,0 +1,5 @@
+parameters:
+    system:
+        error:
+            email: debug@jvitasek.cz
+            presenter: Front:Error

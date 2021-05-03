@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# traverse to the root folder
+
+cd "$(dirname "$0")" || exit
+cd ..
+
+# run phpcbf on app directory
+
+vendor/bin/phpcbf --standard=ruleset.xml --extensions=php --tab-width=4 -sp app

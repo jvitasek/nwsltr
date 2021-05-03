@@ -1,0 +1,34 @@
+.container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.main-layout-wrapper-1 {
+    display: flex;
+    background-color: #2a2a31;
+}
+
+.main-layout-wrapper-2 {
+    flex-grow: 1;
+    margin-left: $sidebarWidth;
+    min-height: 100vh;
+    z-index: 50;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: #f7f7f7;
+    max-width: 100%;
+}
+
+@media screen and (max-width: $lg) {
+    .main-layout-wrapper-2 {
+        margin-left: 0;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

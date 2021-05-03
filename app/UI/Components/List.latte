@@ -1,0 +1,44 @@
+{varType App\Model\Database\Entity\Mailing $mailing}
+{varType array $data}
+{if isset($data['listType']) && isset($data['items']) && count($data['items']) > 0}
+    <table width="700" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF"
+           style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: left;"
+           class="wrapper-table">
+        <tr>
+            <td valign="top" style="padding: 40px; padding-top: 15px; padding-bottom: 15px; text-align: left;"
+                class="mobile-cell">
+                <table>
+                    {if $data['listType'] === 'ul'}
+                        {foreach $data['items'] as $item}
+                            <tr>
+                                <td>
+                                    <div style="display: block; font-weight: 400; color: #494948 !important; font-size: 16px; text-align: left;">
+                                        &bull;
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display: block; font-weight: 400; color: #494948 !important; font-size: 16px; text-align: left;">
+                                        <span>{$item}</span></div>
+                                </td>
+                            </tr>
+                        {/foreach}
+                    {elseif $data['listType'] === 'ol'}
+                        {foreach $data['items'] as $item}
+                            <tr>
+                                <td>
+                                    <div style="display: block; font-weight: 400; color: #494948 !important; font-size: 16px; text-align: left;">{$iterator}
+                                        .
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display: block; font-weight: 400; color: #494948 !important; font-size: 16px; text-align: left;">
+                                        <span>{$item}</span></div>
+                                </td>
+                            </tr>
+                        {/foreach}
+                    {/if}
+                </table>
+            </td>
+        </tr>
+    </table>
+{/if}

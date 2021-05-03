@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# traverse to the root folder
+
+cd "$(dirname "$0")" || exit
+cd ..
+
+# run codeception
+php vendor/bin/codecept run --steps

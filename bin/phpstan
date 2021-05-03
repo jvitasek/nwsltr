@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# traverse to the root folder
+
+cd "$(dirname "$0")" || exit
+cd ..
+
+# run phpcs on app directory
+
+vendor/bin/phpstan analyse

@@ -1,0 +1,16 @@
+{varType App\Model\Database\Entity\Mailing $mailing}
+{varType array $data}
+{if isset($data['images']) && count($data['images']) > 0}
+    {foreach $data['images'] as $image}
+        <table width="700" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF"
+               style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
+               class="wrapper-table">
+            <tr>
+                <td class="full-width-image" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                    <img src="{$domain}{$image['fileUrl']}" alt="" width="700"
+                         style="display:block;border-width:0;width:100%;max-width:700px;height:auto;">
+                </td>
+            </tr>
+        </table>
+    {/foreach}
+{/if}

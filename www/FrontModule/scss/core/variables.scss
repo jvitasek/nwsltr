@@ -1,0 +1,27 @@
+// Layout 
+$layoutWidth: 1170px;
+$sidebarWidth: 280px;
+$sidebarWidthCollapsed: 90px;
+$headerHeight: 82px;
+
+// Colors
+$primaryColor: #008ddf;
+$primaryColorTint: #dcefff;
+$primaryColorShade: #008ddf;
+
+$secondaryColor: #ff7878;
+$secondaryColorTint: #ffe8e8;
+$secondaryColorTint2: #ffd6d6;
+$secondaryColorShade: rgb(255, 102, 102);
+
+$textColor: #2c323f;
+$textColorTint: rgba(43, 43, 43, 0.6);
+$textColorShade: #394A59;
+
+$grey: #f8f9fa;
+
+// Breakpoints
+$lg: 992px;
+$md: 767px;
+$sm: 576px;
+$xs: 525px;

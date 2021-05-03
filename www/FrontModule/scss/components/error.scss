@@ -1,0 +1,20 @@
+.error {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.error__wrapper {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+    strong {
+        display: block;
+        font-size: 7rem;
+        font-weight: 900;
+        line-height: .9
+    }
+}

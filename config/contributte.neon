@@ -1,0 +1,44 @@
+extensions:
+    contributte.console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+    contributte.console.extra: Contributte\Console\Extra\DI\ConsoleBridgesExtension
+    contributte.events: Contributte\EventDispatcher\DI\EventDispatcherExtension
+    contributte.events2nette: Contributte\Events\Extra\DI\EventBridgesExtension
+    contributte.monolog: Contributte\Monolog\DI\MonologExtension
+    redis: Contributte\Redis\DI\RedisExtension
+
+contributte.console:
+    url: https://nwsltr.jvitasek.cz/
+    lazy: true
+
+contributte.events:
+    autoload: true
+    lazy: false
+
+redis:
+    # Setup Tracy panel
+    debug: %debugMode%
+
+    connection:
+        default:
+            uri: tcp://127.0.0.1:6379
+            sessions: false
+            storage: true
+            options: ['parameters': ['database': 0]]
+        session:
+            uri: tcp://127.0.0.1:6379
+            sessions: true
+            storage: false
+            options: ['parameters': ['database': 1]]
+
+contributte.monolog:
+    holder:
+        enabled: true
+    channel:
+        default:
+            handlers:
+                - Monolog\Handler\RotatingFileHandler(%appDir%/../log/syslog.log, 30, Monolog\Logger::WARNING)
+            processors:
+                - Monolog\Processor\WebProcessor()
+                - Monolog\Processor\IntrospectionProcessor()
+                - Monolog\Processor\MemoryPeakUsageProcessor()
+                - Monolog\Processor\ProcessIdProcessor()

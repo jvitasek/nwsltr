@@ -1,0 +1,76 @@
+{block #content}
+
+<section class="page-heading">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <button class="sidebar-btn"><svg class="icon"><use xlink:href="#menu"></use></svg></button>
+                <h1 n:block="title">Recipient Groups</h1>
+            </div>
+            <a n:href="RecipientGroup:form" class="btn btn-tertiary">Create Group</a>
+        </div>
+    </div>
+</section>
+
+<section class="datagrid" data-entity="{App\Model\Database\Entity\RecipientGroup::class}">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card__body">
+                <div class="table-wrapper-2">
+                    <div class="table-wrapper-1">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Created At</th>
+                                <th>No. of Recipients</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {varType App\Model\Database\Entity\RecipientGroup $recipientGroup}
+                                {foreach $recipientGroups as $recipientGroup}
+                                <tr>
+                                    <td>{$recipientGroup->getTitle()}</td>
+                                    <td>{$recipientGroup->getCreatedAt()|date:'j.n.Y H:i'}</td>
+                                    <td>{$recipientGroup->getRecipients()->count()}</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a n:href="RecipientGroup:form $recipientGroup->getId()" class="tool-item"
+                                                                                                     title="Edit">
+                                                <svg class="icon">
+                                                    <use xlink:href="#edit"></use>
+                                                </svg>
+                                            </a>
+                                            <a n:href="openModal! 'importXls', $recipientGroup->getId(), App\Model\Database\Entity\RecipientGroup::class"
+                                                    data-naja-history="off" class="ajax tool-item" title="Import XLS"
+                                                    data-item-id="{$recipientGroup->getId()}"
+                                                    data-item-title="{$recipientGroup->getTitle()}">
+                                                <svg class="icon">
+                                                    <use xlink:href="#filePlus"></use>
+                                                </svg>
+                                            </a>
+                                            <a n:href="openModal! 'delete', $recipientGroup->getId(), App\Model\Database\Entity\RecipientGroup::class"
+                                                    data-naja-history="off" class="ajax tool-item btn-remove"
+                                                    title="Remove" data-item-id="{$recipientGroup->getId()}"
+                                                    data-item-title="{$recipientGroup->getTitle()}">
+                                                <svg class="icon">
+                                                    <use xlink:href="#trash"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {/foreach}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{define scripts}
+    <script src="{$basePath}/FrontModule/dist/datagrid.js"></script>
+{/define}

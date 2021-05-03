@@ -1,0 +1,11 @@
+parameters:
+    checkGenericClassInNonGenericObjectType: false
+    checkMissingIterableValueType: false
+
+    paths:
+        - app
+
+    level: 6
+
+    bootstrapFiles:
+        - app/constants.php

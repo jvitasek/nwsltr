@@ -1,0 +1,90 @@
+{block #content}
+{varType App\Model\Database\Entity\Account $account}
+{varType App\Model\Database\Entity\Queue $queue}
+
+<section class="login">
+    <div class="login-wrapper">
+        <div class="login__head">
+            <a n:href="Home:default" class="logo">
+                <svg class="icon">
+                    <use xlink:href="#paperPlane"></use>
+                </svg>
+                NWSLTR
+            </a>
+        </div>
+        <form class="ajax login__form" n:name="unsubscribeForm">
+            <input n:name="unsubscribeId">
+            <h1 class="mb-3">Mrzí nás, že odcházíte.</h1>
+            <p>Odhlásili jsme Vás z mailingů účtu <strong>{$account->getTitle()}</strong></p>
+            {if $account->isShowUnsubscribeFeedbackForm()}
+                <div class="form-group">
+                    <label class="label-sm" for="feedback">Pokud máte pro nás nějaké nápady, napište nám:</label>
+                    <textarea n:name="feedback" id="feedback"></textarea>
+                </div>
+                <div class="d-flex">
+                <input class="btn btn-primary me-2" value="Odhlásit se" n:name="unsubscribe">
+                {if !($account->isShowResubscribeButton())}
+                    </div>
+                {/if}
+            {/if}
+            {if $account->isShowResubscribeButton()}
+                <button type="button" class="button white" id="resubscribe">
+                    <div class="icon">
+                        <div class="particles">
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                            <div class="particle-inactive"></div>
+                        </div>
+                        <div class="cannon"></div>
+                        <div class="confetti">
+                            <svg viewBox="0 0 18 16">
+                                <polyline points="1 10 4 7 4 5 6 1"/>
+                                <path d="M4,13 C5.33333333,9 7,7 9,7 C11,7 12.3340042,6 13.0020125,4"/>
+                                <path d="M6,15 C7.83362334,13.6666667 9.83362334,12.6666667 12,12 C14.1663767,11.3333333 15.8330433,9.66666667 17,7"/>
+                            </svg>
+                            <i></i><i></i><i></i><i></i><i></i><i></i>
+                            <div class="emitter"></div>
+                        </div>
+                    </div>
+                    <span>Zůstat přihlášen</span>
+                </button>
+            {/if}
+        </form>
+    </div>
+</section>
+
+{define scripts}
+    <script src="{$basePath}/FrontModule/dist/unsubscribe.js"></script>
+    <script>
+        document.getElementById('resubscribe').onclick = function () {
+            naja.makeRequest(
+                'POST',
+                    {link resubscribe!},
+                {
+                    //playerId: id
+                },
+                {
+                    history: false,
+                },
+            ).then(function (response) {
+                if (response.result === true) {
+                    console.log('succ');
+                } else {
+                    console.log('fail');
+                }
+            });
+        }
+    </script>
+{/define}

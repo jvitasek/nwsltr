@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="jvitasek.cz">
+    <meta name="twitter:card" content="summary">
+    <meta name="googlebot" content="snippet,archive">
+    <title>{block #title|stripHtml|trim}NWSLTR{/} | jvitasek.cz</title>
+    {block #head}{/}
+
+    <link rel="stylesheet" href="/FrontModule/dist/app.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+{if $presenter->isLinkCurrent(':Front:Sign:*') || $presenter->isLinkCurrent(':Front:Unsubscribe:*')}
+    <main>
+        {include #content}
+    </main>
+{elseif $presenter->isLinkCurrent(':Front:Editor:default')}
+    <main id="app">
+        {include #content}
+    </main>
+{else}
+    <div class="main-layout-wrapper-1">
+        {include '@sidebar.latte'}
+        <main class="main-layout-wrapper-2">
+            {block #main}
+                {include #content}
+            {/}
+                {include '@footer.latte'}
+                {include '@scripts.latte'}
+        </main>
+    </div>
+{/if}
+
+<script src="/FrontModule/dist/vendor.js"></script>
+<script src="/FrontModule/dist/app.js"></script>
+{snippet modal}
+    {include '@modal.latte'}
+{/snippet}
+<script>
+    {foreach $flashes as $flash}
+    new Noty({
+        type: {$flash->type},
+        layout: 'bottomRight',
+        theme: 'bootstrap-v4',
+        text: {$flash->message},
+        timeout: 5000
+    }).show();
+    {/foreach}
+</script>
+{snippet scripts}
+    {block scripts}{/block}
+{/snippet}
+</body>
+</html>

@@ -1,0 +1,145 @@
+{block #content}
+
+<section class="page-heading">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center">
+            <button class="sidebar-btn"><svg class="icon"><use xlink:href="#menu"></use></svg></button>
+            <h1 n:block="title">Dashboard</h1>
+        </div>
+    </div>
+</section>
+
+<section class="charts">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card__body">
+                        <div class="charts__number">
+                            <h2 class="chart-heading">Total Mailings Sent</h2>
+                            <div class="number green">
+                                <svg class="icon">
+                                    <use xlink:href="#send"></use>
+                                </svg>
+                                {$statistics->totalSent}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card__body">
+                        <div class="charts__number">
+                            <h2 class="chart-heading">Total E-mails Opened By Recipients</h2>
+                            <div class="number orange">
+                                <svg class="icon">
+                                    <use xlink:href="#envelope"></use>
+                                </svg>
+                                {$statistics->totalOpened} %
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card__body">
+                        <div class="charts__number">
+                            <h2 class="chart-heading">Total Recipients</h2>
+                            <div class="number blue">
+                                <svg class="icon">
+                                    <use xlink:href="#users"></use>
+                                </svg>
+                                {$statistics->totalRecipients}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card__body">
+                        <div class="charts__number">
+                            <h2 class="chart-heading">Total Unsubscribes</h2>
+                            <div class="number red">
+                                <svg class="icon">
+                                    <use xlink:href="#signOut"></use>
+                                </svg>
+                                {$statistics->totalUnsubscribes}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card__body">
+                        <canvas id="chart1"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mb-4">
+                <div class="card">
+                    <div class="card__body">
+                        <canvas id="chart2"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{define scripts}
+    <script src="{$basePath}/FrontModule/dist/dashboard.js"></script>
+    <script>
+        const chart1 = new Chart(document.getElementById('chart1').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: [{foreach $statistics->sentOpenedRationByMonths as $date => $stats}{$date}{sep},{/sep}{/foreach}],
+                datasets: [
+                    {
+                        label: 'Sent',
+                        data: [{foreach $statistics->sentOpenedRationByMonths as $date => $stats}{$stats['totalSent']}{sep},{/sep}{/foreach}],
+                        backgroundColor: 'rgba(150, 150, 150, 0.1)',
+                        borderColor: 'rgba(150, 150, 150, 0.5)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Opened',
+                        data: [{foreach $statistics->sentOpenedRationByMonths as $date => $stats}{$stats['totalOpened']}{sep},{/sep}{/foreach}],
+                        backgroundColor: 'rgba(99, 206, 255, 0.3)',
+                        borderColor: 'rgba(99, 206, 255, 0.9)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                aspectRatio: 1.45
+            }
+        });
+
+        const chart2 = new Chart(document.getElementById('chart2').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: [{foreach $statistics->sentOpenedRationByMonths as $date => $stats}{$date}{sep},{/sep}{/foreach}],
+                datasets: [
+                    {
+                        label: 'Sent',
+                        data: [{foreach $statistics->sentOpenedRationByMonths as $date => $stats}{$stats['totalSent']}{sep},{/sep}{/foreach}],
+                        backgroundColor: 'rgba(150, 150, 150, 0.1)',
+                        borderColor: 'rgba(150, 150, 150, 0.5)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Unsubscribed',
+                        data: [{foreach $statistics->sentOpenedRationByMonths as $date => $stats}{$stats['totalUnsubscribes']}{sep},{/sep}{/foreach}],
+                        backgroundColor: 'rgba(255, 120, 120, 0.2)',
+                        borderColor: 'rgba(255, 120, 120, 0.99)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                aspectRatio: 1.45
+            }
+        });
+    </script>
+{/define}

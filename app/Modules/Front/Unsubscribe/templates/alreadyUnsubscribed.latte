@@ -1,0 +1,21 @@
+{block #content}
+
+<section class="login">
+    <div class="login-wrapper">
+        <div class="login__head">
+            <a n:href="Home:default" class="logo">
+                <svg class="icon">
+                    <use xlink:href="#paperPlane"></use>
+                </svg>
+                NWSLTR
+            </a>
+        </div>
+        <form class="login__form">
+            <h1 class="mb-3">Již jste odhlášeni.</h1>
+        </form>
+    </div>
+</section>
+
+{define scripts}
+    <script src="{$basePath}/FrontModule/dist/unsubscribe.js"></script>
+{/define}

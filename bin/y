@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# traverse to the root folder
+
+cd "$(dirname "$0")" || exit
+cd ..
+
+# install frontend assets
+
+cd www/FrontModule || exit
+yarn
+yarn build

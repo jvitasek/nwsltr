@@ -1,0 +1,15 @@
+{varType App\Model\Database\Entity\Mailing $mailing}
+{varType array $data}
+{if isset($data['content']) && isset($data['link'])}
+    <table width="700" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF"
+           style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: left;"
+           class="wrapper-table">
+        <tr>
+            <td valign="top" style="padding: 15px 40px; text-align: left;" class="mobile-cell">
+                <a href="[[LINK_TO_REPLACE]]"
+                   style="display: block; padding: 10px 20px; font-weight: 700; color: #{$mailing->getAccount()->getSecondaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_TEXT_COLOR_HEX} !important; font-size: 16px; text-align: left; background: #{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX}; border-radius: 5px;"><span
+                            style="color: #{$mailing->getAccount()->getSecondaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_TEXT_COLOR_HEX};">{$data['content']}</span></a>
+            </td>
+        </tr>
+    </table>
+{/if}

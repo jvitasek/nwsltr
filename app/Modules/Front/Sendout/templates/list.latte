@@ -1,0 +1,59 @@
+{block #content}
+
+<section class="page-heading">
+    <div class="container-fluid">
+        <div class="d-flex align-items-center">
+            <button class="sidebar-btn"><svg class="icon"><use xlink:href="#menu"></use></svg></button>
+            <h1 n:block="title">Sendouts</h1>
+        </div>
+    </div>
+</section>
+
+<section class="datagrid" data-entity="{App\Model\Database\Entity\Sendout::class}">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card__body">
+                <div class="table-wrapper-2">
+                    <div class="table-wrapper-1">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Mailing</th>
+                                <th>Sending Started At</th>
+                                <th>Sending Finished At</th>
+                                <th>Sending Duration</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {varType App\Model\Database\Entity\Sendout $sendout}
+                                {foreach $sendouts as $sendout}
+                                <tr>
+                                    <td>{$sendout->getMailing()->getTitle()}</td>
+                                    <td>{$sendout->getCreatedAt()|date:'j.n.Y H:i:s'}</td>
+                                    <td>{$sendout->getFinishedSendingAt()|date:'j.n.Y H:i:s'}</td>
+                                    <td>{$sendout->getDuration()}</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <a n:href="Sendout:statistics $sendout->getId()" class="tool-item"
+                                                                                             title="Statistics">
+                                                <svg class="icon">
+                                                    <use xlink:href="#eye"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {/foreach}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{define scripts}
+    <script src="{$basePath}/FrontModule/dist/datagrid.js"></script>
+{/define}

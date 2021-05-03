@@ -1,0 +1,134 @@
+<aside class="sidebar">
+    <div class="sidebar__header">
+        <a n:href=":Front:Home:default" class="logo">
+            <svg class="icon">
+                <use xlink:href="#paperPlane"></use>
+            </svg>
+            NWSLTR
+        </a>
+        <button class="sidebar-btn close"><svg class="icon"><use xlink:href="#close"></use></svg></button>
+        {$selectedAccount->getTitle()}
+        <button class="sidebar-btn close">
+            <svg class="icon">
+                <use xlink:href="#close"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="sidebar__user dropdown">
+        <button class="btn-dropdown d-flex align-items-center" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="avatar">
+                <svg class="icon">
+                    <use xlink:href="#avatar"></use>
+                </svg>
+            </div>
+            <div class="meta">
+                <div class="name">{$userEntity->getFullName()}</div>
+                <div class="role">{$userEntity->getRole()|firstUpper}
+                    <svg class="adown">
+                        <use xlink:href="#adown"></use>
+                    </svg>
+                </div>
+            </div>
+        </button>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" n:href=":Admin:User:form $userEntity->getId()">Profile Settings</a></li>
+            <li><a class="dropdown-item" n:href=":Front:Sign:out">Sign Out</a></li>
+            {if $userEntity->getAccounts()->count() > 1}
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><h6 class="dropdown-header">Switch Account</h6></li>
+                {foreach $userEntity->getAccounts() as $account}
+                    {continueIf $account->getId() === $accountId}
+                    <li><a class="dropdown-item" n:href="switchAccount! $account->getId()">{$account->getTitle()}</a>
+                    </li>
+                {/foreach}
+            {/if}
+        </div>
+    </div>
+    <div class="sidebar__nav" id="sidebarNav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a n:href=":Front:Home:default"
+                        class="nav-link{if ($presenter->isLinkCurrent(':Front:Home:*'))} active{/if}">
+                    <div class="text">
+                        <svg class="icon">
+                            <use xlink:href="#home"></use>
+                        </svg>
+                        Dashboard
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a n:href=":Front:Mailing:list"
+                        class="nav-link{if ($presenter->isLinkCurrent(':Front:Mailing:*'))} active{/if}">
+                    <div class="text">
+                        <svg class="icon">
+                            <use xlink:href="#paperPlane"></use>
+                        </svg>
+                        Mailings
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a n:href=":Front:Sendout:list"
+                        class="nav-link{if ($presenter->isLinkCurrent(':Front:Sendout:*'))} active{/if}">
+                    <div class="text">
+                        <svg class="icon">
+                            <use xlink:href="#send"></use>
+                        </svg>
+                        Sendouts
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a n:href=":Front:Recipient:list"
+                        class="nav-link{if ($presenter->isLinkCurrent(':Front:Recipient:*'))} active{/if}">
+                    <div class="text">
+                        <svg class="icon">
+                            <use xlink:href="#recipients"></use>
+                        </svg>
+                        Recipients
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a n:href=":Front:RecipientGroup:list"
+                        class="nav-link{if ($presenter->isLinkCurrent(':Front:RecipientGroup:*'))} active{/if}">
+                    <div class="text">
+                        <svg class="icon">
+                            <use xlink:href="#group"></use>
+                        </svg>
+                        Groups
+                    </div>
+                </a>
+            </li>
+            {if $userEntity->isAdmin()}
+                <hr>
+                <li class="nav-item">
+                    <a n:href=":Admin:Account:list"
+                            class="nav-link{if ($presenter->isLinkCurrent(':Admin:Account:*'))} active{/if}">
+                        <div class="text">
+                            <svg class="icon">
+                                <use xlink:href="#account"></use>
+                            </svg>
+                            Accounts
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a n:href=":Admin:User:list"
+                            class="nav-link{if ($presenter->isLinkCurrent(':Admin:User:*'))} active{/if}">
+                        <div class="text">
+                            <svg class="icon">
+                                <use xlink:href="#users"></use>
+                            </svg>
+                            Users
+                        </div>
+                    </a>
+                </li>
+            {/if}
+        </ul>
+    </div>
+</aside>

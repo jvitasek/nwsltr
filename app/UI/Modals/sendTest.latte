@@ -1,0 +1,21 @@
+<div class="modal" tabindex="-1" id="modal" data-bs-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Test sendout of mailing <strong>{$model->getTitle()}</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    This mailing <strong>will be sent</strong> to the e-mail specified in the form lower. It will be
+                    sent, even if:
+                </p>
+                <ul>
+                    <li>There are no recipients set</li>
+                    <li>The mailing has any status, does not have to be "ready"</li>
+                </ul>
+                {control sendTestForm}
+            </div>
+        </div>
+    </div>
+</div>

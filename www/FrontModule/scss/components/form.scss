@@ -1,0 +1,49 @@
+.form {
+    .custom-checkbox {
+        input {
+            margin-right: .5rem;
+            position: relative;
+            top: 1px;
+        }
+
+        label {
+            display: inline-block;
+        }
+    }
+
+    .heading-primary {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+        color: $textColor;
+        font-weight: 700;
+    }
+
+    .thumb {
+        max-width: 250px;
+        position: relative;
+        margin-bottom: 1.25rem;
+
+        .delete {
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            border-radius: 50%;
+            background-color: rgba($color: #000, $alpha: .55);
+            width: 30px;
+            height: 30px;
+            color: #fff;
+            font-weight: 400;
+            font-size: .875rem;
+            line-height: 1.1;
+        }
+
+        .delete:hover {
+            background-color: rgba($color: #000, $alpha: .85);
+            color: #fff;
+        }
+    }
+}

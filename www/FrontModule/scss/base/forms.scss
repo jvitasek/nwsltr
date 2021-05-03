@@ -1,0 +1,372 @@
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input, textarea, select, button {
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box; 
+    box-sizing:content-box;
+    outline: none;
+    resize: none;
+}
+
+input[type="submit"], button {
+	outline: none;
+	cursor: pointer;
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+input[type=text], input[type=password], input[type=email], input[type=search] , input[type=tel], textarea {
+    background-color: #ffffff;
+    transition: box-shadow .21s;
+    box-sizing: border-box;
+	color: $textColor;
+    line-height: 1.5;
+    background: #fff;
+    display: block;
+    border-radius: 3px;
+    border: 1px solid #ced4da; 
+    padding: 0.375rem 0.75rem;
+    width: 100%;
+    font-size: .875rem;
+	
+	&:focus {
+        box-shadow: 0 0 0 3px $primaryColorTint;
+	}
+}
+
+textarea {
+    line-height: 21px;
+    height: 100px; 
+    display: block;
+    background-color: #fff;
+    padding: 0.375rem 0.75rem;
+}
+
+select {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #ced4da; 
+    display: block;
+    background-color: #ffffff;
+	border-radius: 3px;
+    appearance: none;
+    padding: 0.375rem 0.75rem;
+	color: $textColor;
+    font-size: .875rem;
+	
+	&:focus {
+        box-shadow: 0 0 0 3px $primaryColorTint;
+	}
+}
+
+.custom-select {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.02);
+    border-radius: 2px;
+
+    .arrow {
+        pointer-events: none;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 5;
+        @include svg-icon(14px, 14px);
+        @include svg-icon-color($textColorTint);
+    }
+
+    select {
+        background: none;
+        border: 0;
+        padding: 0;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        box-shadow: none;
+        width: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+        padding-right: 48px;
+        padding-left: 16px;
+        font-size: .875rem;
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+}
+
+.custom-select--disabled {
+    pointer-events: none;
+    opacity: .65;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-bottom: 0.4rem;
+    color: $textColorTint;
+    display: block;
+    font-size: 1rem;
+}
+
+.custom-datepicker {
+    position: relative;
+
+    .icon {
+        @include svg-icon(20px, 20px);
+        @include svg-icon-color($textColorTint);
+        opacity: .5;
+        pointer-events: none;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 5;
+    }
+}
+
+.form-check-input:checked {
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+}
+
+.choices__input {
+    width: 100% !important;
+}
+
+// Buttons 
+.btn {
+    display: inline-block;
+    line-height: 1.25;
+    padding: 0.575rem 1rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+    border: 0;
+    cursor: pointer;
+    font-style: normal;
+    transition: all .3s;
+    border-radius: 5px;
+    font-size: .875rem;
+    overflow: hidden;
+    letter-spacing: 1px;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+}
+
+.btn-primary {
+    background-color: $primaryColorTint;
+    color: $primaryColor;
+
+    &:hover {
+        background-color: $primaryColorTint;
+        color: $primaryColor;
+    }
+}
+
+.btn-secondary {
+    background-color: $secondaryColorTint;
+    color: $secondaryColor;
+
+    &:hover {
+        background-color: $secondaryColorTint;
+        color: $secondaryColor;
+    }
+}
+
+.btn-tertiary {
+    background-color: lighten($primaryColor, 10);
+    color: #fff;
+
+    &:hover {
+        background-color: $primaryColor;
+        color: #fff;
+    }
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+
+    .icon {
+        @include svg-icon(18px, 18px);
+        position: relative;
+        z-index: 10;
+        margin-right: .5rem;
+    }
+}
+
+.btn-outline {
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+    background: none;
+}
+
+
+// Checkbox
+.form-group--checkbox {
+    margin-bottom: 1.5rem;
+
+    .checkbox-input {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .checkbox-label {
+        display: flex;
+        align-items: flex-start;
+        cursor: pointer;
+        text-transform: none;
+        font-weight: 400;
+        font-size: 1rem;
+        margin-bottom: 0;
+
+        .icon-check {
+            width: 17px;
+            height: 17px;
+            display: inline-block;
+            top: 3px;
+            border-radius: 3px;
+            margin-right: 8px;
+            position: relative;
+            flex-shrink: 0;
+            transition: all .3s ease;
+            background: #F4F4F4;
+            border: 1px solid #E0E0E0;
+            box-sizing: border-box;
+            box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2), inset 0px -1px 0px #A8A8A8;
+        }
+
+        .icon-check:after {
+            position: absolute;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            top: 2px;
+            content: "";
+            background-color: $primaryColor;
+            transition: all .3s cubic-bezier(0, 0, 0, 2);
+            opacity: 0;
+            transform: scale(.1, .1);
+            border-radius: 3px;
+        }
+    }
+
+    .checkbox-input:checked + .checkbox-label {
+        .icon-check:after {
+            border-radius: 2px;
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+
+        // .icon-check {
+        //     border-color: $primaryColor;
+        // }
+    }
+
+    .checkbox-input:hover + .checkbox-label {
+        .icon-check {
+            border-color: $primaryColor;
+        }
+    }
+}
+
+
+// Radio
+.form-group--radio {
+    margin-bottom: 1.5rem;
+
+    .radio-input {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .radio-label {
+        display: flex;
+        align-items: flex-start;
+        cursor: pointer;
+        text-transform: none;
+        font-weight: 400;
+        font-size: 1rem;
+
+        .icon-radio {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            margin-right: 8px;
+            position: relative;
+            flex-shrink: 0;
+            transition: all .3s ease;
+            background: #F4F4F4;
+            border: 1px solid #E0E0E0;
+            box-sizing: border-box;
+            box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2), inset 0px -1px 0px #A8A8A8;
+            border-radius: 50%;
+        }
+
+        .icon-radio:after {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            content: "";
+            background-color: $primaryColor;
+            transition: all .3s cubic-bezier(0, 0, 0, 2);
+            opacity: 0;
+            transform: scale(.1, .1);
+            border-radius: 50%;
+        }
+    }
+
+    .radio-input:checked + .radio-label {
+        .icon-radio:after {
+            opacity: 1;
+            transform: scale(.6, .6);
+        }
+        
+        .icon-radio {
+            border-color: transparent !important;
+        }
+    }
+
+    .radio-input:hover + .radio-label {
+        .icon-radio {
+            border-color: $primaryColor;
+        }
+    }
+
+    .radio-input[disabled] + .radio-label {
+        opacity: .5; 
+        cursor: default;
+    }
+}
