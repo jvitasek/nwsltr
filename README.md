@@ -40,11 +40,18 @@ Now you have two options:
 6. `$ php bin/console doctrine:fixtures:load -n`
 7. `$ bin/y`
 
-## Usage
+## Crontab setup
+When you self-host this application, you need to set-up a cronjob to automatically send the planned mailings.
+
+```bash
+1-59 * * * * php bin/console mailing:send
+```
+
+## Web Application Usage
 
 All use-cases require logging in first. Next sections will assume you are already logged in to the system.
 
-### Creating recipient data:
+### Creating recipient data
 It is important to first create some recipient data, since you cannot send a mailing without a recipient group with at least one subscribed recipient.
 
 1. Access the Groups section in the left sidebar
@@ -53,7 +60,7 @@ It is important to first create some recipient data, since you cannot send a mai
    1. Import recipients to the created group using an Excel file
     2. Add recipients manually in the Recipients section and indicate the created group in their Recipient Groups field
 
-### Creating mailings:
+### Creating mailings
 Now that we have some recipient data in the system, we can go ahead and start building a new mailing campaign.
 
 1. Go to the Mailings section in the left sidebar and click on the Create Mailing button in the top-right corner
