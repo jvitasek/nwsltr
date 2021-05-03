@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# traverse to the root folder
+
+cd "$(dirname "$0")" || exit
+cd ..
+
+# check if we're on dev
+
+FILE=config/test.neon
+if [ ! -f "$FILE" ]; then
+    echo "$FILE doesn't exist!"
+    exit
+fi
+
+# create necessary folders
+
+if [[ ! -d temp ]]; then
+    mkdir temp
+    echo "Creating temp"
+fi
+
+if [[ ! -d log ]]; then
+    mkdir log
+    echo "Creating log"
+fi
+
+# set the right permissions to temp/log
+
+chmod +x temp
+chmod +x log
+
+# set the right permissions to bash scripts
+
+chmod +x bin/codeception
+chmod +x bin/console
+chmod +x bin/deploy
+chmod +x bin/osd
+chmod +x bin/osu
+chmod +x bin/phpstan
+chmod +x bin/slevomatDiff
+chmod +x bin/slevomatFix
+chmod +x bin/tester
+chmod +x bin/y
+
+# install composer package
+
+composer i
+
+# database
+
+bin/osu
+php bin/console doctrine:fixtures:load -n
+
+# install yarn and build webpack
+
+bin/y
