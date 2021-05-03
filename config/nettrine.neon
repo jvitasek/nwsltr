@@ -48,13 +48,13 @@ nettrine.orm.cache:
 nettrine.migrations:
     table: doctrine_migrations
     column: version
-    directory: %appDir%/../db/Migrations
+    directory: %appDir%/Model/Database/Migrations
     namespace: Database\Migrations
     versionsOrganization: null
 
 nettrine.fixtures:
   paths:
-    - %appDir%/../db/Fixtures
+    - %appDir%/Model/Database/Fixtures
 
 decorator:
     Doctrine\Common\EventSubscriber:

@@ -39,3 +39,4 @@ www/FrontModule/yarn.lock
 !log/.gitkeep
 !temp/.gitkeep
 !web.config
+!www/uploads/logo/sample.png
