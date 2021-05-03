@@ -28,8 +28,8 @@ Once you have the project files, do the following:
 Now you have two options:
 
 ### Automatic installation (recommended)
-1. (Optional, only if on UNIX) Set the right permissions to the init script: `chmod +x bin/init`
-2. Run `bin init` which takes care of all the necessary configuration
+1. (Optional, only if on UNIX) Set the right permissions to the init script: `$ chmod +x bin/init`
+2. Run `$ bin/init` which takes care of all the necessary configuration
 
 ### Manual Installation
 1. Create directories log and temp in the root folder (`$ mkdir log temp && chmod +x log temp`)
