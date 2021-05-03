@@ -35,9 +35,9 @@ www/FrontModule/yarn.lock
 
 !.gitignore
 !.htaccess
+!www/uploads/logo/sample.png
 !www/uploads/.gitkeep
 !log/.gitkeep
 !temp/.gitkeep
 !web.config
 !app/Model/Database/Migrations/.gitkeep
-!www/uploads/logo/sample.png
