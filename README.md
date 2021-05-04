@@ -1,6 +1,8 @@
 # NWSLTR
 This project contains a ready-made self-hosted mailing system written in PHP8, Nette Framework, Doctrine 2 and Vue.js
 
+[![Build Status](https://travis-ci.org/jvitasek/nwsltr.svg?branch=main)](https://travis-ci.org/jvitasek/nwsltr)
+
 ## System Requirements
 - \>= PHP 8.0
 - \>= MySQL 8
