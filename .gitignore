@@ -41,3 +41,5 @@ www/FrontModule/yarn.lock
 !temp/.gitkeep
 !web.config
 !app/Model/Database/Migrations/.gitkeep
+!tests/codeception/unit/.gitkeep
+!tests/codeception/functional/.gitkeep

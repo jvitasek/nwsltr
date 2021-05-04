@@ -17,8 +17,8 @@
 class AcceptanceTester extends \Codeception\Actor
 {
 
-	const EMAIL = 'test@test.com';
-	const PASSWORD = 'test';
+	const EMAIL = 'admin@sample.com';
+	const PASSWORD = 'secret';
 
 	use _generated\AcceptanceTesterActions;
 
