@@ -1,6 +1,7 @@
 # NWSLTR
 
 [![Build Status](https://travis-ci.org/jvitasek/nwsltr.svg?branch=main)](https://travis-ci.org/jvitasek/nwsltr)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/jvitasek/nwsltr/blob/main/license.md)
 
 This project contains a ready-made self-hosted mailing system written in PHP8, Nette Framework, Doctrine 2 and Vue.js
 
