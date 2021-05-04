@@ -32,6 +32,7 @@ trait TRepositories
 	{
 		/** @var AccountRepository $accountRepository */
 		$accountRepository = $this->getRepository(Account::class);
+
 		return $accountRepository;
 	}
 
@@ -39,6 +40,7 @@ trait TRepositories
 	{
 		/** @var ConversionRepository $conversionRepository */
 		$conversionRepository = $this->getRepository(Conversion::class);
+
 		return $conversionRepository;
 	}
 
@@ -46,6 +48,7 @@ trait TRepositories
 	{
 		/** @var ElementRepository $elementRepository */
 		$elementRepository = $this->getRepository(Element::class);
+
 		return $elementRepository;
 	}
 
@@ -53,6 +56,7 @@ trait TRepositories
 	{
 		/** @var MailingRepository $mailingRepository */
 		$mailingRepository = $this->getRepository(Mailing::class);
+
 		return $mailingRepository;
 	}
 
@@ -60,6 +64,7 @@ trait TRepositories
 	{
 		/** @var QueueRepository $queueRepository */
 		$queueRepository = $this->getRepository(Queue::class);
+
 		return $queueRepository;
 	}
 
@@ -67,6 +72,7 @@ trait TRepositories
 	{
 		/** @var RecipientRepository $recipientRepository */
 		$recipientRepository = $this->getRepository(Recipient::class);
+
 		return $recipientRepository;
 	}
 
@@ -74,6 +80,7 @@ trait TRepositories
 	{
 		/** @var RecipientGroupRepository $recipientGroupRepository */
 		$recipientGroupRepository = $this->getRepository(RecipientGroup::class);
+
 		return $recipientGroupRepository;
 	}
 
@@ -81,6 +88,7 @@ trait TRepositories
 	{
 		/** @var SendoutRepository $sendoutRepository */
 		$sendoutRepository = $this->getRepository(Sendout::class);
+
 		return $sendoutRepository;
 	}
 
@@ -88,6 +96,7 @@ trait TRepositories
 	{
 		/** @var UnsubscribeRepository $unsubscribeRepository */
 		$unsubscribeRepository = $this->getRepository(Unsubscribe::class);
+
 		return $unsubscribeRepository;
 	}
 
@@ -95,6 +104,7 @@ trait TRepositories
 	{
 		/** @var UserRepository $userRepository */
 		$userRepository = $this->getRepository(User::class);
+
 		return $userRepository;
 	}
 

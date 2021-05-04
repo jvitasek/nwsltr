@@ -84,6 +84,7 @@ class Account extends AbstractEntity
 	public function __construct()
 	{
 		$this->users = new ArrayCollection();
+		$this->recipients = new ArrayCollection();
 		$this->recipientGroups = new ArrayCollection();
 		$this->mailings = new ArrayCollection();
 	}
@@ -266,6 +267,16 @@ class Account extends AbstractEntity
 	public function setSmtpPort(?string $smtpPort): void
 	{
 		$this->smtpPort = $smtpPort;
+	}
+
+	public function getRecipients(): ArrayCollection|Collection
+	{
+		return $this->recipients;
+	}
+
+	public function setRecipients(ArrayCollection|Collection $recipients): void
+	{
+		$this->recipients = $recipients;
 	}
 
 }

@@ -12,7 +12,8 @@ class UserFixture implements FixtureInterface, OrderedFixtureInterface {
 
 	/**
 	 * Load data fixtures with the passed ObjectManager
-	 * @param ObjectManager $manager
+     *
+     * @param ObjectManager $manager
 	 */
 	public function load(ObjectManager $manager): void {
 		/** @var Account $account */

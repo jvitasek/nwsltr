@@ -285,7 +285,7 @@ class Mailing extends AbstractEntity
 					$html = $latteEngine->renderToString($templatePath, [
 						'data' => $component,
 						'mailing' => $this,
-						'domain' => $domain
+						'domain' => $domain,
 					]);
 
 					if ($component['component'] === 'Button') {
@@ -401,7 +401,7 @@ class Mailing extends AbstractEntity
 		return !empty($json['body']);
 	}
 
-	public function send(LinkGenerator $linkGenerator, string $email, string $queueHash): bool
+	public function send(LinkGenerator $linkGenerator, string $email, ?string $queueHash = null): bool
 	{
 		$account = $this->getAccount();
 		$mailer = new SmtpMailer([

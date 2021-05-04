@@ -9,3 +9,7 @@ parameters:
 
     bootstrapFiles:
         - app/constants.php
+
+    excludes_analyse:
+        - app/Model/Database/EntityManager.php
+        - app/Modules/Front/DatagridPresenter.php

@@ -17,10 +17,9 @@ final class ImagePresenter extends BaseApiPresenter
 
 	public const SUPPORTED_BASE64_TYPES = [
 		'data:image/jpeg;base64,',
-		'data:image/png;base64,'
+		'data:image/png;base64,',
 	];
 
-	#[Inject]
 	public FileUpload $fileUpload;
 
 	public function actionCreate(): void
