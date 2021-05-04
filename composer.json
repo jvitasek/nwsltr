@@ -1,13 +1,22 @@
 {
-    "name": "jvitasek/newsletter",
-    "description": "Newsletter for UTB FAI master's degree",
+    "name": "jvitasek/nwsltr",
+    "description": "A ready-made self-hosted mailing system on PHP 8, Vue.js, Doctrine ORM and Nette Framework",
     "keywords": [
-        "newsletter",
-        "nette",
-        "utb"
+        "mailing",
+        "newsletter"
+        "nette framework",
+        "doctrine",
+        "vuejs"
     ],
+    "homepage": "https://github.com/jvitasek/nwsltr",
+    "authors": [
+		{
+			"name": "Jakub Vitásek",
+			"homepage": "https://www.jvitasek.cz"
+		}
+	],
     "type": "project",
-    "license": "MIT",
+    "license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
     "require": {
         "php": ">= 8",
         "nette/application": "^3.1",
