@@ -28,7 +28,7 @@ Once you have the project files, do the following:
 Now you have two options:
 
 ### Automatic installation (recommended)
-1. (Optional, only if on UNIX) Set the right permissions to the init script: `$ chmod +x bin/init`
+1. Set the right permissions to the init script: `$ chmod +x bin/init` (UNIX only)
 2. Run `$ bin/init` which takes care of all the necessary configuration
 
 ### Manual Installation
@@ -36,15 +36,68 @@ Now you have two options:
 2. `$ composer i`
 3. `$ php bin/console orm:clear-cache:metadata`
 4. `$ php bin/console o:s:u -f`
-5. (Optional, only if on UNIX) `$ chmod +x bin/*`
+5. `$ chmod +x bin/*` (UNIX only)
 6. `$ php bin/console doctrine:fixtures:load -n`
-7. `$ bin/y`
+7. `$ cd www/FrontModule && yarn && yarn build`
 
-## Crontab setup
+## Self-hosted Use
+During the installation steps you loaded fixtures into the newly created database. These fixtures contain  a sample account and a user. Once you finish the installation, you can access the website and log in using these credentials:
+
+E-mail: `admin@sample.com`<br>
+Password: `secret`
+
+With these credentials, you can access the system as an administrator. It is recommended to remove this account after creating a new one with a strong password.
+
+### Crontab setup
 When you self-host this application, you need to set-up a cronjob to automatically send the planned mailings.
 
 ```bash
 1-59 * * * * php bin/console mailing:send
+```
+
+Alternatively, you can run this command anytime you need to send the newsletter
+
+```bash
+# does a dry run not actually sending the e-mails
+$ php bin/console mailing:send -t
+
+# actually sends the e-mails
+$ php bin/console mailing:send
+```
+
+## Tests
+This package comes with some ready-made tests.
+
+### Acceptance Tests
+For acceptence tests, Codeception was used. You can run these tests like this:
+
+```bash
+$ php vendor/bin/codecept run --steps
+```
+
+### Unit Tests
+Unit and feature tests are run with Nette Tester
+
+```bash
+$ vendor/bin/tester -c tests/tester/php.ini tests/tester
+```
+
+### Static Analysis
+There are two static analysis tools to help with detecting and fixing errors in the code.
+
+**PHPStan**
+```bash
+$ vendor/bin/phpstan analyse
+```
+
+**PHP_CodeSniffer with error detection**
+```bash
+$ vendor/bin/phpcs --standard=ruleset.xml --extensions=php --tab-width=4 -sp app
+```
+
+**PHP_CodeSniffer with error fixing**
+```bash
+$ vendor/bin/phpcbf --standard=ruleset.xml --extensions=php --tab-width=4 -sp app
 ```
 
 ## Web Application Usage
