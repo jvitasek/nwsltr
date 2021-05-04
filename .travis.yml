@@ -10,7 +10,6 @@ install:
   - composer install --no-interaction --prefer-source
   
 script:
-  - vendor/bin/tester -s -c ./tests/tester/php.ini ./tests/tester
+  - vendor/bin/tester tests/tester
   - vendor/bin/phpstan analyse
   - vendor/bin/phpcs --standard=ruleset.xml --extensions=php --tab-width=4 -sp app
-  - php vendor/bin/codecept run --steps
