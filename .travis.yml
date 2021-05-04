@@ -1,0 +1,16 @@
+language: php
+
+php:
+  - 8.0
+
+before_install:
+  - composer self-update
+
+install:
+  - composer install --no-interaction --prefer-source
+  
+script:
+  - vendor/bin/tester -p $TESTER_PHP_BIN -s -c ./tests/tester/php.ini ./tests/tester
+  - vendor/bin/phpstan analyse
+  - vendor/bin/phpcs --standard=ruleset.xml --extensions=php --tab-width=4 -sp app
+  - $TESTER_PHP_BIN vendor/bin/codecept run --steps
