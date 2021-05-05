@@ -1,6 +1,5 @@
 # NWSLTR
 
-[![GitHub Release](https://img.shields.io/github/release/jvitasek/nwsltr.svg?style=flat)]()  
 [![Build Status](https://travis-ci.org/jvitasek/nwsltr.svg?branch=main)](https://travis-ci.org/jvitasek/nwsltr)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/jvitasek/nwsltr/blob/main/license.md)
 [![Open Source Software](https://img.shields.io/badge/open_source-🤍-3DA639.svg)](https://opensource.org/)
