@@ -1,5 +1,6 @@
 # NWSLTR
 
+[![Latest Version](https://img.shields.io/github/v/tag/jvitasek/nwsltr?sort=semver&label=version)](https://packagist.org/packages/jvitasek/nwsltr)
 [![Build Status](https://travis-ci.org/jvitasek/nwsltr.svg?branch=main)](https://travis-ci.org/jvitasek/nwsltr)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/jvitasek/nwsltr/blob/main/license.md)
 
