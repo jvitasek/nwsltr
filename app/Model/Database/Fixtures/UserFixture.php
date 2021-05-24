@@ -8,14 +8,16 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class UserFixture implements FixtureInterface, OrderedFixtureInterface {
+class UserFixture implements FixtureInterface, OrderedFixtureInterface
+{
 
 	/**
 	 * Load data fixtures with the passed ObjectManager
-     *
-     * @param ObjectManager $manager
+	 *
+	 * @param ObjectManager $manager
 	 */
-	public function load(ObjectManager $manager): void {
+	public function load(ObjectManager $manager): void
+	{
 		/** @var Account $account */
 		$account = $manager->getRepository(Account::class)->find(1);
 
@@ -23,7 +25,7 @@ class UserFixture implements FixtureInterface, OrderedFixtureInterface {
 		$user->addAccount($account);
 		$user->setState(User::STATE_ACTIVATED);
 		$user->setEmail('admin@sample.com');
-		$user->setPassword('$2b$10$fZG7Ry9vCbPj.rjZTCE9eeBav3l.GDRYW.GsvJlQM3bc2/VnD4XiW'); // the password is: secret
+		$user->setPassword('secret');
 		$user->setRole(User::ROLE_ADMIN);
 		$user->setFirstName('Test');
 		$user->setLastName('Tester');
@@ -34,7 +36,8 @@ class UserFixture implements FixtureInterface, OrderedFixtureInterface {
 	/**
 	 * Get the order of this fixture
 	 */
-	public function getOrder(): int {
+	public function getOrder(): int
+	{
 		return 2;
 	}
 
