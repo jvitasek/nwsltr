@@ -14,6 +14,7 @@ trait TDatagridFilters
 	#[Persistent]
 	public string $filterQuery = '';
 
+	#[Persistent]
 	public string $filterField = '';
 
 }

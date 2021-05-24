@@ -14,6 +14,7 @@ trait TDatagridSort
 	#[Persistent]
 	public string $sortDirection = '';
 
+	#[Persistent]
 	public string $sortField = '';
 
 }
