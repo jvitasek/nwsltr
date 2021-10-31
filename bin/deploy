@@ -3,4 +3,4 @@
 cd "$(dirname "$0")" || exit
 cd ..
 
-php vendor/extensions/ftp-deployment/deployment config/deployment.ini
+php ../ftp-deployment/deployment config/deployment.ini
