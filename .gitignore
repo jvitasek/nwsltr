@@ -15,6 +15,7 @@ www/node_modules/*
 log/*
 temp/*
 .idea
+.htdeployment
 
 # important to keep private
 config/test.neon

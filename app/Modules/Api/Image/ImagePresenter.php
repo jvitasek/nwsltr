@@ -20,6 +20,7 @@ final class ImagePresenter extends BaseApiPresenter
 		'data:image/png;base64,',
 	];
 
+    #[Inject]
 	public FileUpload $fileUpload;
 
 	public function actionCreate(): void
