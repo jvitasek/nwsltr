@@ -18,6 +18,7 @@ final class MailingPresenter extends DatagridPresenter
 	use TDatagridFilters;
 	use TDatagridSort;
 
+    #[Inject]
     public SendTestFormFactory $sendTestFormFactory;
 	private array $mailings;
 
