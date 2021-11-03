@@ -16,7 +16,9 @@ final class RecipientGroupPresenter extends DatagridPresenter
 
     #[Inject]
     public RecipientGroupFormFactory $recipientGroupFormFactory;
+    #[Inject]
     public ImportXlsFormFactory $importXlsFormFactory;
+
 	private array $recipientGroups;
 	private ?RecipientGroup $recipientGroup = null;
 
