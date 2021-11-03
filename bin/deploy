@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cd "$(dirname "$0")" || exit
-cd ..
-
-php ../ftp-deployment/deployment config/deployment.ini

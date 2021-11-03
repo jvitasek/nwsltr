@@ -19,7 +19,7 @@ temp/*
 # important to keep private
 config/test.neon
 config/production.neon
-config/deployment.ini
+deployment/*
 
 # tests
 tests/codeception/_support/_generated
