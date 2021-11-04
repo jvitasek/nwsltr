@@ -2,6 +2,24 @@
     <div class="composer__item" :id="component.id">
         <div class="center-wrapper">
             <div class="composer__tools">
+                <button v-on:click="setBold(component.id)">
+                    <svg class="icon icon--sm">
+                        <title>Bold</title>
+                        <use xlink:href="#bold"></use>
+                    </svg>
+                </button>
+                <button v-on:click="setItalic(component.id)">
+                    <svg class="icon icon--sm">
+                        <title>Italic</title>
+                        <use xlink:href="#italic"></use>
+                    </svg>
+                </button>
+                <button v-on:click="setUnderline(component.id)">
+                    <svg class="icon icon--sm">
+                        <title>Underline</title>
+                        <use xlink:href="#underline"></use>
+                    </svg>
+                </button>
                 <button v-on:click="handleRemove(component.id)">
                     <svg class="icon">
                         <title>Remove</title>
@@ -33,8 +51,6 @@
 </template>
 
 <script>
-    import MediumEditor from 'medium-editor'
-
     export default {
         props: {
             component: Object
@@ -42,7 +58,7 @@
         name: "Quotation",
         methods: {
             onInput(e) {
-                this.component.content = e.target.innerText
+                this.component.content = e.target.innerHTML
             },
             handleRemove(id) {
                 this.$store.commit('removeComposerItem', id)
@@ -52,19 +68,18 @@
             },
             moveItemDown(item) {
                 this.$store.commit('moveItemDown', item, 1)
+            },
+            setBold() {
+                document.execCommand('bold')
+            },
+            setItalic() {
+                document.execCommand('italic')
+            },
+            setUnderline() {
+                document.execCommand('underline')
             }
         },
         mounted() {
-            const editor = new MediumEditor('.editable', {
-                singleEnterBlockElement: false,
-                toolbar: {
-                    buttons: ['bold', 'italic', 'underline', 'anchor'], 
-                },
-                placeholder: {
-                    text: 'Insert quote text',
-                }
-            });
-
             document.querySelectorAll('.editable').forEach(function (item, index) {
                 item.addEventListener('focus', () => {
                     item.innerHTML = item.innerHTML.replace('<p>', '').replace('</p>', ''); 

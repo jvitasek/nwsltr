@@ -443,32 +443,32 @@
             send(showPreview) {
                 console.log(this.$store.getters.getComposer)
 
-                const config = {
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded"
-                    }
-                }
+                // const config = {
+                //     headers: {
+                //         "Content-Type": "application/x-www-form-urlencoded"
+                //     }
+                // }
 
-                const url = '/api/editor/save'
+                // const url = '/api/editor/save'
 
-                axios.post(url, this.$store.getters.getComposer, config)
-                    .then((result) => {
-                        console.log(result)
-                        if(result.data.result === 'ok') {
-                            this.$toasted.success('Mailing saved successfully')
-                            if(showPreview) {
-                                console.log('redir')
-                                window.location.href = this.previewButton
-                            }
-                        }
-                        else {
-                            this.$toasted.error('There was an error while saving the record')
-                        }
-                    })
-                    .catch((err) => {
-                        console.log(err)
-                        this.$toasted.error('There was an error while saving the record')
-                    })
+                // axios.post(url, this.$store.getters.getComposer, config)
+                //     .then((result) => {
+                //         console.log(result)
+                //         if(result.data.result === 'ok') {
+                //             this.$toasted.success('Mailing saved successfully')
+                //             if(showPreview) {
+                //                 console.log('redir')
+                //                 window.location.href = this.previewButton
+                //             }
+                //         }
+                //         else {
+                //             this.$toasted.error('There was an error while saving the record')
+                //         }
+                //     })
+                //     .catch((err) => {
+                //         console.log(err)
+                //         this.$toasted.error('There was an error while saving the record')
+                //     })
             },
             fetchData() {
                 const url = `/api/editor/read/${this.id}`
@@ -627,8 +627,10 @@
             Html
         },
         mounted() {
-            this.fetchData()
-            this.fetchRecipients()
+            this.$nextTick(() => { 
+                this.fetchData()
+                this.fetchRecipients()
+            })
         } 
     }
 </script>

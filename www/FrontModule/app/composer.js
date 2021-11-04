@@ -38,3 +38,6 @@ import devices from '../images/devices.svg';
 import desktop from '../images/desktop.svg'; 
 import tablet from '../images/tablet.svg'; 
 import mobile from '../images/mobile.svg'; 
+import bold from '../images/bold.svg'; 
+import italic from '../images/italic.svg'; 
+import underline from '../images/underline.svg'; 
