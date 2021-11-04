@@ -330,7 +330,7 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => {
-                    document.querySelector('#input-'+newItem.id).focus();
+                    document.querySelector('#input-'+newItem.id).focus()
                 });
             },
             addGallery() {
@@ -343,7 +343,7 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => {
-                    document.querySelector('#input-'+newItem.id).focus();
+                    document.querySelector('#input-'+newItem.id).focus()
                 });
             },
             addParagraph(paragraphType) {
@@ -357,7 +357,8 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => { 
-                    document.querySelector('#input-'+newItem.id).focus();
+                    document.querySelector('#input-'+newItem.id).focus()
+                    document.querySelector('#input-'+newItem.id).value = ''
                 }); 
             },
             addQuotation() {
@@ -370,7 +371,7 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => {
-                    document.querySelector('#input-'+newItem.id).focus();
+                    document.querySelector('#input-'+newItem.id).focus()
                 }); 
             },
             addList(listType) {
@@ -384,7 +385,7 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => {
-                    document.querySelector('#input-item-'+newItem.id+'-0').focus();
+                    document.querySelector('#input-item-'+newItem.id+'-0').focus()
                 }); 
             },
             addButton() {
@@ -399,7 +400,7 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => {
-                    document.querySelector('#input-'+newItem.id).focus();
+                    document.querySelector('#input-'+newItem.id).focus()
                 });
             },
             addDivider() {

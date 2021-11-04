@@ -21,15 +21,15 @@
                     </svg>
                 </button>
             </div>
-            <div contenteditable="true"
-                ref="input"
+            <textarea ref="input"
                 :class="component.paragraphType === 'perex' ? 'input paragraph editable paragraph-perex' : 'input paragraph editable'"
                 :id="'input-'+component.id"
-                @input="onInput"
-                @keydown.enter="addParagraph('text')"
+                @keydown="handleKeyDown"
+                @paste="handlePaste"
+                @input="handleInput"
+                v-model="component.content"
             >
-                {{ component.content }}
-            </div>
+            </textarea>
         </div>
     </div>
 </template>
@@ -43,9 +43,6 @@
         },
         name: "Paragraph",
         methods: {
-            onInput(e) {
-                this.component.content = e.target.innerText
-            },
             handleRemove(id) {
                 if(this.component.required) {
                     this.$toasted.error('Cannot remove a required field')
@@ -70,44 +67,64 @@
                     this.$store.commit('moveItemDown', item, 1)
                 }
             },
-            addParagraph(paragraphType) {
+            addParagraph(paragraphType, paragraphContent) {
                 this.$store.commit('setComposerlastComponentId', parseInt(this.$store.getters.getComposerlastComponentId)+1)
                 let newItem = {
                     id: this.$store.getters.getComposerlastComponentId,
                     component: 'Paragraph',
                     paragraphType: paragraphType,
-                    content: '',
+                    content: paragraphContent,
                     required: false
                 }
                 this.$store.commit('pushComposerItem', newItem)
-                setTimeout(function(){ 
-                    let input = document.querySelector('#input-'+newItem.id)
-                    input.focus()
-                    input.innerHTML = ''
-                }, 50); 
+                this.$nextTick(() => { 
+                    document.querySelector('#input-'+newItem.id).focus()
+                    // document.querySelector('#input-'+newItem.id).value = ''
+                });
+            },
+            handleKeyDown(e) {
+                if(e.key === 'Enter') {
+                    e.preventDefault();
+                    this.addParagraph('text')
+                }
+            },
+            handlePaste(e) {
+                e.preventDefault()
+                let clipboardText = e.clipboardData.getData('text').split(/\r?\n/)
+                this.component.content = clipboardText[0]
+                
+                for(let i = 1; i <= clipboardText.length; i++) {
+                    this.addParagraph('text', clipboardText[i])
+                }
+            },
+            handleInput() {
+                console.log(this.component.content)
             }
         },
         mounted() {
-            const editor = new MediumEditor('.editable', {
-                singleEnterBlockElement: false,
-                toolbar: {
-                    buttons: ['bold', 'italic', 'underline', 'anchor'], 
-                },
-                placeholder: {
-                    text: 'Insert paragraph text',
-                }
-            });
+            // adjust height
+            document.querySelectorAll('.editable').forEach(function (item) {
+                item.addEventListener('input', () => {
+                    item.style.height = "1px";
+                    item.style.height = (item.scrollHeight) + "px";
+                })
+            })
+
+            // const editor = new MediumEditor('.editable', {
+            //     singleEnterBlockElement: false,
+            //     toolbar: {
+            //         buttons: ['bold', 'italic', 'underline', 'anchor'], 
+            //     },
+            //     placeholder: {
+            //         text: 'Insert paragraph text',
+            //     }
+            // });
             
-            document.querySelectorAll('.editable').forEach(function (item, index) {
-                item.addEventListener('keydown', (e) => {
-                    if (e.which === 13) {
-                        e.preventDefault();
-                    }
-                });
-                item.addEventListener('focus', () => {
-                    item.innerHTML = item.innerHTML.replace('<p>', '').replace('</p>', ''); 
-                });
-            });
+            // document.querySelectorAll('.editable').forEach(function (item, index) {
+            //     item.addEventListener('focus', () => {
+            //         item.innerHTML = item.innerHTML.replace('<p>', '').replace('</p>', ''); 
+            //     });
+            // });
         }
     };
 </script>
