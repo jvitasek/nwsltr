@@ -53,6 +53,9 @@ class Mailing extends AbstractEntity
 	/** @ORM\Column(type="string", nullable=true, options={"default": NULL}) */
 	protected ?string $subject;
 
+	/** @ORM\Column(type="string", nullable=true, options={"default": NULL}) */
+	protected ?string $emailFrom;
+
 	/** @ORM\Column(type="datetime", nullable=true, options={"default": NULL}) */
 	protected ?DateTime $sendDate;
 
@@ -417,7 +420,7 @@ class Mailing extends AbstractEntity
 			$mail->setHeader('X-CampaignId', $this->getApiCode());
 		}
 
-		$mail->setFrom($account->getEmailFrom());
+		$mail->setFrom($this->getEmailFrom() ?: $account->getEmailFrom());
 
 		if ($account->getEmailReplyTo()) {
 			$mail->addReplyTo($account->getEmailReplyTo());
@@ -436,6 +439,16 @@ class Mailing extends AbstractEntity
 		}
 
 		return false;
+	}
+
+	public function getEmailFrom(): ?string
+	{
+		return $this->emailFrom;
+	}
+
+	public function setEmailFrom(?string $emailFrom): void
+	{
+		$this->emailFrom = $emailFrom;
 	}
 
 }
