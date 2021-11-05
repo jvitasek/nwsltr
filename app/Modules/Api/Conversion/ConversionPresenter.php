@@ -7,6 +7,7 @@ use App\Model\Database\Entity\Element;
 use App\Model\Database\Entity\Queue;
 use App\Modules\Api\BaseApiPresenter;
 use Nette\Application\BadRequestException;
+use Nette\Utils\Strings;
 
 final class ConversionPresenter extends BaseApiPresenter
 {
@@ -43,7 +44,14 @@ final class ConversionPresenter extends BaseApiPresenter
 			}
 
 			if ($element->getRedirectToUrl()) {
-				$this->redirectUrl($element->getRedirectToUrl());
+				$redirectUrl = $element->getRedirectToUrl();
+				$redirectUrl .= sprintf(
+					'%sutm_source=newsletter&utm_campaign=%s&utm_medium=%s',
+					(parse_url($redirectUrl, PHP_URL_QUERY) ? '&' : '?'),
+					Strings::webalize($queue->getMailing()->getSubject()),
+					Strings::webalize($element->getTitle())
+				);
+				$this->redirectUrl($redirectUrl);
 			}
 		}
 
