@@ -2,6 +2,24 @@
     <div class="composer__item" :id="component.id">
         <div class="center-wrapper">
             <div class="composer__tools">
+                <button v-on:click="setBold(component.id)">
+                    <svg class="icon icon--sm">
+                        <title>Bold</title>
+                        <use xlink:href="#bold"></use>
+                    </svg>
+                </button>
+                <button v-on:click="setItalic(component.id)">
+                    <svg class="icon icon--sm">
+                        <title>Italic</title>
+                        <use xlink:href="#italic"></use>
+                    </svg>
+                </button>
+                <button v-on:click="setUnderline(component.id)">
+                    <svg class="icon icon--sm">
+                        <title>Underline</title>
+                        <use xlink:href="#underline"></use>
+                    </svg>
+                </button>
                 <button v-on:click="handleRemove(component.id)">
                     <svg class="icon">
                         <title>Remove</title>
@@ -22,11 +40,11 @@
                 </button>
             </div>
             <div contenteditable="true"
-                ref="input"
-                :class="component.paragraphType === 'perex' ? 'input paragraph editable paragraph-perex' : 'input paragraph editable'"
+                :class="component.paragraphType === 'perex' ? 'input paragraph paragraph-perex' : 'input paragraph editable'"
                 :id="'input-'+component.id"
-                @input="onInput"
-                @keydown.enter="addParagraph('text')"
+                @keydown="handleKeyDown"
+                @paste="handlePaste"
+                @input="handleInput"
             >
                 {{ component.content }}
             </div>
@@ -35,17 +53,12 @@
 </template>
 
 <script>
-    import MediumEditor from 'medium-editor'
-
     export default {
         props: {
             component: Object
         },
         name: "Paragraph",
         methods: {
-            onInput(e) {
-                this.component.content = e.target.innerText
-            },
             handleRemove(id) {
                 if(this.component.required) {
                     this.$toasted.error('Cannot remove a required field')
@@ -70,40 +83,51 @@
                     this.$store.commit('moveItemDown', item, 1)
                 }
             },
-            addParagraph(paragraphType) {
+            addParagraph(paragraphType, paragraphContent) {
                 this.$store.commit('setComposerlastComponentId', parseInt(this.$store.getters.getComposerlastComponentId)+1)
                 let newItem = {
                     id: this.$store.getters.getComposerlastComponentId,
                     component: 'Paragraph',
                     paragraphType: paragraphType,
-                    content: '',
+                    content: paragraphContent,
                     required: false
                 }
                 this.$store.commit('pushComposerItem', newItem)
-                setTimeout(function(){ 
-                    let input = document.querySelector('#input-'+newItem.id)
-                    input.focus()
-                    input.innerHTML = ''
-                }, 50); 
+                this.$nextTick(() => { 
+                    document.querySelector('#input-'+newItem.id).focus()
+                    document.querySelector('#input-'+newItem.id).value = ''
+                });
+            },
+            handleKeyDown(e) {
+                if(e.key === 'Enter') {
+                    e.preventDefault();
+                    this.addParagraph('text')
+                }
+            },
+            handlePaste(e) {
+                e.preventDefault()
+                let clipboardText = e.clipboardData.getData('text').split(/\r?\n/)
+                this.component.content = clipboardText[0]
+
+                for(let i = 1; i <= clipboardText.length; i++) {
+                    this.addParagraph('text', clipboardText[i])
+                }
+            },
+            handleInput(e) {
+                this.component.content = e.target.innerHTML
+            },
+            setBold() {
+                document.execCommand('bold')
+            },
+            setItalic() {
+                document.execCommand('italic')
+            },
+            setUnderline() {
+                document.execCommand('underline')
             }
         },
         mounted() {
-            const editor = new MediumEditor('.editable', {
-                singleEnterBlockElement: false,
-                toolbar: {
-                    buttons: ['bold', 'italic', 'underline', 'anchor'], 
-                },
-                placeholder: {
-                    text: 'Insert paragraph text',
-                }
-            });
-            
-            document.querySelectorAll('.editable').forEach(function (item, index) {
-                item.addEventListener('keydown', (e) => {
-                    if (e.which === 13) {
-                        e.preventDefault();
-                    }
-                });
+            document.querySelectorAll('.paragraph').forEach(function (item) {
                 item.addEventListener('focus', () => {
                     item.innerHTML = item.innerHTML.replace('<p>', '').replace('</p>', ''); 
                 });

@@ -368,8 +368,12 @@
         padding: 8px;
 
         .icon {
-            @include svg-icon(18px, 20px);
+            @include svg-icon(16px, 18px);
             @include svg-icon-color($textColor);
+        }
+
+        .icon--sm {
+            @include svg-icon(13px, 14px);
         }
     }
 

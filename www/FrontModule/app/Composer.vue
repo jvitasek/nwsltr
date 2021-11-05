@@ -330,7 +330,7 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => {
-                    document.querySelector('#input-'+newItem.id).focus();
+                    document.querySelector('#input-'+newItem.id).focus()
                 });
             },
             addGallery() {
@@ -343,7 +343,7 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => {
-                    document.querySelector('#input-'+newItem.id).focus();
+                    document.querySelector('#input-'+newItem.id).focus()
                 });
             },
             addParagraph(paragraphType) {
@@ -357,7 +357,8 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => { 
-                    document.querySelector('#input-'+newItem.id).focus();
+                    document.querySelector('#input-'+newItem.id).focus()
+                    document.querySelector('#input-'+newItem.id).value = ''
                 }); 
             },
             addQuotation() {
@@ -370,7 +371,7 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => {
-                    document.querySelector('#input-'+newItem.id).focus();
+                    document.querySelector('#input-'+newItem.id).focus()
                 }); 
             },
             addList(listType) {
@@ -384,7 +385,7 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => {
-                    document.querySelector('#input-item-'+newItem.id+'-0').focus();
+                    document.querySelector('#input-item-'+newItem.id+'-0').focus()
                 }); 
             },
             addButton() {
@@ -399,7 +400,7 @@
                 }
                 this.$store.commit('pushComposerItem', newItem)
                 this.$nextTick(() => {
-                    document.querySelector('#input-'+newItem.id).focus();
+                    document.querySelector('#input-'+newItem.id).focus()
                 });
             },
             addDivider() {
@@ -442,32 +443,32 @@
             send(showPreview) {
                 console.log(this.$store.getters.getComposer)
 
-                const config = {
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded"
-                    }
-                }
+                // const config = {
+                //     headers: {
+                //         "Content-Type": "application/x-www-form-urlencoded"
+                //     }
+                // }
 
-                const url = '/api/editor/save'
+                // const url = '/api/editor/save'
 
-                axios.post(url, this.$store.getters.getComposer, config)
-                    .then((result) => {
-                        console.log(result)
-                        if(result.data.result === 'ok') {
-                            this.$toasted.success('Mailing saved successfully')
-                            if(showPreview) {
-                                console.log('redir')
-                                window.location.href = this.previewButton
-                            }
-                        }
-                        else {
-                            this.$toasted.error('There was an error while saving the record')
-                        }
-                    })
-                    .catch((err) => {
-                        console.log(err)
-                        this.$toasted.error('There was an error while saving the record')
-                    })
+                // axios.post(url, this.$store.getters.getComposer, config)
+                //     .then((result) => {
+                //         console.log(result)
+                //         if(result.data.result === 'ok') {
+                //             this.$toasted.success('Mailing saved successfully')
+                //             if(showPreview) {
+                //                 console.log('redir')
+                //                 window.location.href = this.previewButton
+                //             }
+                //         }
+                //         else {
+                //             this.$toasted.error('There was an error while saving the record')
+                //         }
+                //     })
+                //     .catch((err) => {
+                //         console.log(err)
+                //         this.$toasted.error('There was an error while saving the record')
+                //     })
             },
             fetchData() {
                 const url = `/api/editor/read/${this.id}`
@@ -626,8 +627,10 @@
             Html
         },
         mounted() {
-            this.fetchData()
-            this.fetchRecipients()
+            this.$nextTick(() => { 
+                this.fetchData()
+                this.fetchRecipients()
+            })
         } 
     }
 </script>
