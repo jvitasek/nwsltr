@@ -119,6 +119,10 @@
                     <label for="">E-mail Subject</label>
                     <input v-model="campaignMeta.subject" type="text">
                 </div>
+              <div class="form-group">
+                <label for="">E-mail From</label>
+                <input v-model="campaignMeta.emailFrom" type="text">
+              </div>
                 <div class="form-group">
                     <label for="">Sendout Date</label>
                     <div class="custom-datepicker">
@@ -225,6 +229,7 @@
                     meta: {
                         title: '',
                         subject: '',
+                        emailFrom: '',
                         date: ''
                     },
                     lastComponentId: '1',
@@ -441,34 +446,32 @@
                 this.$store.commit('pushComposerItem', newItem)
             },
             send(showPreview) {
-                console.log(this.$store.getters.getComposer)
+                const config = {
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                }
 
-                // const config = {
-                //     headers: {
-                //         "Content-Type": "application/x-www-form-urlencoded"
-                //     }
-                // }
+                const url = '/api/editor/save'
 
-                // const url = '/api/editor/save'
-
-                // axios.post(url, this.$store.getters.getComposer, config)
-                //     .then((result) => {
-                //         console.log(result)
-                //         if(result.data.result === 'ok') {
-                //             this.$toasted.success('Mailing saved successfully')
-                //             if(showPreview) {
-                //                 console.log('redir')
-                //                 window.location.href = this.previewButton
-                //             }
-                //         }
-                //         else {
-                //             this.$toasted.error('There was an error while saving the record')
-                //         }
-                //     })
-                //     .catch((err) => {
-                //         console.log(err)
-                //         this.$toasted.error('There was an error while saving the record')
-                //     })
+                axios.post(url, this.$store.getters.getComposer, config)
+                    .then((result) => {
+                        console.log(result)
+                        if(result.data.result === 'ok') {
+                            this.$toasted.success('Mailing saved successfully')
+                            if(showPreview) {
+                                console.log('redir')
+                                window.location.href = this.previewButton
+                            }
+                        }
+                        else {
+                            this.$toasted.error('There was an error while saving the record')
+                        }
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                        this.$toasted.error('There was an error while saving the record')
+                    })
             },
             fetchData() {
                 const url = `/api/editor/read/${this.id}`
@@ -487,6 +490,7 @@
                                 this.campaignMeta.title = response.data.meta.title
                                 this.campaignMeta.date = response.data.meta.date
                                 this.campaignMeta.subject = response.data.meta.subject
+                                this.campaignMeta.emailFrom = response.data.meta.emailFrom
                             }
                         }
                     })

@@ -10,6 +10,7 @@ use App\Modules\Api\BaseApiPresenter;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Nette\Application\BadRequestException;
+use Nette\Utils\Validators;
 use Tracy\Debugger;
 
 final class EditorPresenter extends BaseApiPresenter
@@ -26,6 +27,10 @@ final class EditorPresenter extends BaseApiPresenter
 			if ($mailing !== null) {
 				$mailing->setTitle((string) $post['meta']['title']);
 				$mailing->setSubject((string) $post['meta']['subject']);
+				$emailFrom = trim($post['meta']['emailFrom']);
+				if (Validators::isEmail($emailFrom)) {
+					$mailing->setEmailFrom($emailFrom);
+				}
 				$mailing->setSendDate(new DateTime($post['meta']['date']));
 
 				$mailing->setJsonData(json_encode($post));
