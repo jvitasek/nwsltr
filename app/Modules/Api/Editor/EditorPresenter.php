@@ -19,6 +19,7 @@ final class EditorPresenter extends BaseApiPresenter
 	public function actionCreate(): void
 	{
 		$post = json_decode($this->getHttpRequest()->getRawBody(), true);
+		Debugger::barDump($post);
 
 		if ($post && is_array($post)) {
 			/** @var Mailing|null $mailing */
@@ -27,9 +28,11 @@ final class EditorPresenter extends BaseApiPresenter
 			if ($mailing !== null) {
 				$mailing->setTitle((string) $post['meta']['title']);
 				$mailing->setSubject((string) $post['meta']['subject']);
-				$emailFrom = trim($post['meta']['emailFrom']);
-				if (Validators::isEmail($emailFrom)) {
-					$mailing->setEmailFrom($emailFrom);
+				if (isset($post['meta']['emailFrom'])) {
+					$emailFrom = trim($post['meta']['emailFrom']);
+					if (Validators::isEmail($emailFrom)) {
+						$mailing->setEmailFrom($emailFrom);
+					}
 				}
 				$mailing->setSendDate(new DateTime($post['meta']['date']));
 

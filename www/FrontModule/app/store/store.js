@@ -67,6 +67,7 @@ export const store = new Vuex.Store({
         updateMeta(state, payload) {
             state.composer.meta.title = payload.author
             state.composer.meta.subject = payload.date
+            state.composer.meta.emailFrom = payload.emailFrom
             state.composer.meta.date = payload.category
         }
     },

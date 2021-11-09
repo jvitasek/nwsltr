@@ -233,8 +233,7 @@
                         date: ''
                     },
                     lastComponentId: '1',
-                    body: [
-                    ]
+                    body: []
                 }
             };
         },
@@ -413,15 +412,6 @@
                 let newItem = {
                     id: this.$store.getters.getComposerlastComponentId,
                     component: 'Divider',
-                    required: false
-                }
-                this.$store.commit('pushComposerItem', newItem)
-            },
-            addSpacer() {
-                this.$store.commit('setComposerlastComponentId', parseInt(this.$store.getters.getComposerlastComponentId)+1)
-                let newItem = {
-                    id: this.$store.getters.getComposerlastComponentId,
-                    component: 'Spacer',
                     required: false
                 }
                 this.$store.commit('pushComposerItem', newItem)
