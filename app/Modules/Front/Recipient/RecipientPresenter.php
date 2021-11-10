@@ -12,8 +12,8 @@ use Nette\DI\Attributes\Inject;
 final class RecipientPresenter extends DatagridPresenter
 {
 
-    #[Inject]
-    public RecipientFormFactory $recipientFormFactory;
+	#[Inject]
+	public RecipientFormFactory $recipientFormFactory;
 	private array $recipients;
 	private ?Recipient $recipient = null;
 
@@ -21,7 +21,14 @@ final class RecipientPresenter extends DatagridPresenter
 	{
 		$qb = $this->initializeQueryBuilder(Recipient::class);
 		$qb
-			->andWhere('p.account = :selectedAccount')->setParameter('selectedAccount', $this->account);
+			->andWhere('p.account = :selectedAccount')
+			->setParameter('selectedAccount', $this->account);
+
+		$paginator = $this['pagination']->getPaginator();
+		$paginator->itemsPerPage = self::DEFAULT_ITEMS_PER_PAGE;
+		$paginator->itemCount = count($qb->getQuery()->getResult());
+		$qb->setMaxResults($paginator->itemsPerPage)->setFirstResult($paginator->offset);
+
 		$this->recipients = $qb->getQuery()->getResult();
 	}
 

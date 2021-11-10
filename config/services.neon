@@ -25,6 +25,9 @@ services:
     - App\UI\Form\UnsubscribeFormFactory
     - App\UI\Form\SendTestFormFactory
 
+    # paginator
+    - AlesWita\VisualPaginator\VisualPaginatorFactory
+
     # session
     - App\Model\Session\AccountSession
 

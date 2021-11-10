@@ -54,7 +54,8 @@
     "contributte/forms-bootstrap": "^0.3.2",
     "phpoffice/phpspreadsheet": "^1.16",
     "nettrine/extensions-beberlei": "^0.2.0",
-    "jvitasek/dumpanddie": "^1.1"
+    "jvitasek/dumpanddie": "^1.1",
+    "aleswita/visualpaginator": "^4.0"
   },
   "require-dev": {
     "nette/tester": "^2.4",
