@@ -107,7 +107,7 @@
             handlePaste(e) {
                 e.preventDefault()
                 let clipboardText = e.clipboardData.getData('text').split(/\r?\n/)
-                this.component.content = clipboardText[0]
+                e.target.innerHTML += clipboardText[0]
 
                 for(let i = 1; i <= clipboardText.length; i++) {
                     this.addParagraph('text', clipboardText[i])
