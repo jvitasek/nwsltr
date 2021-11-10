@@ -41,3 +41,4 @@ import mobile from '../images/mobile.svg';
 import bold from '../images/bold.svg'; 
 import italic from '../images/italic.svg'; 
 import underline from '../images/underline.svg'; 
+import unlink from '../images/unlink.svg'; 

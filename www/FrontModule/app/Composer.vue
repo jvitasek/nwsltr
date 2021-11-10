@@ -235,7 +235,7 @@
                     lastComponentId: '1',
                     body: []
                 }
-            };
+            }
         },
         computed: {
             campaignMeta: {

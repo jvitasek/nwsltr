@@ -361,6 +361,7 @@
     visibility: hidden;
     opacity: 0;
     transition: all .15s;
+    display: flex;
 
     button {
         background: none;
@@ -383,6 +384,44 @@
 
     button:focus {
         outline: none;
+    }
+
+    .tool-wrapper-1 {
+        position: relative;
+    }
+
+    .tool-wrapper-2 {
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(75%);
+        transition: all .3s;
+        
+        input {
+            width: 200px;
+            border: 1px solid #e2e7e9;
+        }
+
+        button {
+            font-size: .75rem;
+            background: #e2e7e9;
+            border: 0;
+            padding: 4px 8px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
     }
 }
 
@@ -492,6 +531,10 @@
         width: 100%;
         height: auto;
         resize: none;
+
+        a {
+            color: $primaryColor !important;
+        }
     }
 
     .paragraph-perex {

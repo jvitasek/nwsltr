@@ -2,37 +2,55 @@
     <div class="composer__item" :id="component.id">
         <div class="center-wrapper">
             <div class="composer__tools">
-                <button v-on:click="setBold(component.id)">
+                <button v-on:click="setBold(component.id)" title="Bold">
                     <svg class="icon icon--sm">
                         <title>Bold</title>
                         <use xlink:href="#bold"></use>
                     </svg>
                 </button>
-                <button v-on:click="setItalic(component.id)">
+                <button v-on:click="setItalic(component.id)" title="Italic">
                     <svg class="icon icon--sm">
                         <title>Italic</title>
                         <use xlink:href="#italic"></use>
                     </svg>
                 </button>
-                <button v-on:click="setUnderline(component.id)">
+                <button v-on:click="setUnderline(component.id)" title="Underline">
                     <svg class="icon icon--sm">
                         <title>Underline</title>
                         <use xlink:href="#underline"></use>
                     </svg>
                 </button>
-                <button v-on:click="handleRemove(component.id)">
+                <div class="tool-wrapper-1">
+                    <div class="tool-wrapper-2" :class="linkInputShowed ? 'active' : ''">
+                        <input type="text" placeholder="URL" v-model="linkUrl">
+                        <button v-on:click="setLink(component.id)">OK</button>                
+                    </div>
+                    <button v-on:click="showLinkInput()" title="Link">
+                        <svg class="icon icon--sm">
+                            <title>Link</title>
+                            <use xlink:href="#link"></use>
+                        </svg>
+                    </button>
+                </div>
+                <button v-on:click="removeLink(component.id)" title="Unlink">
+                    <svg class="icon icon--sm">
+                        <title>Unlink</title>
+                        <use xlink:href="#unlink"></use>
+                    </svg>
+                </button>
+                <button v-on:click="handleRemove(component.id)" title="Remove component">
                     <svg class="icon">
                         <title>Remove</title>
                         <use xlink:href="#trash"></use>
                     </svg>
                 </button>
-                <button v-on:click="moveItemTop(component)">
+                <button v-on:click="moveItemTop(component)" title="Move up">
                     <svg class="icon">
                         <title>Move up</title>
                         <use xlink:href="#atop"></use>
                     </svg>
                 </button>
-                <button v-on:click="moveItemDown(component)">
+                <button v-on:click="moveItemDown(component)" title="Move down">
                     <svg class="icon">
                         <title>Move down</title>
                         <use xlink:href="#adown"></use>
@@ -45,8 +63,8 @@
                 @keydown="handleKeyDown"
                 @paste="handlePaste"
                 @input="handleInput"
+                v-html="component.content"
             >
-                {{ component.content }}
             </div>
         </div>
     </div>
@@ -56,6 +74,12 @@
     export default {
         props: {
             component: Object
+        },
+        data() {
+            return {
+                linkInputShowed: false,
+                linkUrl: ''
+            }
         },
         name: "Paragraph",
         methods: {
@@ -124,6 +148,15 @@
             },
             setUnderline() {
                 document.execCommand('underline')
+            },
+            setLink() {
+                document.execCommand('CreateLink', false, this.linkUrl)
+            },
+            removeLink() {
+                document.execCommand('unlink', false, false)
+            },
+            showLinkInput() {
+                this.linkInputShowed = !this.linkInputShowed
             }
         },
         mounted() {
