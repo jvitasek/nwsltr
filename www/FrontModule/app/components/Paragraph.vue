@@ -139,6 +139,10 @@
             },
             handleInput(e) {
                 this.component.content = e.target.innerHTML
+                this.$nextTick(() => { 
+                    document.execCommand('selectAll', false, null);
+                    document.getSelection().collapseToEnd();
+                })
             },
             setBold() {
                 document.execCommand('bold')
