@@ -51,16 +51,16 @@ class Mailing extends AbstractEntity
 	public const DEFAULT_TEXT_COLOR_HEX = 'FFFFFF';
 
 	/** @ORM\Column(type="string", nullable=true, options={"default": NULL}) */
-	protected ?string $subject;
+	protected ?string $subject = '';
 
 	/** @ORM\Column(type="string", nullable=true, options={"default": NULL}) */
-	protected ?string $emailFrom;
+	protected ?string $emailFrom = '';
 
 	/** @ORM\Column(type="datetime", nullable=true, options={"default": NULL}) */
 	protected ?DateTime $sendDate;
 
 	/** @ORM\Column(type="text", nullable=true, options={"default": NULL}) */
-	private ?string $jsonData;
+	private ?string $jsonData = '';
 
 	/** @ORM\ManyToOne(targetEntity="User", inversedBy="mailings") */
 	private User $user;
@@ -72,7 +72,7 @@ class Mailing extends AbstractEntity
 	private int $status = 1;
 
 	/** @ORM\Column(type="string", nullable=true, options={"default": NULL}) */
-	private ?string $apiCode;
+	private ?string $apiCode = '';
 
 	/** @ORM\OneToMany(targetEntity="Element", mappedBy="mailing", cascade={"remove"}) */
 	private Collection $elements;
