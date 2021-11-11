@@ -65,17 +65,18 @@ class Sendout extends AbstractEntity
 
 	public function getDuration(): string
 	{
-		$difference = $this->getFinishedSendingAt()->diff($this->getCreatedAt());
+		if ($this->getFinishedSendingAt()) {
+			$difference = $this->getFinishedSendingAt()->diff($this->getCreatedAt());
 
-		if ($difference->h !== 0) {
-			return $difference->h . ' hours ' . $difference->i . ' minutes ' . $difference->s . ' seconds';
-		} elseif ($difference->i !== 0) {
-			return $difference->i . ' minutes ' . $difference->s . ' seconds';
-		} elseif ($difference->s !== 0) {
-			return $difference->s . ' seconds';
+			if ($difference->h !== 0) {
+				return $difference->h . ' hours ' . $difference->i . ' minutes ' . $difference->s . ' seconds';
+			} elseif ($difference->i !== 0) {
+				return $difference->i . ' minutes ' . $difference->s . ' seconds';
+			} elseif ($difference->s !== 0) {
+				return $difference->s . ' seconds';
+			}
 		}
-
-		return '';
+		return 'Running';
 	}
 
 	public function getQueueItems(): Collection
