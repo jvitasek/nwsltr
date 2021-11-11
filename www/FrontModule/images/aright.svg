@@ -1,1 +1,10 @@
-<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"></path></svg>
+<svg width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M6.4375 6.18555C6.70117 5.89258 6.70117 5.45312 6.4375 5.18945L2.45312 1.20508C2.16016 0.912109 1.7207 0.912109 1.45703 1.20508L0.7832 1.84961C0.51953 2.14258 0.51953 2.58203 0.7832 2.8457L3.625 5.6875L0.783199 8.5C0.519529 8.76367 0.519529 9.23242 0.783199 9.49609L1.45703 10.1699C1.7207 10.4336 2.16016 10.4336 2.45312 10.1699L6.4375 6.18555Z" />
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="11" height="7" fill="white" transform="translate(7) rotate(90)"/>
+</clipPath>
+</defs>
+</svg>
