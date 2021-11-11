@@ -27,6 +27,7 @@ tests/codeception/_support/_generated
 tests/codeception/_output
 
 vendor/*
+www/terms-of-use.pdf
 www/uploads/*
 www/dist/*
 www/bower_components
