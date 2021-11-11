@@ -2,13 +2,17 @@
 
 namespace App\Modules\Front;
 
-use Doctrine\ORM\Query\QueryException;
+use AlesWita\VisualPaginator\VisualPaginator;
+use AlesWita\VisualPaginator\VisualPaginatorFactory;
 use Doctrine\ORM\QueryBuilder;
-use Nette\Application\Attributes\Persistent;
-use Tracy\Debugger;
+use Nette\DI\Attributes\Inject;
 
 abstract class DatagridPresenter extends BaseFrontPresenter
 {
+	const DEFAULT_ITEMS_PER_PAGE = 50;
+
+	#[Inject]
+	public VisualPaginatorFactory $visualPaginatorFactory;
 
 	public function startup()
 	{
@@ -54,6 +58,18 @@ abstract class DatagridPresenter extends BaseFrontPresenter
 		}
 
 		return $qb;
+	}
+
+	protected function createComponentPagination(): VisualPaginator
+	{
+		$control = $this->visualPaginatorFactory->create();
+		$control->ajax = false;
+		$control->canSetItemsPerPage = true;
+		$control->itemsPerPageList = [self::DEFAULT_ITEMS_PER_PAGE => self::DEFAULT_ITEMS_PER_PAGE];
+		$control->setItemsPerPage(self::DEFAULT_ITEMS_PER_PAGE);
+		$control->templateFile = MODULES_DIR . '/Base/templates/@pagination.latte';
+
+		return $control;
 	}
 
 	public function handleDelete(string $entityId, string $entity): void
