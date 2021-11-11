@@ -9,6 +9,8 @@ import trash from '../images/trash.svg';
 import caretDown from '../images/caretDown.svg'; 
 import caretUp from '../images/caretUp.svg';  
 import filePlus from '../images/filePlus.svg';
+import aright from '../images/aright.svg'; 
+import aleft from '../images/aleft.svg';
 
 /* custom datepicker */
 document.querySelectorAll('.custom-datepicker').forEach(customDatepicker => {

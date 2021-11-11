@@ -1,0 +1,129 @@
+.pagination {
+    position: relative;
+    margin-top: 3.75rem;
+    text-align: center;
+}
+
+.pagination__ul {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 10;
+    font-size: .875rem;
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+    }
+}
+
+.pagination__item {
+    display: inline-block;
+    line-height: normal;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: $textColor;
+    background-color: #ECF1F3;
+    border-radius: 2px;
+    
+    a, .link {
+        display: block;
+        color: $textColorTint;
+        padding: 10px 16px;
+        transition: all .3s;
+    }
+    
+    .icon {
+        @include svg-icon(12px, 12px);
+        @include svg-icon-color(#565656);
+    }
+    
+    a:hover {
+        color: $primaryColor;
+        text-decoration: none;
+        
+        .icon {
+            @include svg-icon-color($primaryColor);
+            opacity: 1;
+        }
+    }
+}
+
+.pagination__item--current {
+    padding: 10px 16px;
+    font-weight: 400;
+    background-color: transparent;
+    color: #fff;
+    background-color: $primaryColor;
+
+    a {
+        color: $textColor;
+    }
+}
+
+.pagination__item--dots {
+    padding: 10px 8px;
+    border-radius: 2px;
+    background: transparent;
+    border-color: transparent;
+}
+
+.pagination__item--disabled, .pagination__item--disabled-prev, .pagination__item--disabled-next {
+    padding: 10px 16px;
+    opacity: .21;
+}
+
+.pagination__item--disabled-arrow {
+    display: none;
+}
+
+.pagination__item--arrow {
+    a, .link {
+        color: $textColorTint;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (max-width: $lg) {
+    .pagination {
+        .btn-wrapper {
+            justify-content: flex-start;
+            right: auto;
+        }
+    }
+
+    .pagination__ul {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: $md) {
+    .pagination__ul {
+        justify-content: center;
+    }
+
+    .pagination__item--more, .pagination__item--dots, .pagination__item--current {
+        padding: 10px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+    .pagination__item {
+        margin-bottom: .75rem;
+
+        a {
+            padding: 10px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+    }
+}
