@@ -30,6 +30,11 @@ final class SignPresenter extends BaseFrontPresenter
 		}
 	}
 
+	public function renderIn()
+	{
+		$this->template->termsOfUse = file_exists(WWW_DIR . '/terms-of-use.pdf');
+	}
+
 	public function actionOut(): void
 	{
 		$this->accountSession->empty();
