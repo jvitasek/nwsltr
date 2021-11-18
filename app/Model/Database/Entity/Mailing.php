@@ -407,13 +407,16 @@ class Mailing extends AbstractEntity
 	public function send(LinkGenerator $linkGenerator, string $email, ?string $queueHash = null): bool
 	{
 		$account = $this->getAccount();
-		$mailer = new SmtpMailer([
+		$smtpOptions = [
 			'host' => $account->getSmtpHost(),
 			'username' => $account->getSmtpUsername(),
 			'password' => $account->getSmtpPassword(),
 			'secure' => $account->getSmtpSecure(),
-			'port' => $account->getSmtpPort(),
-		]);
+		];
+		if ($account->getSmtpPort()) {
+			$smtpOptions['port'] = $account->getSmtpPort();
+		}
+		$mailer = new SmtpMailer($smtpOptions);
 		$mail = new Message();
 
 		if ($this->getApiCode()) {

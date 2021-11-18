@@ -133,6 +133,7 @@ class SendMailingsCommand extends Command
 				if (Validators::isEmail($queue->getEmail())) {
 					if (!$isDebug) {
 						if ($queue->getMailing()->send($this->linkGenerator, $queue->getEmail(), $queue->getHash())) {
+							$queue->setTimeSent(new \DateTime());
 							$queue->setSent(true);
 							$this->em->persist($queue);
 						}
