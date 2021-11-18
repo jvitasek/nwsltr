@@ -1,0 +1,172 @@
+# Gettext keys exported by GettextExtractor
+#, fuzzy
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2021-11-18T21:56:45+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:7
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:7
+msgid "Dashboard"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:19
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:19
+msgid "Total Mailings Sent"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:33
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:33
+msgid "Total E-mails Opened By Recipients"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:48
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:48
+msgid "Total Recipients"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:62
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:62
+msgid "Total Unsubscribes"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:99
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:99
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:125
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:125
+msgid "Sent"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:106
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:106
+msgid "Opened"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:132
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:132
+msgid "Unsubscribed"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:23
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientGroupFormFactory.php:22
+msgid "Title"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:26
+msgid "From (title)"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:29
+msgid "Website URL"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:30
+msgid "Redirect after unsubscribe"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:32
+msgid "Show unsubscribe feedback form"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:33
+msgid "Show resubscribe button after unsubscribe"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:35
+msgid "Logo (the image will be resized to 400px width)"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:36
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:37
+msgid "Enter 6 characters"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:36
+msgid "Primary Color HEX"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:37
+msgid "Secondary Color HEX"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:39
+msgid "SMTP: host"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:40
+msgid "SMTP: username"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:41
+msgid "SMTP: password"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:42
+msgid "SMTP: secure (ssl/tls)"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:44
+#: /home/vagrant/www/nwsltr/app/UI/Form/ImportXlsFormFactory.php:45
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:30
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientGroupFormFactory.php:23
+#: /home/vagrant/www/nwsltr/app/UI/Form/SendTestFormFactory.php:44
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:52
+msgid "Submit"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/ImportXlsFormFactory.php:43
+msgid "File"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/ImportXlsFormFactory.php:44
+msgid "Replace current recipients?"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:26
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:41
+msgid "First Name"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:27
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:42
+msgid "Last Name"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:28
+msgid "Recipient Groups"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:29
+msgid "Subscribed"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/SignInFormFactory.php:18
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:44
+msgid "Password"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/SignInFormFactory.php:19
+msgid "Remember?"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/UnsubscribeFormFactory.php:26
+msgid "Zpětná vazba"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:47
+msgid "Status"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:48
+msgid "Role"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:49
+msgid "Accounts"
+msgstr ""

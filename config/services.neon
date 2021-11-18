@@ -40,6 +40,7 @@ services:
 
     # console
     - {class: App\Model\Console\SendMailingsCommand, tags: {console.command: mailing:send}}
+    - {class: App\Model\Console\GenerateTranslationsCommand, tags: {console.command: app:generateTranslations}}
 
 latte:
     macros:
@@ -53,5 +54,5 @@ translation:
         default: en
         fallback: [en]
     dirs:
-        - %appDir%/../lang
+        - %appDir%/Language
     localeResolvers!: [App\Model\Localization\LanguageResolver]

@@ -5,11 +5,13 @@ namespace App\Modules\Base;
 use App\Model\App;
 use App\Model\Database\Entity\Account;
 use App\Model\Database\Entity\User;
-use App\Model\Database\EntityManager;
-use App\Model\Session\AccountSession;
 use Nette\Application\AbortException;
+use Nette\Application\Attributes\Persistent;
 use Nette\Application\UI\ComponentReflection;
+use Nette\DI\Attributes\Inject;
+use Nette\Localization\Translator;
 use Nette\Security\UserStorage;
+use Tracy\Debugger;
 
 abstract class SecuredPresenter extends BasePresenter
 {
@@ -17,6 +19,12 @@ abstract class SecuredPresenter extends BasePresenter
 	protected User $userEntity;
 	protected ?int $accountId;
 	protected ?Account $account;
+
+	#[Persistent]
+	public string $locale;
+
+	#[Inject]
+	public Translator $translator;
 
 	/**
 	 * @param ComponentReflection|mixed $element
@@ -67,6 +75,8 @@ abstract class SecuredPresenter extends BasePresenter
 			$this->template->selectedAccount = $this->account = $this->em->getRepository(Account::class)->find($this->accountId);
 		}
 
+		$this->template->locale = $this->translator->getLocale();
+
 		// we check if the user did not spoof the session
 		// injecting another account ID which does not belong
 		// to him - if so, we empty the session and log him out
@@ -83,6 +93,13 @@ abstract class SecuredPresenter extends BasePresenter
 	{
 		$this->accountSession->set($accountId);
 		$this->redirect('this');
+	}
+
+	public function handleChangeLang($lang) {
+		$this->locale = $lang;
+		$this->translator->setLocale($lang);
+		$this->template->locale = $lang;
+		$this->redirect('this', ['locale' => $lang]);
 	}
 
 }

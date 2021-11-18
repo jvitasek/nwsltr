@@ -2,6 +2,7 @@
 
 define('APP_DIR', __DIR__);
 define('UI_DIR', __DIR__ . '/UI');
+define('LANG_DIR', __DIR__ . '/Language');
 define('MODULES_DIR', __DIR__ . '/Modules');
 define('MODEL_DIR', __DIR__ . '/Model');
 define('CONFIG_DIR', __DIR__ . '/../config');
