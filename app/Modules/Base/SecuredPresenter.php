@@ -34,7 +34,7 @@ abstract class SecuredPresenter extends BasePresenter
 	{
 		if (!$this->user->isLoggedIn()) {
 			if ($this->user->getLogoutReason() === UserStorage::LOGOUT_INACTIVITY) {
-				$this->flashInfo('You have been logged out for inactivity');
+				$this->flashInfo($this->translator->translate('You have been logged out for inactivity'));
 			}
 
 			$this->redirect(App::DESTINATION_SIGN_IN, ['backlink' => $this->storeRequest()]);
@@ -84,7 +84,7 @@ abstract class SecuredPresenter extends BasePresenter
 		if ($this->user->isLoggedIn() && !$this->userEntity->getAccounts()->contains($this->account)) {
 			$this->accountSession->empty();
 			$this->user->logout();
-			$this->flashError('You were accessing an account for which you have no authorization');
+			$this->flashError($this->translator->translate('You were accessing an account for which you have no authorization'));
 			$this->redirect(App::DESTINATION_AFTER_SIGN_OUT);
 		}
 	}

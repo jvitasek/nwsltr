@@ -9,7 +9,7 @@
     <meta name="author" content="jvitasek.cz">
     <meta name="twitter:card" content="summary">
     <meta name="googlebot" content="snippet,archive">
-    <title>{block #title|stripHtml|trim}NWSLTR{/} | jvitasek.cz</title>
+    <title>{block #title|stripHtml|trim}NWSLTR{/}</title>
     {block #head}{/}
 
     <link rel="stylesheet" href="/FrontModule/dist/app.css">
@@ -40,8 +40,8 @@
     </div>
 {/if}
 
-<script src="/FrontModule/dist/vendor.js"></script>
-<script src="/FrontModule/dist/app.js"></script>
+<script src="{$basePath}/FrontModule/dist/vendor.js"></script>
+<script src="{$basePath}/FrontModule/dist/app.js"></script>
 {snippet modal}
     {include '@modal.latte'}
 {/snippet}

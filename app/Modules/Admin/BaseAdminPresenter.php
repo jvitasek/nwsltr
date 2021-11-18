@@ -19,7 +19,7 @@ abstract class BaseAdminPresenter extends DatagridPresenter
                     && ((int) $this->getParameter('id') === $this->userEntity->getId())
                 )
             ) {
-				$this->flashWarning('You are not authorized to view this section');
+				$this->flashWarning($this->translator->translate('You are not authorized to view this section'));
 				$this->redirect(':Front:Home:default');
 			}
 		}

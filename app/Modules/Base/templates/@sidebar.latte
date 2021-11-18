@@ -32,13 +32,13 @@
             </div>
         </button>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" n:href=":Admin:User:form $userEntity->getId()">Profile Settings</a></li>
-            <li><a class="dropdown-item" n:href=":Front:Sign:out">Sign Out</a></li>
+            <li><a class="dropdown-item" n:href=":Admin:User:form $userEntity->getId()">{_'Profile Settings'}</a></li>
+            <li><a class="dropdown-item" n:href=":Front:Sign:out">{_'Sign Out'}</a></li>
             {if $userEntity->getAccounts()->count() > 1}
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><h6 class="dropdown-header">Switch Account</h6></li>
+                <li><h6 class="dropdown-header">{_'Switch Account'}</h6></li>
                 {foreach $userEntity->getAccounts() as $account}
                     {continueIf $account->getId() === $accountId}
                     <li><a class="dropdown-item" n:href="switchAccount! $account->getId()">{$account->getTitle()}</a>
@@ -56,7 +56,7 @@
                         <svg class="icon">
                             <use xlink:href="#home"></use>
                         </svg>
-                        Dashboard
+                        {_'Dashboard'}
                     </div>
                 </a>
             </li>
@@ -67,7 +67,7 @@
                         <svg class="icon">
                             <use xlink:href="#paperPlane"></use>
                         </svg>
-                        Mailings
+                        {_'Mailings'}
                     </div>
                 </a>
             </li>
@@ -78,7 +78,7 @@
                         <svg class="icon">
                             <use xlink:href="#send"></use>
                         </svg>
-                        Sendouts
+                        {_'Sendouts'}
                     </div>
                 </a>
             </li>
@@ -89,7 +89,7 @@
                         <svg class="icon">
                             <use xlink:href="#recipients"></use>
                         </svg>
-                        Recipients
+                        {_'Recipients'}
                     </div>
                 </a>
             </li>
@@ -100,7 +100,7 @@
                         <svg class="icon">
                             <use xlink:href="#group"></use>
                         </svg>
-                        Groups
+                        {_'Groups'}
                     </div>
                 </a>
             </li>
@@ -113,7 +113,7 @@
                             <svg class="icon">
                                 <use xlink:href="#account"></use>
                             </svg>
-                            Accounts
+                            {_'Accounts'}
                         </div>
                     </a>
                 </li>
@@ -124,7 +124,7 @@
                             <svg class="icon">
                                 <use xlink:href="#users"></use>
                             </svg>
-                            Users
+                            {_'Users'}
                         </div>
                     </a>
                 </li>

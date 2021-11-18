@@ -2,7 +2,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-11-18T21:56:45+01:00\n"
+"POT-Creation-Date: 2021-11-18T22:06:38+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,9 +11,179 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/AccountPresenter.php:81
+msgid "Logo successfully removed"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/AccountPresenter.php:85
+msgid "You are not authorized to do this"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/form.latte:5
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/form.latte:5
+msgid "Account Form"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/form.latte:14
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/form.latte:14
+msgid "Logo"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:6
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:6
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:116
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:116
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:49
+msgid "Accounts"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:7
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:7
+msgid "Create Account"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:21
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:21
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:21
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:21
+msgid "ID"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:22
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:22
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:22
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:22
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:25
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:25
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:25
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:25
+msgid "Created At"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:23
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:23
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:30
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:30
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:24
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:24
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:23
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientGroupFormFactory.php:22
+msgid "Title"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:24
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:24
+msgid "# of Users"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:25
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:25
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:24
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:24
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:66
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:66
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:28
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:28
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:27
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:27
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:25
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:25
+msgid "Action"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:38
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:38
+msgid "Edit"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/BaseAdminPresenter.php:22
+msgid "You are not authorized to view this section"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/form.latte:5
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/form.latte:5
+msgid "User Form"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:6
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:6
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:127
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:127
+msgid "Users"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:7
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:7
+msgid "Create User"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:23
+#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:23
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:62
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:62
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:18
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:18
+msgid "E-mail"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Base/SecuredPresenter.php:37
+msgid "You have been logged out for inactivity"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Base/SecuredPresenter.php:87
+msgid "You were accessing an account for which you have no authorization"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:35
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:35
+msgid "Profile Settings"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:36
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:36
+msgid "Sign Out"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:41
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:41
+msgid "Switch Account"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:59
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:59
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:7
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:7
 msgid "Dashboard"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:70
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:70
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:9
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:9
+msgid "Mailings"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:81
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:81
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:7
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:7
+msgid "Sendouts"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:92
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:92
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:8
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:8
+msgid "Recipients"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:103
+#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:103
+msgid "Groups"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/DatagridPresenter.php:83
+msgid "Record deleted successfully"
 msgstr ""
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:19
@@ -40,11 +210,17 @@ msgstr ""
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:99
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:125
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:125
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:116
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:116
 msgid "Sent"
 msgstr ""
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:106
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:106
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:77
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:77
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:113
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:113
 msgid "Opened"
 msgstr ""
 
@@ -53,9 +229,172 @@ msgstr ""
 msgid "Unsubscribed"
 msgstr ""
 
-#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:23
-#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientGroupFormFactory.php:22
-msgid "Title"
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:11
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:11
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:24
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:24
+msgid "Create Mailing"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:23
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:23
+msgid "Nothing here yet. Start by creating a mailing."
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:48
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:48
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:45
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:45
+msgid "Sendout Date"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:65
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:65
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:47
+msgid "Status"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/form.latte:7
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/form.latte:7
+msgid "Recipient Form"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:10
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:10
+msgid "Create Recipient"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:24
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:24
+msgid "E-mai"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:26
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:26
+msgid "Subscribed?"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:27
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:27
+msgid "In Groups"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/form.latte:7
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/form.latte:7
+msgid "Recipient Group Form"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:8
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:8
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:28
+msgid "Recipient Groups"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:10
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:10
+msgid "Create Group"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:26
+#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:26
+msgid "No. of Recipients"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:21
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:21
+msgid "Mailing"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:22
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:22
+msgid "Sending Started At"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:23
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:23
+msgid "Sending Finished At"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:24
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:24
+msgid "Sending Duration"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
+msgid "Statistics of"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
+msgid "sent on"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
+msgid "between"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:113
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:113
+msgid "Not opened"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:128
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:128
+msgid "Opened mailings"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:141
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:141
+msgid "Links"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:152
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:152
+msgid "Opened links"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/SignPresenter.php:44
+msgid "You were successfully logged out"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:14
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:14
+msgid "Sign In"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:15
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:15
+msgid "Please enter your e-mail address and password."
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:23
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:23
+#: /home/vagrant/www/nwsltr/app/UI/Form/SignInFormFactory.php:18
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:44
+msgid "Password"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:29
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:29
+msgid "Remember Me"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:32
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:32
+#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:44
+#: /home/vagrant/www/nwsltr/app/UI/Form/ImportXlsFormFactory.php:45
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:30
+#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientGroupFormFactory.php:23
+#: /home/vagrant/www/nwsltr/app/UI/Form/SendTestFormFactory.php:44
+#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:52
+msgid "Submit"
+msgstr ""
+
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:36
+#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:36
+msgid "Terms of Use"
 msgstr ""
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:26
@@ -111,15 +450,6 @@ msgstr ""
 msgid "SMTP: secure (ssl/tls)"
 msgstr ""
 
-#: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:44
-#: /home/vagrant/www/nwsltr/app/UI/Form/ImportXlsFormFactory.php:45
-#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:30
-#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientGroupFormFactory.php:23
-#: /home/vagrant/www/nwsltr/app/UI/Form/SendTestFormFactory.php:44
-#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:52
-msgid "Submit"
-msgstr ""
-
 #: /home/vagrant/www/nwsltr/app/UI/Form/ImportXlsFormFactory.php:43
 msgid "File"
 msgstr ""
@@ -138,17 +468,8 @@ msgstr ""
 msgid "Last Name"
 msgstr ""
 
-#: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:28
-msgid "Recipient Groups"
-msgstr ""
-
 #: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:29
 msgid "Subscribed"
-msgstr ""
-
-#: /home/vagrant/www/nwsltr/app/UI/Form/SignInFormFactory.php:18
-#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:44
-msgid "Password"
 msgstr ""
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/SignInFormFactory.php:19
@@ -159,14 +480,6 @@ msgstr ""
 msgid "Zpětná vazba"
 msgstr ""
 
-#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:47
-msgid "Status"
-msgstr ""
-
 #: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:48
 msgid "Role"
-msgstr ""
-
-#: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:49
-msgid "Accounts"
 msgstr ""
