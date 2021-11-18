@@ -7,7 +7,7 @@ extensions:
     redis: Contributte\Redis\DI\RedisExtension
 
 contributte.console:
-    url: https://nwsltr.jvitasek.cz/
+    url: %domain%
     lazy: true
 
 contributte.events:

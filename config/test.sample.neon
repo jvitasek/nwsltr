@@ -1,4 +1,5 @@
 parameters:
+    domain: http://nwsltr.test
     database:
         driver: mysqli
         charset: utf8
