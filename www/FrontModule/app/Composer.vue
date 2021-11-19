@@ -485,7 +485,7 @@
                         }
                     })
                     .catch(error => {
-                        console.log(error)
+                        console.error('ERROR: ', error.response); 
                     })
             },
             fetchRecipients() {
@@ -495,7 +495,7 @@
                         this.recipientGroups = response.data
                     })
                     .catch(error => {
-                        console.log(error) 
+                        console.error('ERROR: ', error.response); 
                     })
 
                 axios
@@ -508,7 +508,7 @@
                         console.log(this.recipients)
                     })
                     .catch(error => {
-                        console.log(error)
+                        console.error('ERROR: ', error.response); 
                     })
             },
             toggleSidebar(sidebar) {

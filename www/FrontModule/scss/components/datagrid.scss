@@ -87,17 +87,6 @@
         
         .table-wrapper-1 {
             position: relative;
-
-            &:after {
-                position: absolute;
-                top: 0;
-                bottom: 20px;
-                right: -20px;
-                width: 35%;
-                background: linear-gradient(90deg, rgba(255, 255, 255, 0) 30%, #FFFFFF 100%);
-                content: "";
-                pointer-events: none;
-            }
         }
 
         .table-wrapper-2 {

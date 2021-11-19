@@ -46,3 +46,14 @@
         }
     }
 }
+
+@media screen and (max-width: $sm) {
+    .page-heading {
+        height: auto;
+        padding: 15px 0;
+
+        h1 {
+            font-size: 1.3rem;
+        }
+    }
+}
