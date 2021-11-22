@@ -6,31 +6,31 @@
                     :class="sidebarComponents ? 'tools-item active ms-0' : 'tools-item ms-0'"
                     v-on:click="toggleSidebar('components')"
                 >
-                    <svg class="icon"><title>Add Component</title><use xlink:href="#plus"></use></svg>
+                    <svg class="icon"><title v-translate>Add Component</title><use xlink:href="#plus"></use></svg>
                 </button>
                 <button type="button"
                     :class="sidebarArticle ? 'tools-item active' : 'tools-item'"
                     v-on:click="toggleSidebar('article')"
                 >
-                    <svg class="icon"><title>Mailing</title><use xlink:href="#edit"></use></svg>
+                    <svg class="icon"><title v-translate>Mailing</title><use xlink:href="#edit"></use></svg>
                 </button>
                 <button type="button"
                     :class="sidebarHelp ? 'tools-item active' : 'tools-item'"
                     v-on:click="toggleSidebar('help')"
                 >
-                    <svg class="icon"><title>Help</title><use xlink:href="#help"></use></svg>
+                    <svg class="icon"><title v-translate>Help</title><use xlink:href="#help"></use></svg>
                 </button>
                 <button type="button"
                     :class="sidebarView ? 'tools-item active' : 'tools-item'"
                     v-on:click="toggleSidebar('view')"
                 >
-                    <svg class="icon"><title>Help</title><use xlink:href="#devices"></use></svg>
+                    <svg class="icon"><title v-translate>Help</title><use xlink:href="#devices"></use></svg>
                 </button>
             </div>
             <div class="d-flex align-items-center">
-                <a :href="backButton" class="btn btn-primary me-3">Back</a>
-                <button type="button" v-on:click="send(true)" class="btn btn-secondary me-3">Preview</button>
-                <button type="button" class="btn btn-tertiary" v-on:click="send(false)">Save</button>
+                <a :href="backButton" class="btn btn-primary me-3" v-translate>Back</a>
+                <button type="button" v-on:click="send(true)" class="btn btn-secondary me-3" v-translate>Preview</button>
+                <button type="button" class="btn btn-tertiary" v-on:click="send(false)" v-translate>Save</button>
             </div>
         </div>
 
@@ -41,13 +41,13 @@
                         <div class="dropdown">
                             <button class="btn-add" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg class="icon"><use xlink:href="#heading"></use></svg>
-                                <div class="heading">Heading</div>
+                                <div class="heading" v-translate>Heading</div>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="dropdown-menu-wrapper">
-                                    <button v-on:click="addHeading(1)" class="dropdown-item">Heading Level 1</button>
-                                    <button v-on:click="addHeading(2)" class="dropdown-item">Heading Level 2</button>
-                                    <button v-on:click="addHeading(3)" class="dropdown-item">Heading Level 3</button>
+                                    <button v-on:click="addHeading(1)" class="dropdown-item" v-translate>Heading Level 1</button>
+                                    <button v-on:click="addHeading(2)" class="dropdown-item" v-translate>Heading Level 2</button>
+                                    <button v-on:click="addHeading(3)" class="dropdown-item" v-translate>Heading Level 3</button>
                                 </div>
                             </div>
                         </div>
@@ -55,25 +55,25 @@
                     <div class="item">
                         <button class="btn-add" type="button" v-on:click="addParagraph('text')">
                             <svg class="icon"><use xlink:href="#paragraph"></use></svg>
-                            <div class="heading">Paragraph</div>
+                            <div class="heading" v-translate>Paragraph</div>
                         </button>
                     </div>
                     <div class="item">
                         <button class="btn-add" type="button" v-on:click="addQuotation">
                             <svg class="icon"><use xlink:href="#quote"></use></svg>
-                            <div class="heading">Quote</div>
+                            <div class="heading" v-translate>Quote</div>
                         </button>
                     </div>
                     <div class="item">
                         <div class="dropdown">
                             <button class="btn-add" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg class="icon"><use xlink:href="#list"></use></svg>
-                                <div class="heading">List</div>
+                                <div class="heading" v-translate>List</div>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="dropdown-menu-wrapper">
-                                    <button v-on:click="addList('ul')" class="dropdown-item">Unordered</button>
-                                    <button v-on:click="addList('ol')" class="dropdown-item">Ordered</button>
+                                    <button v-on:click="addList('ul')" class="dropdown-item" v-translate>Unordered</button>
+                                    <button v-on:click="addList('ol')" class="dropdown-item" v-translate>Ordered</button>
                                 </div>
                             </div>
                         </div>
@@ -81,81 +81,81 @@
                     <div class="item">
                         <button class="btn-add" type="button" v-on:click="addGallery">
                             <svg class="icon"><use xlink:href="#image"></use></svg>
-                            <div class="heading">Gallery</div>
+                            <div class="heading" v-translate>Gallery</div>
                         </button>
                     </div>
                     <div class="item">
                         <button class="btn-add" type="button" v-on:click="addButton()">
                             <svg class="icon"><use xlink:href="#link"></use></svg>
-                            <div class="heading">Button</div>
+                            <div class="heading" v-translate>Button</div>
                         </button>
                     </div>
                     <div class="item">
                         <button class="btn-add" type="button" v-on:click="addDivider()">
                             <svg class="icon"><use xlink:href="#divider"></use></svg>
-                            <div class="heading">Divider</div>
+                            <div class="heading" v-translate>Divider</div>
                         </button>
                     </div>
                     <div class="item">
                         <button class="btn-add" type="button" v-on:click="addSpacer()">
                             <svg class="icon"><use xlink:href="#spacer"></use></svg>
-                            <div class="heading">Spacer</div>
+                            <div class="heading" v-translate>Spacer</div>
                         </button>
                     </div>
                     <div class="item">
                         <button class="btn-add" type="button" v-on:click="addHtml()">
                             <svg class="icon"><use xlink:href="#code"></use></svg>
-                            <div class="heading">HTML</div>
+                            <div class="heading" v-translate>HTML</div>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="composer__sidebar composer__sidebar--form" v-if="sidebarArticle">
                 <div class="form-group">
-                    <label for="">Mailing Title</label>
-                    <input v-model="campaignMeta.title" type="text">
+                    <label for="title" v-translate>Mailing Title</label>
+                    <input v-model="campaignMeta.title" type="text" id="title">
                 </div>
                 <div class="form-group">
-                    <label for="">E-mail Subject</label>
-                    <input v-model="campaignMeta.subject" type="text">
+                    <label for="subject" v-translate>E-mail Subject</label>
+                    <input v-model="campaignMeta.subject" type="text" id="subject">
                 </div>
               <div class="form-group">
-                <label for="">E-mail From</label>
-                <input v-model="campaignMeta.emailFrom" type="text">
+                <label for="emailFrom" v-translate>E-mail From</label>
+                <input v-model="campaignMeta.emailFrom" type="text" id="emailFrom">
               </div>
                 <div class="form-group">
-                    <label for="">Sendout Date</label>
+                    <label for="date" v-translate>Sendout Date</label>
                     <div class="custom-datepicker">
                     <input type="text" name="date" id="date" placeholder="Select Sendout Date" v-model="campaignMeta.date">
                         <svg class="icon"><use xlink:href="#calendar"></use></svg>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="">Recipients</label>
-                    <select name="" id="select-1" multiple v-model="recipients">
+                    <label for="recipients" v-translate>Recipients</label>
+                    <select name="recipients" id="select-1" multiple v-model="recipients">
                         <option v-for="recipient in recipientGroups" :key="recipient.id" :value="recipient.id">{{ recipient.title }}</option>                        
                     </select>
                 </div>
             </div>
             <div class="composer__sidebar composer__sidebar--help" v-if="sidebarHelp">
                 <ul class="article-info">
-                    <li><span class="heading">Components</span><span class="value">{{ $store.getters.getComposer.body.length }}</span></li>
-                    <li><span class="heading">Headings</span><span class="value">{{ headingsCounter }}</span></li>
-                    <li><span class="heading">Paragraphs</span><span class="value">{{ paragraphsCounter }}</span></li>
-                    <li><span class="heading">Words</span><span class="value">{{ contentCounter.words }}</span></li>
-                    <li><span class="heading">Characters</span><span class="value">{{ contentCounter.chars }}</span></li>
+                    <li><span class="heading" v-translate>Components</span><span class="value">{{ $store.getters.getComposer.body.length }}</span></li>
+                    <li><span class="heading" v-translate>Headings</span><span class="value">{{ headingsCounter }}</span></li>
+                    <li><span class="heading" v-translate>Paragraphs</span><span class="value">{{ paragraphsCounter }}</span></li>
+                    <li><span class="heading" v-translate>Words</span><span class="value">{{ contentCounter.words }}</span></li>
+                    <li><span class="heading" v-translate>Characters</span><span class="value">{{ contentCounter.chars }}</span></li>
                 </ul>
                 <article class="message message--error" v-if="!campaignMeta.title.length > 0">
                     <svg class="icon"><use xlink:href="#warn"></use></svg>
-                    Enter Mailing Title
+                    <translate>Enter Mailing Title</translate>
                 </article>
                 <article class="message message--error" v-if="!campaignMeta.subject.length > 0">
                     <svg class="icon"><use xlink:href="#warn"></use></svg>
-                    Enter E-mail Subject
+                    <translate>Enter E-mail Subject</translate>
                 </article>
                 <article class="message message--error" v-if="!campaignMeta.date.length > 0">
                     <svg class="icon"><use xlink:href="#warn"></use></svg>
-                    Enter Sendout Date
+                    <translate>Enter Sendout Date</translate>
                 </article>
             </div>
             <div class="composer__sidebar composer__sidebar--components" v-if="sidebarView">
@@ -163,19 +163,19 @@
                     <div class="item">
                         <button class="btn-add" type="button" v-on:click="setView('desktop')">
                             <svg class="icon"><use xlink:href="#desktop"></use></svg>
-                            <div class="heading">Desktop</div>
+                            <div class="heading" v-translate>Desktop</div>
                         </button>
                     </div>
                     <div class="item">
                         <button class="btn-add" type="button" v-on:click="setView('tablet')">
                             <svg class="icon"><use xlink:href="#tablet"></use></svg>
-                            <div class="heading">Tablet</div>
+                            <div class="heading" v-translate>Tablet</div>
                         </button>
                     </div>
                     <div class="item">
                         <button class="btn-add" type="button" v-on:click="setView('mobile')">
                             <svg class="icon"><use xlink:href="#mobile"></use></svg>
-                            <div class="heading">Mobile</div>
+                            <div class="heading" v-translate>Mobile</div>
                         </button>
                     </div>
                 </div>
@@ -210,7 +210,7 @@
     import Html from "./components/Html";
 
     export default {
-        props: ['backButton', 'previewButton', 'id'],
+        props: ['backButton', 'previewButton', 'id', 'lang'],
         data() {
             return {
                 sidebarComponents: false,
@@ -448,19 +448,19 @@
                     .then((result) => {
                         console.log(result)
                         if(result.data.result === 'ok') {
-                            this.$toasted.success('Mailing saved successfully')
+                            this.$toasted.success(vm.$gettext('Mailing saved successfully'))
                             if(showPreview) {
                                 console.log('redir')
                                 window.location.href = this.previewButton
                             }
                         }
                         else {
-                            this.$toasted.error('There was an error while saving the record')
+                            this.$toasted.error(vm.$gettext('There was an error while saving the record'))
                         }
                     })
                     .catch((err) => {
                         console.log(err)
-                        this.$toasted.error('There was an error while saving the record')
+                        this.$toasted.error(vm.$gettext('There was an error while saving the record'))
                     })
             },
             fetchData() {
@@ -597,13 +597,13 @@
                     document.querySelectorAll('select[multiple]').forEach(multiSelect => { 
                         new Choices(multiSelect, {
                             removeItemButton: true,
-                            loadingText: 'Loading...',
-                            noResultsText: 'No results',
-                            noChoicesText: 'No choices',
-                            itemSelectText: 'Click for selection',
-                            addItemText: 'Press enter to add',
-                            maxItemText: 'Only ${maxItemCount} items can be added',
-                            searchPlaceholderValue: 'Search...'
+                            loadingText: vm.$gettext('Loading...'),
+                            noResultsText: vm.$gettext('No results'),
+                            noChoicesText: vm.$gettext('No choices'),
+                            itemSelectText: vm.$gettext('Click for selection'),
+                            addItemText: vm.$gettext('Press enter to add'),
+                            maxItemText: vm.$gettext('Only ${maxItemCount} items can be added'),
+                            searchPlaceholderValue: vm.$gettext('Search...')
                         });
                     })
                 });
@@ -621,10 +621,10 @@
             Html
         },
         mounted() {
-            this.$nextTick(() => { 
-                this.fetchData()
-                this.fetchRecipients()
-            })
+            this.$language.current = this.lang;
+
+            this.fetchData()
+            this.fetchRecipients()
         } 
     }
 </script>

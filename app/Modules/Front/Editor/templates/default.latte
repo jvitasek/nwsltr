@@ -1,9 +1,10 @@
 {block #content}
 
 <Composer
-        :back-button="'{link 'Mailing:list'}'"
-        :preview-button="'{link 'Editor:preview', $mailing->getId()}'"
-        :id="{$mailing->getId()}"/>
+    :back-button="'{link 'Mailing:list'}'"
+    :preview-button="'{link 'Editor:preview', $mailing->getId()}'"
+    :id="{$mailing->getId()}"
+    :lang="'en'" />
 
 {define scripts}
     <script src="/FrontModule/dist/composer.js"></script>

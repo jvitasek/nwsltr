@@ -4,25 +4,25 @@
             <div class="composer__tools">
                 <button v-on:click="handleRemove(component.id)">
                     <svg class="icon">
-                        <title>Remove</title>
+                        <title v-translate>Remove</title>
                         <use xlink:href="#trash"></use>
                     </svg>
                 </button>
                 <button v-on:click="moveItemTop(component)">
                     <svg class="icon">
-                        <title>Move up</title>
+                        <title v-translate>Move up</title>
                         <use xlink:href="#atop"></use>
                     </svg>
                 </button>
                 <button v-on:click="moveItemDown(component)">
                     <svg class="icon">
-                        <title>Move down</title>
+                        <title v-translate>Move down</title>
                         <use xlink:href="#adown"></use>
                     </svg>
                 </button>
                 <button v-on:click="toggleForm(component)">
                     <svg class="icon">
-                        <title>Set html</title>
+                        <title v-translate>Set html</title>
                         <use xlink:href="#edit"></use>
                     </svg>
                 </button>
@@ -31,8 +31,8 @@
             <div class="link-form" v-if="form">
                 <div class="heading">HTML</div>
                 <div class="d-flex">
-                    <textarea placeholder="Type HTML" v-model="component.content" class="me-2"></textarea>
-                    <button type="button" v-on:click="toggleForm()" class="btn btn-primary btn-sm">Save</button>
+                    <textarea :placeholder="vm.$gettext('Type HTML')" v-model="component.content" class="me-2"></textarea>
+                    <button type="button" v-on:click="toggleForm()" class="btn btn-primary btn-sm" v-translate>Save</button>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
             },
             handleRemove(id) {
                 if(this.component.required) {
-                    this.$toasted.error('Cannot remove a required field')
+                    this.$toasted.error(vm.$gettext('Cannot remove a required field'))
                 }
                 else {
                     this.$store.commit('removeComposerItem', id)
@@ -72,7 +72,7 @@
             },
             moveItemTop(item) {
                 if(this.component.required) {
-                    this.$toasted.error('Cannot move a required field')
+                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemTop', item, 1)
@@ -80,7 +80,7 @@
             },
             moveItemDown(item) {
                 if(this.component.required) {
-                    this.$toasted.error('Cannot move a required field')
+                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemDown', item, 1)

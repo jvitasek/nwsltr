@@ -4,37 +4,37 @@
             <div class="composer__tools">
                 <button v-on:click="setBold(component.id)">
                     <svg class="icon icon--sm">
-                        <title>Bold</title>
+                        <title v-translate>Bold</title>
                         <use xlink:href="#bold"></use>
                     </svg>
                 </button>
                 <button v-on:click="setItalic(component.id)">
                     <svg class="icon icon--sm">
-                        <title>Italic</title>
+                        <title v-translate>Italic</title>
                         <use xlink:href="#italic"></use>
                     </svg>
                 </button>
                 <button v-on:click="setUnderline(component.id)">
                     <svg class="icon icon--sm">
-                        <title>Underline</title>
+                        <title v-translate>Underline</title>
                         <use xlink:href="#underline"></use>
                     </svg>
                 </button>
                 <button v-on:click="handleRemove(component.id)">
                     <svg class="icon">
-                        <title>Remove</title>
+                        <title v-translate>Remove</title>
                         <use xlink:href="#trash"></use>
                     </svg>
                 </button>
                 <button v-on:click="moveItemTop(component)">
                     <svg class="icon">
-                        <title>Move up</title>
+                        <title v-translate>Move up</title>
                         <use xlink:href="#atop"></use>
                     </svg>
                 </button>
                 <button v-on:click="moveItemDown(component)">
                     <svg class="icon">
-                        <title>Move down</title>
+                        <title v-translate>Move down</title>
                         <use xlink:href="#adown"></use>
                     </svg>
                 </button>

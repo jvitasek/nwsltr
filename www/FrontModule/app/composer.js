@@ -2,6 +2,17 @@ import { Collapse, Dropdown, Modal } from 'bootstrap'
 import Vue from 'vue';
 import { store } from './store/store'
 import Toasted from 'vue-toasted';
+import GetTextPlugin from 'vue-gettext'
+import translations from '../lang/translations.json'
+
+Vue.use(GetTextPlugin, {
+    availableLanguages: {
+        en: 'English',
+        cs: 'Czech'
+    },
+    defaultLanguage: 'en',
+    translations: translations
+})
 
 Vue.use(Toasted, {
     theme: 'toasted-primary', 

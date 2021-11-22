@@ -1,0 +1,324 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: easygettext\n"
+"Project-Id-Version: \n"
+
+#: ./app/Composer.vue:5
+msgid "Add Component"
+msgstr ""
+
+#: ./app/Composer.vue:18
+msgid "Back"
+msgstr ""
+
+#: ./app/components/Paragraph.vue:6
+#: ./app/components/Quotation.vue:6
+msgid "Bold"
+msgstr ""
+
+#: ./app/Composer.vue:77
+msgid "Button"
+msgstr ""
+
+#: ./app/components/Button.vue:31
+msgid "Button URL"
+msgstr ""
+
+#: ./app/components/Button.vue:35
+#: ./app/components/Button.vue:43
+#: ./app/components/Divider.vue:17
+#: ./app/components/Divider.vue:25
+#: ./app/components/Gallery.vue:61
+#: ./app/components/Gallery.vue:69
+#: ./app/components/Heading.vue:32
+#: ./app/components/Heading.vue:40
+#: ./app/components/Html.vue:33
+#: ./app/components/Html.vue:41
+#: ./app/components/Paragraph.vue:23
+#: ./app/components/Paragraph.vue:31
+#: ./app/components/Spacer.vue:17
+#: ./app/components/Spacer.vue:25
+msgid "Cannot move a required field"
+msgstr ""
+
+#: ./app/components/Button.vue:27
+#: ./app/components/Divider.vue:9
+#: ./app/components/Gallery.vue:53
+#: ./app/components/Heading.vue:24
+#: ./app/components/Html.vue:25
+#: ./app/components/Paragraph.vue:15
+#: ./app/components/Spacer.vue:9
+msgid "Cannot remove a required field"
+msgstr ""
+
+#: ./app/Composer.vue:133
+msgid "Characters"
+msgstr ""
+
+#: ./app/Composer.vue:406
+msgid "Click for selection"
+msgstr ""
+
+#: ./app/Composer.vue:129
+msgid "Components"
+msgstr ""
+
+#: ./app/Composer.vue:153
+msgid "Desktop"
+msgstr ""
+
+#: ./app/Composer.vue:83
+msgid "Divider"
+msgstr ""
+
+#: ./app/components/Gallery.vue:39
+#: ./app/components/Gallery.vue:13
+#: ./app/components/Gallery.vue:4
+msgid "Drag the file here or click and select in file browser"
+msgstr ""
+
+#: ./app/Composer.vue:110
+msgid "E-mail From"
+msgstr ""
+
+#: ./app/Composer.vue:106
+msgid "E-mail Subject"
+msgstr ""
+
+#: ./app/Composer.vue:141
+msgid "Enter E-mail Subject"
+msgstr ""
+
+#: ./app/Composer.vue:137
+msgid "Enter Mailing Title"
+msgstr ""
+
+#: ./app/Composer.vue:145
+msgid "Enter Sendout Date"
+msgstr ""
+
+#: ./app/components/Gallery.vue:24
+#: ./app/components/Gallery.vue:1
+msgid "gallery"
+msgstr ""
+
+#: ./app/Composer.vue:71
+msgid "Gallery"
+msgstr ""
+
+#: ./app/Composer.vue:31
+msgid "Heading"
+msgstr ""
+
+#: ./app/Composer.vue:35
+msgid "Heading Level 1"
+msgstr ""
+
+#: ./app/Composer.vue:36
+msgid "Heading Level 2"
+msgstr ""
+
+#: ./app/Composer.vue:37
+msgid "Heading Level 3"
+msgstr ""
+
+#: ./app/Composer.vue:130
+msgid "Headings"
+msgstr ""
+
+#: ./app/Composer.vue:11
+#: ./app/Composer.vue:14
+msgid "Help"
+msgstr ""
+
+#: ./app/Composer.vue:95
+msgid "HTML"
+msgstr ""
+
+#: ./app/components/Gallery.vue:38
+#: ./app/components/Gallery.vue:12
+#: ./app/components/Gallery.vue:3
+msgid "Image"
+msgstr ""
+
+#: ./app/components/Button.vue:101
+msgid "Insert button text"
+msgstr ""
+
+#: ./app/components/Heading.vue:70
+msgid "Insert heading level"
+msgstr ""
+
+#: ./app/components/Paragraph.vue:12
+#: ./app/components/Quotation.vue:12
+msgid "Italic"
+msgstr ""
+
+#: ./app/components/Paragraph.vue:29
+msgid "Link"
+msgstr ""
+
+#: ./app/Composer.vue:58
+msgid "List"
+msgstr ""
+
+#: ./app/Composer.vue:403
+msgid "Loading..."
+msgstr ""
+
+#: ./app/Composer.vue:8
+msgid "Mailing"
+msgstr ""
+
+#: ./app/Composer.vue:254
+msgid "Mailing saved successfully"
+msgstr ""
+
+#: ./app/Composer.vue:102
+msgid "Mailing Title"
+msgstr ""
+
+#: ./app/Composer.vue:165
+msgid "Mobile"
+msgstr ""
+
+#: ./app/components/Button.vue:18
+#: ./app/components/Divider.vue:18
+#: ./app/components/Gallery.vue:18
+#: ./app/components/Heading.vue:18
+#: ./app/components/Html.vue:18
+#: ./app/components/List.vue:18
+#: ./app/components/Paragraph.vue:54
+#: ./app/components/Quotation.vue:36
+#: ./app/components/Spacer.vue:18
+msgid "Move down"
+msgstr ""
+
+#: ./app/components/Button.vue:12
+#: ./app/components/Divider.vue:12
+#: ./app/components/Gallery.vue:12
+#: ./app/components/Heading.vue:12
+#: ./app/components/Html.vue:12
+#: ./app/components/List.vue:12
+#: ./app/components/Paragraph.vue:48
+#: ./app/components/Quotation.vue:30
+#: ./app/components/Spacer.vue:12
+msgid "Move up"
+msgstr ""
+
+#: ./app/Composer.vue:405
+msgid "No choices"
+msgstr ""
+
+#: ./app/Composer.vue:404
+msgid "No results"
+msgstr ""
+
+#: ./app/Composer.vue:408
+msgid "Only ${maxItemCount} items can be added"
+msgstr ""
+
+#: ./app/Composer.vue:63
+msgid "Ordered"
+msgstr ""
+
+#: ./app/Composer.vue:45
+msgid "Paragraph"
+msgstr ""
+
+#: ./app/Composer.vue:131
+msgid "Paragraphs"
+msgstr ""
+
+#: ./app/Composer.vue:407
+msgid "Press enter to add"
+msgstr ""
+
+#: ./app/Composer.vue:19
+msgid "Preview"
+msgstr ""
+
+#: ./app/Composer.vue:51
+msgid "Quote"
+msgstr ""
+
+#: ./app/Composer.vue:121
+msgid "Recipients"
+msgstr ""
+
+#: ./app/components/Button.vue:6
+#: ./app/components/Divider.vue:6
+#: ./app/components/Gallery.vue:6
+#: ./app/components/Heading.vue:6
+#: ./app/components/Html.vue:6
+#: ./app/components/List.vue:6
+#: ./app/components/Paragraph.vue:42
+#: ./app/components/Quotation.vue:24
+#: ./app/components/Spacer.vue:6
+msgid "Remove"
+msgstr ""
+
+#: ./app/Composer.vue:20
+#: ./app/components/Button.vue:34
+#: ./app/components/Html.vue:34
+msgid "Save"
+msgstr ""
+
+#: ./app/Composer.vue:409
+msgid "Search..."
+msgstr ""
+
+#: ./app/Composer.vue:114
+msgid "Sendout Date"
+msgstr ""
+
+#: ./app/components/Html.vue:24
+msgid "Set html"
+msgstr ""
+
+#: ./app/components/Button.vue:24
+msgid "Set link"
+msgstr ""
+
+#: ./app/Composer.vue:89
+#: ./app/components/Spacer.vue:25
+msgid "Spacer"
+msgstr ""
+
+#: ./app/Composer.vue:159
+msgid "Tablet"
+msgstr ""
+
+#: ./app/Composer.vue:261
+#: ./app/Composer.vue:266
+#: ./app/components/Button.vue:71
+#: ./app/components/Gallery.vue:45
+msgid "There was an error while saving the record"
+msgstr ""
+
+#: ./app/components/Html.vue:102
+msgid "Type HTML"
+msgstr ""
+
+#: ./app/components/Button.vue:112
+msgid "Type url"
+msgstr ""
+
+#: ./app/components/Paragraph.vue:18
+#: ./app/components/Quotation.vue:18
+msgid "Underline"
+msgstr ""
+
+#: ./app/components/Paragraph.vue:36
+msgid "Unlink"
+msgstr ""
+
+#: ./app/Composer.vue:62
+msgid "Unordered"
+msgstr ""
+
+#: ./app/Composer.vue:132
+msgid "Words"
+msgstr ""

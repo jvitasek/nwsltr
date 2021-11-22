@@ -10,6 +10,7 @@
 		"babel-loader": "^8.0.5",
 		"cross-env": "^7.0.3",
 		"css-loader": "^5.0.1",
+		"easygettext": "^2.17.0",
 		"extract-loader": "^5.1.0",
 		"file-loader": "^6.2.0",
 		"node-sass": "^5.0.0",
@@ -45,6 +46,7 @@
 		"swiper": "^6.4.5",
 		"tinymce": "^5.6.2",
 		"vue": "^2.6.12",
+		"vue-gettext": "^2.1.12",
 		"vue-loader": "^15.9.6",
 		"vue-template-compiler": "^2.6.12",
 		"vue-toasted": "^1.1.28",
@@ -53,6 +55,8 @@
 	"scripts": {
 		"build": "webpack --mode production",
 		"build:dev": "webpack --mode development",
-		"watch": "webpack --watch --mode development"
+		"watch": "webpack --watch --mode development",
+		"gettext-extract": "gettext-extract --attribute v-translate --output ./lang/dictionary.pot ./app/Composer.vue ./app/components/Button.vue ./app/components/Divider.vue ./app/components/Gallery.vue ./app/components/Heading.vue ./app/components/Html.vue ./app/components/List.vue ./app/components/Paragraph.vue ./app/components/Quotation.vue ./app/components/Spacer.vue",
+		"gettext-compile": "gettext-compile --output ./lang/translations.json ./lang/cs.po"
 	}
 }

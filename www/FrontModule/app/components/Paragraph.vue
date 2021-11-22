@@ -4,19 +4,19 @@
             <div class="composer__tools">
                 <button v-on:click="setBold(component.id)" title="Bold">
                     <svg class="icon icon--sm">
-                        <title>Bold</title>
+                        <title v-translate>Bold</title>
                         <use xlink:href="#bold"></use>
                     </svg>
                 </button>
                 <button v-on:click="setItalic(component.id)" title="Italic">
                     <svg class="icon icon--sm">
-                        <title>Italic</title>
+                        <title v-translate>Italic</title>
                         <use xlink:href="#italic"></use>
                     </svg>
                 </button>
                 <button v-on:click="setUnderline(component.id)" title="Underline">
                     <svg class="icon icon--sm">
-                        <title>Underline</title>
+                        <title v-translate>Underline</title>
                         <use xlink:href="#underline"></use>
                     </svg>
                 </button>
@@ -27,32 +27,32 @@
                     </div>
                     <button v-on:click="showLinkInput()" title="Link">
                         <svg class="icon icon--sm">
-                            <title>Link</title>
+                            <title v-translate>Link</title>
                             <use xlink:href="#link"></use>
                         </svg>
                     </button>
                 </div>
                 <button v-on:click="removeLink(component.id)" title="Unlink">
                     <svg class="icon icon--sm">
-                        <title>Unlink</title>
+                        <title v-translate>Unlink</title>
                         <use xlink:href="#unlink"></use>
                     </svg>
                 </button>
                 <button v-on:click="handleRemove(component.id)" title="Remove component">
                     <svg class="icon">
-                        <title>Remove</title>
+                        <title v-translate>Remove</title>
                         <use xlink:href="#trash"></use>
                     </svg>
                 </button>
                 <button v-on:click="moveItemTop(component)" title="Move up">
                     <svg class="icon">
-                        <title>Move up</title>
+                        <title v-translate>Move up</title>
                         <use xlink:href="#atop"></use>
                     </svg>
                 </button>
                 <button v-on:click="moveItemDown(component)" title="Move down">
                     <svg class="icon">
-                        <title>Move down</title>
+                        <title v-translate>Move down</title>
                         <use xlink:href="#adown"></use>
                     </svg>
                 </button>
@@ -85,7 +85,7 @@
         methods: {
             handleRemove(id) {
                 if(this.component.required) {
-                    this.$toasted.error('Cannot remove a required field')
+                    this.$toasted.error(vm.$gettext('Cannot remove a required field'))
                 }
                 else {
                     this.$store.commit('removeComposerItem', id)
@@ -93,7 +93,7 @@
             },
             moveItemTop(item) {
                 if(this.component.required) {
-                    this.$toasted.error('Cannot move a required field')
+                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemTop', item, 1)
@@ -101,7 +101,7 @@
             },
             moveItemDown(item) {
                 if(this.component.required) {
-                    this.$toasted.error('Cannot move a required field')
+                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemDown', item, 1)

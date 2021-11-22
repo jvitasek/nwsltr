@@ -4,25 +4,25 @@
             <div class="composer__tools">
                 <button v-on:click="handleRemove(component.id)">
                     <svg class="icon">
-                        <title>Remove</title>
+                        <title v-translate>Remove</title>
                         <use xlink:href="#trash"></use>
                     </svg>
                 </button>
                 <button v-on:click="moveItemTop(component)">
                     <svg class="icon">
-                        <title>Move up</title>
+                        <title v-translate>Move up</title>
                         <use xlink:href="#atop"></use>
                     </svg>
                 </button>
                 <button v-on:click="moveItemDown(component)">
                     <svg class="icon">
-                        <title>Move down</title>
+                        <title v-translate>Move down</title>
                         <use xlink:href="#adown"></use>
                     </svg>
                 </button>
             </div>
             <template v-if="component.multiple">
-                gallery
+                <translate>gallery</translate>
             </template>
             <template v-else>
                 <template v-if="component.images.length > 0">
@@ -36,8 +36,8 @@
                 <template v-else>
                     <input class="input gallery-input" :id="'input-'+component.id" type="file" v-on:change="handleImages($event)">
                     <label :for="'input-'+component.id" class="gallery-label">
-                        <div class="heading"><svg class="icon"><use xlink:href="#image"></use></svg>Image</div>
-                        <p class="mb-0">Drag the file here or click and select in file browser</p>
+                        <div class="heading"><svg class="icon"><use xlink:href="#image"></use></svg><translate>Image</translate></div>
+                        <p class="mb-0" v-translate>Drag the file here or click and select in file browser</p>
                     </label>
                 </template>
             </template>
@@ -90,7 +90,7 @@
                     })
                     .catch((err) => {
                         console.log(err)
-                        this.$toasted.error('There was an error while saving the record')
+                        this.$toasted.error(vm.$gettext('There was an error while saving the record'))
                     })
             },
             handleRemoveImage(index) {
@@ -98,7 +98,7 @@
             },
             handleRemove(id) {
                 if(this.component.required) {
-                    this.$toasted.error('Cannot remove a required field')
+                    this.$toasted.error(vm.$gettext('Cannot remove a required field'))
                 }
                 else {
                     this.$store.commit('removeComposerItem', id)
@@ -106,7 +106,7 @@
             },
             moveItemTop(item) {
                 if(this.component.required) {
-                    this.$toasted.error('Cannot move a required field')
+                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemTop', item, 1)
@@ -114,7 +114,7 @@
             },
             moveItemDown(item) {
                 if(this.component.required) {
-                    this.$toasted.error('Cannot move a required field')
+                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemDown', item, 1)
