@@ -2,7 +2,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-11-23T15:07:33+01:00\n"
+"POT-Creation-Date: 2021-11-23T15:29:23+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -297,7 +297,7 @@ msgstr ""
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:26
 #: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:26
-msgid "No. of Recipients"
+msgid "# of Recipients"
 msgstr ""
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:21
