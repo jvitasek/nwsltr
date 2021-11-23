@@ -7,8 +7,9 @@
         <tr>
             <td valign="top" style="padding: 15px 40px; text-align: left;" class="mobile-cell">
                 <a href="[[LINK_TO_REPLACE]]"
-                   style="display: block; padding: 10px 20px; font-weight: 700; color: #{$mailing->getAccount()->getSecondaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_TEXT_COLOR_HEX} !important; font-size: 16px; text-align: left; background: #{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX}; border-radius: 5px;"><span
-                            style="color: #{$mailing->getAccount()->getSecondaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_TEXT_COLOR_HEX};">{$data['content']}</span></a>
+                   style="display: block; padding: 10px 20px; font-weight: 700; color: #{$mailing->getAccount()->getSecondaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_TEXT_COLOR_HEX} !important; font-size: 16px; text-align: center; background: #{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX}; border-radius: 5px;">
+                   <span style="color: #{$mailing->getAccount()->getSecondaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_TEXT_COLOR_HEX};">{$data['content']}</span>
+                </a>
             </td>
         </tr>
     </table>

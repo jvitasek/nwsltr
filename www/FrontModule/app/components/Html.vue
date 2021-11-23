@@ -31,7 +31,7 @@
             <div class="link-form" v-if="form">
                 <div class="heading">HTML</div>
                 <div class="d-flex">
-                    <textarea :placeholder="vm.$gettext('Type HTML')" v-model="component.content" class="me-2"></textarea>
+                    <textarea :placeholder="this.$gettext('Type HTML')" v-model="component.content" class="me-2"></textarea>
                     <button type="button" v-on:click="toggleForm()" class="btn btn-primary btn-sm" v-translate>Save</button>
                 </div>
             </div>
@@ -64,7 +64,7 @@
             },
             handleRemove(id) {
                 if(this.component.required) {
-                    this.$toasted.error(vm.$gettext('Cannot remove a required field'))
+                    this.$toasted.error(this.$gettext('Cannot remove a required field'))
                 }
                 else {
                     this.$store.commit('removeComposerItem', id)
@@ -72,7 +72,7 @@
             },
             moveItemTop(item) {
                 if(this.component.required) {
-                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
+                    this.$toasted.error(this.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemTop', item, 1)
@@ -80,7 +80,7 @@
             },
             moveItemDown(item) {
                 if(this.component.required) {
-                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
+                    this.$toasted.error(this.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemDown', item, 1)

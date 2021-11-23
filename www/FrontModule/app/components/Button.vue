@@ -30,13 +30,13 @@
             <div contenteditable="true"
                 :class="['input button', placeholder ? 'placeholder' : '']"
                 :id="'input-'+component.id" 
-                :placeholder="vm.$gettext('Insert button text')"
+                :placeholder="this.$gettext('Insert button text')"
                 @input="onInput"
             >{{ component.content }}</div>
             <div class="link-form" v-if="linkForm">
                 <div class="heading" v-translate>Button URL</div>
                 <div class="d-flex">
-                    <input type="text" :placeholder="vm.$gettext('Type url')" v-model="component.link" class="me-2">
+                    <input type="text" :placeholder="this.$gettext('Type url')" v-model="component.link" class="me-2">
                     <button type="button" v-on:click="setLink()" class="btn btn-primary btn-sm" v-translate>Save</button>
                 </div>
             </div>
@@ -71,7 +71,7 @@
             },
             handleRemove(id) {
                 if(this.component.required) {
-                    this.$toasted.error(vm.$gettext('Cannot remove a required field'))
+                    this.$toasted.error(this.$gettext('Cannot remove a required field'))
                 }
                 else {
                     this.$store.commit('removeComposerItem', id)
@@ -79,7 +79,7 @@
             },
             moveItemTop(item) {
                 if(this.component.required) {
-                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
+                    this.$toasted.error(this.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemTop', item, 1)
@@ -87,7 +87,7 @@
             },
             moveItemDown(item) {
                 if(this.component.required) {
-                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
+                    this.$toasted.error(this.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemDown', item, 1)
@@ -115,7 +115,7 @@
                     })
                     .catch((err) => {
                         console.log(err)
-                        this.$toasted.error(vm.$gettext('There was an error while saving the record'))
+                        this.$toasted.error(this.$gettext('There was an error while saving the record'))
                     })
             }
         },

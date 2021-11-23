@@ -609,6 +609,7 @@
         font-weight: 700;
         padding: 10px 20px;
         position: relative;
+        text-align: center;
 
         &.placeholder:after {
             content: attr(placeholder) !important;

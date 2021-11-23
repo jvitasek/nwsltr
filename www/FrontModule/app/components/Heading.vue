@@ -24,7 +24,7 @@
             <div contenteditable="true"
                 :class="['input heading heading--'+component.headingType, placeholder ? 'placeholder' : '']"
                 :id="'input-'+component.id" 
-                :placeholder="vm.$gettext('Insert heading level')+' '+component.headingType"
+                :placeholder="this.$gettext('Insert heading level')+' '+component.headingType"
                 @input="onInput"
             >{{ component.content }}</div>
         </div>
@@ -55,7 +55,7 @@
             },
             handleRemove(id) {
                 if(this.component.required) {
-                    this.$toasted.error(vm.$gettext('Cannot remove a required field'))
+                    this.$toasted.error(this.$gettext('Cannot remove a required field'))
                 }
                 else {
                     this.$store.commit('removeComposerItem', id)
@@ -63,7 +63,7 @@
             },
             moveItemTop(item) {
                 if(this.component.required) {
-                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
+                    this.$toasted.error(this.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemTop', item, 1)
@@ -71,7 +71,7 @@
             },
             moveItemDown(item) {
                 if(this.component.required) {
-                    this.$toasted.error(vm.$gettext('Cannot move a required field'))
+                    this.$toasted.error(this.$gettext('Cannot move a required field'))
                 }
                 else {
                     this.$store.commit('moveItemDown', item, 1)

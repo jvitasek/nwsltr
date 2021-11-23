@@ -448,19 +448,19 @@
                     .then((result) => {
                         console.log(result)
                         if(result.data.result === 'ok') {
-                            this.$toasted.success(vm.$gettext('Mailing saved successfully'))
+                            this.$toasted.success(this.$gettext('Mailing saved successfully'))
                             if(showPreview) {
                                 console.log('redir')
                                 window.location.href = this.previewButton
                             }
                         }
                         else {
-                            this.$toasted.error(vm.$gettext('There was an error while saving the record'))
+                            this.$toasted.error(this.$gettext('There was an error while saving the record'))
                         }
                     })
                     .catch((err) => {
                         console.log(err)
-                        this.$toasted.error(vm.$gettext('There was an error while saving the record'))
+                        this.$toasted.error(this.$gettext('There was an error while saving the record'))
                     })
             },
             fetchData() {
@@ -597,13 +597,13 @@
                     document.querySelectorAll('select[multiple]').forEach(multiSelect => { 
                         new Choices(multiSelect, {
                             removeItemButton: true,
-                            loadingText: vm.$gettext('Loading...'),
-                            noResultsText: vm.$gettext('No results'),
-                            noChoicesText: vm.$gettext('No choices'),
-                            itemSelectText: vm.$gettext('Click for selection'),
-                            addItemText: vm.$gettext('Press enter to add'),
-                            maxItemText: vm.$gettext('Only ${maxItemCount} items can be added'),
-                            searchPlaceholderValue: vm.$gettext('Search...')
+                            loadingText: this.$gettext('Loading...'),
+                            noResultsText: this.$gettext('No results'),
+                            noChoicesText: this.$gettext('No choices'),
+                            itemSelectText: this.$gettext('Click for selection'),
+                            addItemText: this.$gettext('Press enter to add'),
+                            maxItemText: this.$gettext('Only ${maxItemCount} items can be added'),
+                            searchPlaceholderValue: this.$gettext('Search...')
                         });
                     })
                 });
