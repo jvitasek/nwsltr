@@ -1,17 +1,17 @@
 # Gettext keys exported by GettextExtractor
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2021-11-23T15:07:33+01:00\n"
-"PO-Revision-Date: 2021-11-23 15:21+0100\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-11-23T15:29:23+01:00\n"
+"PO-Revision-Date: 2021-11-23 15:30+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"Project-Id-Version: \n"
 "X-Generator: Poedit 2.3\n"
-"Last-Translator: \n"
-"Language: cs_CZ\n"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/AccountPresenter.php:81
 msgid "Logo successfully removed"
@@ -212,7 +212,7 @@ msgstr "E-mai"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:26
 msgid "Subscribed?"
-msgstr "Přihlášen k odebírce?"
+msgstr "Přihlášen?"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:27
 msgid "In Groups"
@@ -232,7 +232,7 @@ msgid "Create Group"
 msgstr "Vytvořit skupinu"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:26
-msgid "No. of Recipients"
+msgid "# of Recipients"
 msgstr "Počet příjemců"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:21
@@ -388,7 +388,7 @@ msgstr "Příjmení"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:29
 msgid "Subscribed"
-msgstr "Přihlášen k odebírce?"
+msgstr "Přihlášen"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/SignInFormFactory.php:19
 msgid "Remember?"
