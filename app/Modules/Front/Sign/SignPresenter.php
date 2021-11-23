@@ -41,7 +41,7 @@ final class SignPresenter extends BaseFrontPresenter
 
 		if ($this->user->isLoggedIn()) {
 			$this->user->logout();
-			$this->flashSuccess('You were successfully logged out');
+			$this->flashSuccess($this->translator->translate('You were successfully logged out'));
 		}
 
 		$this->redirect(App::DESTINATION_AFTER_SIGN_OUT);

@@ -23,7 +23,7 @@ final class RouterFactory
 	{
 		$router[] = $list = new RouteList('Front');
 		$list[] = new Route('/unsubscribe/<queueHash>/<mailingId>/<unsubscribeId>', 'Unsubscribe:default');
-		$list[] = new Route('<presenter>/<action>[/<id>]', 'Home:default');
+		$list[] = new Route('//%host%/[<locale=en cs|en>/]<presenter>/<action>[/<id>]', 'Home:default');
 
 		return $router;
 	}
@@ -31,7 +31,7 @@ final class RouterFactory
 	protected function buildAdmin(RouteList $router): RouteList
 	{
 		$router[] = $list = new RouteList('Admin');
-		$list[] = new Route('admin/<presenter>/<action>[/<id>]');
+		$list[] = new Route('//%host%/[<locale=en cs|en>/]admin/<presenter>/<action>[/<id>]');
 
 		return $router;
 	}

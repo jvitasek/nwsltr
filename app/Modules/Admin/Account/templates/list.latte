@@ -3,8 +3,8 @@
 <section class="page-heading">
     <div class="container-fluid">
         <div class="d-flex align-items-center justify-content-between">
-            <h1 n:block="title">Accounts</h1>
-            <a n:href="Account:form" class="btn btn-tertiary">Create Account</a>
+            <h1 n:block="title">{_'Accounts'}</h1>
+            <a n:href="Account:form" class="btn btn-tertiary">{_'Create Account'}</a>
         </div>
     </div>
 </section>
@@ -18,11 +18,11 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Created At</th>
-                                <th>Title</th>
-                                <th># of Users</th>
-                                <th>Action</th>
+                                <th>{_'ID'}</th>
+                                <th>{_'Created At'}</th>
+                                <th>{_'Title'}</th>
+                                <th>{_'# of Users'}</th>
+                                <th>{_'Action'}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -35,7 +35,7 @@
                                     <td>{$account->getUsers()->count()}</td>
                                     <td>
                                         <div class="d-flex">
-                                            <a n:href="Account:form $account->getId()" class="tool-item" title="Edit">
+                                            <a n:href="Account:form $account->getId()" class="tool-item" title="{_'Edit'}">
                                                 <svg class="icon">
                                                     <use xlink:href="#edit"></use>
                                                 </svg>

@@ -80,7 +80,7 @@ abstract class DatagridPresenter extends BaseFrontPresenter
 			$this->redrawControl('grid');
 			$this->redrawControl('flashes');
 		} else {
-			$this->flashSuccess('Record deleted successfully');
+			$this->flashSuccess($this->translator->translate('Record deleted successfully'));
 			$this->redirect('this');
 		}
 	}
