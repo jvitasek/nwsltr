@@ -39,7 +39,7 @@ class AccountFixture implements FixtureInterface, OrderedFixtureInterface {
 	 * Get the order of this fixture
 	 */
 	public function getOrder(): int {
-		return 1;
+		return 2;
 	}
 
 }

@@ -73,6 +73,9 @@ class User extends AbstractEntity
     /** @ORM\OneToMany(targetEntity="Mailing", mappedBy="user") */
     private Collection $mailings;
 
+    /** @ORM\ManyToOne(targetEntity="Language") */
+    private Language $language;
+
 	#[Pure] public function __construct()
 	{
 		$this->accounts = new ArrayCollection();
@@ -207,6 +210,22 @@ class User extends AbstractEntity
 	public function getTitle(): string
 	{
 		return $this->getFullName();
+	}
+
+	/**
+	 * @return Language
+	 */
+	public function getLanguage(): Language
+	{
+		return $this->language;
+	}
+
+	/**
+	 * @param Language $language
+	 */
+	public function setLanguage(Language $language): void
+	{
+		$this->language = $language;
 	}
 
 }
