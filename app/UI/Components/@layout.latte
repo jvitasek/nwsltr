@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{$mailing->getSubject()}</title>
     <style type="text/css" n:syntax="off">
-        p{font-size: 14px;color: #494948;} img {
+        p { font-size: 14px;color: #494948; }
+        
+        img {
             margin: 0px;
             padding: 0px;
             border: 0px;
         }
 
-        ul {padding:0px 0px 0px 0px;margin: 0 0 0 15px; list-style: square;} li {margin:0px 0px 4px 0px; padding:0px 0px 0px 0px;} table td {
+        ul {
+            padding:0px 0px 0px 0px;margin: 0 0 0 15px; list-style: square;
+        } 
+        
+        li {margin:0px 0px 4px 0px; padding:0px 0px 0px 0px;}
+        
+        table td {
             border: 0;
             padding: 0;
             color: #494948;
@@ -27,7 +35,15 @@
             text-decoration: none;
         }
 
-        a:visited {color: #9c104c !important;} a[x-apple-data-detectors] {
+        table tr, table td, table th, table {
+            width: 100% !important;
+            table-layout:fixed;
+            -webkit-text-size-adjust:100%;
+            -ms-text-size-adjust:100%;
+        }
+
+        a:visited {color: #9c104c !important;}
+        a[x-apple-data-detectors] {
             color: inherit !important;
             text-decoration: none !important;
             font-size: inherit !important;
@@ -37,9 +53,8 @@
         }
 
         /* for Outlook.com */
-        .ExternalClass * {line-height: 100%} .ExternalClass p
-
-        {margin:0 !important;}
+        .ExternalClass * {line-height: 100%}
+        .ExternalClass p {margin:0 !important;}
 
         /* responsivity */
         @media screen and (max-width: 700px) {
@@ -166,8 +181,7 @@
     <link rel="stylesheet" href="/FrontModule/dist/app.css">
     {/if}
 </head>
-<body style="text-align:center;width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Arial, Helvetica, sans-serif; font-size: 12px; margin: 0; padding: 0; background: #f3f3f3 !important;"
-      bgcolor="#f3f3f3">
+<body style="text-align:center;-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Arial, Helvetica, sans-serif; font-size: 12px; margin: 0; padding: 0;" bgcolor="#f3f3f3">
     {if $backToEditLink}
         <div class="preview__header">
             <div class="d-flex align-items-center justify-content-between">
@@ -193,46 +207,53 @@
         </div>
     {/if}
 
+    {if $backToEditLink}
     <div class="preview-wrapper preview-wrapper--mobile">
         <div class="preview-wrapper-2">
+    {/if}
             <span id="body_style" style="padding:0; display:block; background:#f3f3f3;">
                 <table width="700" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff"
                     style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #ffffff;"
                     class="wrapper-table">
-                <tr>
-                    <td class="inner contents"
-                        style="padding-top:15px;padding-bottom:15px;padding-right:40px;padding-left:40px;width:100%;text-align:center; color: #ffffff;">
-                        <img src="{$domain}{$mailing->getAccount()->getLogo()}" width="400" alt="">
-                    </td>
-                </tr>
+                    <tr>
+                        <td class="inner contents"
+                            style="padding-top:15px;padding-bottom:15px;padding-right:40px;padding-left:40px;width:100%;text-align:center; color: #ffffff;">
+                            <img src="{$domain}{$mailing->getAccount()->getLogo()}" width="400" alt="">
+                        </td>
+                    </tr>
                 </table>
+
                 <table width="700" cellspacing="0" cellpadding="0" border="0"
                     bgcolor="#{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX}"
                     style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #ffffff;"
                     class="wrapper-table">
-                <tr>
-                    <td class="inner contents"
-                        style="padding-top:15px;padding-bottom:15px;padding-right:40px;padding-left:40px;width:100%;text-align:center; color: #ffffff;">
-                    <span style="font-size:16px;margin-top:0;margin-bottom:0;background:#{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX}; color: #{$mailing->getAccount()->getSecondaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_TEXT_COLOR_HEX}; font-weight: 400;text-transform: uppercase; font-weight: 700;"
-                            target="_blank">{$mailing->getSubject()}</span>
-                    </td>
-                </tr>
+                    <tr>
+                        <td class="inner contents"
+                            style="padding-top:15px;padding-bottom:15px;padding-right:40px;padding-left:40px;width:100%;text-align:center; color: #ffffff;">
+                        <span style="font-size:16px;margin-top:0;margin-bottom:0;background:#{$mailing->getAccount()->getPrimaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_BACKGROUND_COLOR_HEX}; color: #{$mailing->getAccount()->getSecondaryColorHex() ?: App\Model\Database\Entity\Mailing::DEFAULT_TEXT_COLOR_HEX}; font-weight: 400;text-transform: uppercase; font-weight: 700;"
+                                target="_blank">{$mailing->getSubject()}</span>
+                        </td>
+                    </tr>
                 </table> 
+
                 [[COMPONENTS]]
+
                 <table width="700" cellspacing="0" cellpadding="0" border="0" bgcolor="#f3f3f3"
                     style="margin:0 auto;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"
                     class="wrapper-table">
-                <tr>
-                    <td class="inner contents"
-                        style="padding-bottom:20px;padding-right:40px;padding-left:40px;width:100%;text-align:center;padding-top:15px;">
-                    <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:10px;line-height:18px;text-align:center;padding-top:10px;font-size:12px;">Pro odhlášení z odběru newsletteru klikněte <a
-                                href="{$unsubscribeLink}" style="color:# !important;text-decoration:underline;">ZDE</a>.</p>
-                    </td>
-                </tr>
+                    <tr>
+                        <td class="inner contents"
+                            style="padding-bottom:20px;padding-right:40px;padding-left:40px;width:100%;text-align:center;padding-top:15px;">
+                        <p style="margin-top:0;margin-right:0;margin-left:0;margin-bottom:10px;line-height:18px;text-align:center;padding-top:10px;font-size:12px;">Pro odhlášení z odběru newsletteru klikněte <a
+                                    href="{$unsubscribeLink}" style="color:# !important;text-decoration:underline;">ZDE</a>.</p>
+                        </td>
+                    </tr>
                 </table>
             </span>
+    {if $backToEditLink}
         </div>
     </div>
+    {/if}
 
     {if $backToEditLink}
     <script src="/FrontModule/dist/vendor.js"></script>
