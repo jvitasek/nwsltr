@@ -74,7 +74,7 @@ class User extends AbstractEntity
     private Collection $mailings;
 
     /** @ORM\ManyToOne(targetEntity="Language") */
-    private Language $language;
+    private ?Language $language = null;
 
 	#[Pure] public function __construct()
 	{
@@ -212,17 +212,11 @@ class User extends AbstractEntity
 		return $this->getFullName();
 	}
 
-	/**
-	 * @return Language
-	 */
-	public function getLanguage(): Language
+	public function getLanguage(): ?Language
 	{
 		return $this->language;
 	}
 
-	/**
-	 * @param Language $language
-	 */
 	public function setLanguage(Language $language): void
 	{
 		$this->language = $language;

@@ -71,7 +71,7 @@ abstract class SecuredPresenter extends BasePresenter
 			$user = $this->em->getRepository(User::class)->find($this->user->getId());
 			$this->template->userEntity = $this->userEntity = $user;
 
-			if ($user->getLanguage()->getCode() !== $this->locale) {
+			if ($user->getLanguage() && $user->getLanguage()->getCode() !== $this->locale) {
 				$this->handleChangeLang($user->getLanguage()->getCode());
 			}
 
