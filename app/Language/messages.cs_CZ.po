@@ -1,387 +1,306 @@
 # Gettext keys exported by GettextExtractor
-#, fuzzy
 msgid ""
 msgstr ""
 "POT-Creation-Date: 2021-11-23T15:07:33+01:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-11-23 15:21+0100\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"Project-Id-Version: \n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: \n"
+"Language: cs_CZ\n"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/AccountPresenter.php:81
 msgid "Logo successfully removed"
-msgstr ""
+msgstr "Logo úspěšně odstraněno"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/AccountPresenter.php:85
 msgid "You are not authorized to do this"
-msgstr ""
+msgstr "K této akci nemáte oprávnění"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/form.latte:5
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/form.latte:5
 msgid "Account Form"
-msgstr ""
+msgstr "Formulář - účet"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/form.latte:14
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/form.latte:14
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:6
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:6
-#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:116
 #: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:116
 #: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:49
 msgid "Accounts"
-msgstr ""
+msgstr "Účty"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:7
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:7
 msgid "Create Account"
-msgstr ""
+msgstr "Vytvořit účet"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:21
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:21
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:21
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:21
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:22
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:22
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:22
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:22
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:25
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:25
-#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:25
 #: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:25
 msgid "Created At"
-msgstr ""
+msgstr "Vytvořeno"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:23
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:23
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:30
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:30
-#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:24
 #: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:24
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:23
 #: /home/vagrant/www/nwsltr/app/UI/Form/RecipientGroupFormFactory.php:22
 msgid "Title"
-msgstr ""
+msgstr "Název"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:24
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:24
 msgid "# of Users"
-msgstr ""
+msgstr "# uživatelů"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:25
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:25
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:24
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:24
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:66
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:66
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:28
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:28
 #: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:27
-#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:27
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:25
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:25
 msgid "Action"
-msgstr ""
+msgstr "Akce"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:38
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/Account/templates/list.latte:38
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/BaseAdminPresenter.php:22
 msgid "You are not authorized to view this section"
-msgstr ""
+msgstr "K zobrazení této sekce nemáte oprávnění"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/form.latte:5
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/form.latte:5
 msgid "User Form"
-msgstr ""
+msgstr "Formulář - uživatel"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:6
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:6
-#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:127
 #: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:127
 msgid "Users"
-msgstr ""
+msgstr "Uživatelé"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:7
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:7
 msgid "Create User"
-msgstr ""
+msgstr "Vytvořit uživatele"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:23
-#: /home/vagrant/www/nwsltr/app/Modules/Admin/User/templates/list.latte:23
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:62
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:62
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:18
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:18
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Base/SecuredPresenter.php:37
 msgid "You have been logged out for inactivity"
-msgstr ""
+msgstr "Byl jste odhlášen z důvodu neaktivity"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Base/SecuredPresenter.php:87
 msgid "You were accessing an account for which you have no authorization"
-msgstr ""
+msgstr "Přistupoval jste k účtu, ke kterému nemáte oprávnění"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:35
 #: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:35
 msgid "Profile Settings"
-msgstr ""
+msgstr "Nastavení profilu"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:36
 #: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:36
 msgid "Sign Out"
-msgstr ""
+msgstr "Odhlásit se"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:41
 #: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:41
 msgid "Switch Account"
-msgstr ""
+msgstr "Přepnout účet"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:59
-#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:59
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:7
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:7
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:70
-#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:70
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:9
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:9
 msgid "Mailings"
-msgstr ""
+msgstr "Mailingy"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:81
-#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:81
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:7
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:7
 msgid "Sendouts"
-msgstr ""
+msgstr "Rozesílky"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:92
-#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:92
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:8
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:8
 msgid "Recipients"
-msgstr ""
+msgstr "Příjemci"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:103
-#: /home/vagrant/www/nwsltr/app/Modules/Base/templates/@sidebar.latte:103
 msgid "Groups"
-msgstr ""
+msgstr "Skupiny"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/DatagridPresenter.php:83
 msgid "Record deleted successfully"
-msgstr ""
+msgstr "Záznam úspěšně smazán"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:19
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:19
 msgid "Total Mailings Sent"
-msgstr ""
+msgstr "Odeslaných mailingů"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:33
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:33
 msgid "Total E-mails Opened By Recipients"
-msgstr ""
+msgstr "Otevřených e-mailů"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:48
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:48
 msgid "Total Recipients"
-msgstr ""
+msgstr "Příjemců"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:62
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:62
 msgid "Total Unsubscribes"
-msgstr ""
+msgstr "Odhlášení"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:99
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:99
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:125
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:125
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:116
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:116
 msgid "Sent"
-msgstr ""
+msgstr "Odesláno"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:106
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:106
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:77
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:77
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:113
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:113
 msgid "Opened"
-msgstr ""
+msgstr "Otevřeno"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:132
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Home/templates/default.latte:132
 msgid "Unsubscribed"
-msgstr ""
+msgstr "Odhlášeno"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:11
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:11
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:24
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:24
 msgid "Create Mailing"
-msgstr ""
+msgstr "Vytvořit mailing"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:23
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:23
 msgid "Nothing here yet. Start by creating a mailing."
-msgstr ""
+msgstr "Zatím zde nic není. Začněte vytvořením mailingu."
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:48
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:48
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:45
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:45
 msgid "Sendout Date"
-msgstr ""
+msgstr "Datum rozesílky"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:65
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Mailing/templates/list.latte:65
 #: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:47
 msgid "Status"
-msgstr ""
+msgstr "Stav"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/form.latte:7
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/form.latte:7
 msgid "Recipient Form"
-msgstr ""
+msgstr "Formulář - příjemce"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:10
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:10
 msgid "Create Recipient"
-msgstr ""
+msgstr "Vytvořit příjemce"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:24
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:24
 msgid "E-mai"
-msgstr ""
+msgstr "E-mai"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:26
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:26
 msgid "Subscribed?"
-msgstr ""
+msgstr "Přihlášen k odebírce?"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:27
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Recipient/templates/list.latte:27
 msgid "In Groups"
-msgstr ""
+msgstr "Ve skupinách"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/form.latte:7
 #: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/form.latte:7
 msgid "Recipient Group Form"
-msgstr ""
+msgstr "Formulář - skupina uživatelů"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:8
 #: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:8
 #: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:28
 msgid "Recipient Groups"
-msgstr ""
+msgstr "Skupiny uživatelů"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:10
 #: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:10
 msgid "Create Group"
-msgstr ""
+msgstr "Vytvořit skupinu"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:26
 #: /home/vagrant/www/nwsltr/app/Modules/Front/RecipientGroup/templates/list.latte:26
 msgid "No. of Recipients"
-msgstr ""
+msgstr "Počet příjemců"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:21
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:21
 msgid "Mailing"
-msgstr ""
+msgstr "Mailing"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:22
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:22
 msgid "Sending Started At"
-msgstr ""
+msgstr "Rozesílka začala v"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:23
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:23
 msgid "Sending Finished At"
-msgstr ""
+msgstr "Rozesílka skončila v"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:24
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/list.latte:24
 msgid "Sending Duration"
-msgstr ""
+msgstr "Doba rozesílky"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
 msgid "Statistics of"
-msgstr ""
+msgstr "Statistika mailingu"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
 msgid "sent on"
-msgstr ""
+msgstr "rozeslaného"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:8
 msgid "between"
-msgstr ""
+msgstr "mezi"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:113
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:113
 msgid "Not opened"
-msgstr ""
+msgstr "Nezobrazeno"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:128
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:128
 msgid "Opened mailings"
-msgstr ""
+msgstr "Otevřených mailingů"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:141
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:141
 msgid "Links"
-msgstr ""
+msgstr "Odkazy"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:152
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sendout/templates/statistics.latte:152
 msgid "Opened links"
-msgstr ""
+msgstr "Otevřené odkazy"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/SignPresenter.php:44
 msgid "You were successfully logged out"
-msgstr ""
+msgstr "Byl jste úspěšně odhlášen"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:14
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:14
 msgid "Sign In"
-msgstr ""
+msgstr "Přihlásit se"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:15
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:15
 msgid "Please enter your e-mail address and password."
-msgstr ""
+msgstr "Vložte prosím vaši e-mailovou adresu a heslo."
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:23
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:23
 #: /home/vagrant/www/nwsltr/app/UI/Form/SignInFormFactory.php:18
 #: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:44
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:29
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:29
 msgid "Remember Me"
-msgstr ""
+msgstr "Zapamatovat"
 
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:32
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:32
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:44
 #: /home/vagrant/www/nwsltr/app/UI/Form/ImportXlsFormFactory.php:45
@@ -390,96 +309,95 @@ msgstr ""
 #: /home/vagrant/www/nwsltr/app/UI/Form/SendTestFormFactory.php:44
 #: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:52
 msgid "Submit"
-msgstr ""
+msgstr "Odeslat"
 
 #: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:36
-#: /home/vagrant/www/nwsltr/app/Modules/Front/Sign/templates/in.latte:36
 msgid "Terms of Use"
-msgstr ""
+msgstr "Podmínky použití"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:26
 msgid "From (title)"
-msgstr ""
+msgstr "Od (název)"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:29
 msgid "Website URL"
-msgstr ""
+msgstr "URL webu"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:30
 msgid "Redirect after unsubscribe"
-msgstr ""
+msgstr "Přesměrovat po odhlášení"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:32
 msgid "Show unsubscribe feedback form"
-msgstr ""
+msgstr "Zobrazit formulář pro zpětnou vazbu po odhlášení"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:33
 msgid "Show resubscribe button after unsubscribe"
-msgstr ""
+msgstr "Zobrazit tlačítko k opětovnému přihlášení po odhlášení"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:35
 msgid "Logo (the image will be resized to 400px width)"
-msgstr ""
+msgstr "Logo (obrázek bude zmenšen na 400px šířky)"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:36
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:37
 msgid "Enter 6 characters"
-msgstr ""
+msgstr "Vložte 6 znaků"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:36
 msgid "Primary Color HEX"
-msgstr ""
+msgstr "Primární barva HEX"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:37
 msgid "Secondary Color HEX"
-msgstr ""
+msgstr "Sekundární barva HEX"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:39
 msgid "SMTP: host"
-msgstr ""
+msgstr "SMTP: host"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:40
 msgid "SMTP: username"
-msgstr ""
+msgstr "SMTP: username"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:41
 msgid "SMTP: password"
-msgstr ""
+msgstr "SMTP: password"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/AccountFormFactory.php:42
 msgid "SMTP: secure (ssl/tls)"
-msgstr ""
+msgstr "SMTP: secure (ssl/tls)"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/ImportXlsFormFactory.php:43
 msgid "File"
-msgstr ""
+msgstr "Soubor"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/ImportXlsFormFactory.php:44
 msgid "Replace current recipients?"
-msgstr ""
+msgstr "Přepsat aktuální příjemce?"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:26
 #: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:41
 msgid "First Name"
-msgstr ""
+msgstr "Jméno"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:27
 #: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:42
 msgid "Last Name"
-msgstr ""
+msgstr "Příjmení"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/RecipientFormFactory.php:29
 msgid "Subscribed"
-msgstr ""
+msgstr "Přihlášen k odebírce?"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/SignInFormFactory.php:19
 msgid "Remember?"
-msgstr ""
+msgstr "Zapamatovat?"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/UnsubscribeFormFactory.php:26
 msgid "Zpětná vazba"
-msgstr ""
+msgstr "Zpětná vazba"
 
 #: /home/vagrant/www/nwsltr/app/UI/Form/UserFormFactory.php:48
 msgid "Role"
-msgstr ""
+msgstr "Role"
