@@ -6,9 +6,9 @@
         <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
                 <button class="sidebar-btn"><svg class="icon"><use xlink:href="#menu"></use></svg></button>
-                <h1 n:block="title">Mailings</h1>
+                <h1 n:block="title">{_'Mailings'}</h1>
             </div>
-            <a n:href="Editor:default" class="btn btn-tertiary">Create Mailing</a>
+            <a n:href="Editor:default" class="btn btn-tertiary">{_'Create Mailing'}</a>
         </div>
     </div>
 </section>
@@ -20,14 +20,14 @@
                 <div class="table-wrapper-2">
                     <div class="table-wrapper-1">
                         {if count($mailings) === 0}
-                            <p>Nothing here yet. Start by creating a mailing.</p>
-                            <a n:href="Editor:default" class="btn btn-tertiary">Create Mailing</a>
+                            <p>{_'Nothing here yet. Start by creating a mailing.'}</p>
+                            <a n:href="Editor:default" class="btn btn-tertiary">{_'Create Mailing'}</a>
                         {else}
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
                                     <th class="d-flex align-items-center justify-content-between">
-                                        Title
+                                        {_'Title'}
                                         <div class="sort">
                                             <button class="sort-button{if $sortField === 'p.title' && $sortDirection === 'ASC'} active{/if}"
                                                     data-field="p.title" data-direction="ASC">
@@ -45,7 +45,7 @@
                                     </th>
                                     <th>
                                         <div class="d-flex align-items-center justify-content-between">
-                                            Sendout Date
+                                            {_'Sendout Date'}
                                             <div class="sort">
                                                 <button class="sort-button{if $sortField === 'p.sendDate' && $sortDirection === 'ASC'} active{/if}"
                                                         data-field="p.sendDate" data-direction="ASC">
@@ -62,8 +62,8 @@
                                             </div>
                                         </div>
                                     </th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>{_'Status'}</th>
+                                    <th>{_'Action'}</th>
                                 </tr>
                                 <tr>
                                     <th>

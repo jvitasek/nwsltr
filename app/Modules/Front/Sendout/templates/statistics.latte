@@ -5,7 +5,7 @@
         <div class="d-flex align-items-center">
             <button class="sidebar-btn"><svg class="icon"><use xlink:href="#menu"></use></svg></button>
             {varType App\Model\Database\Entity\Sendout $sendout}
-            <h1 n:block="title">Statistics of <strong>{$sendout->getMailing()->getTitle()}</strong> sent on {$sendout->getCreatedAt()|date:'j.n.Y'} between {$sendout->getCreatedAt()|date:'H:i:s'} - {$sendout->getFinishedSendingAt()|date:'H:i:s'}</h1>
+            <h1 n:block="title">{_'Statistics of'} <strong>{$sendout->getMailing()->getTitle()}</strong> {_'sent on'} {$sendout->getCreatedAt()|date:'j.n.Y'} {_'between'} {$sendout->getCreatedAt()|date:'H:i:s'} - {$sendout->getFinishedSendingAt()|date:'H:i:s'}</h1>
         </div>
     </div>
 </section>
@@ -42,7 +42,7 @@
                             <tr>
                                 <th>
                                     <div class="d-flex align-items-center justify-content-between">
-                                        Sendout Date
+                                        {_'Sendout Date'}
                                         <div class="sort">
                                             <button class="sort-button">
                                                 <svg class="icon">
@@ -59,7 +59,7 @@
                                 </th>
                                 <th>
                                     <div class="d-flex align-items-center justify-content-between">
-                                        E-mail
+                                        {_'E-mail'}
                                         <div class="sort">
                                             <button class="sort-button">
                                                 <svg class="icon">
@@ -74,7 +74,7 @@
                                         </div>
                                     </div>
                                 </th>
-                                <th>Opened</th>
+                                <th>{_'Opened'}</th>
                             </tr>
                             <tr>
                                 <th></th>
@@ -110,10 +110,10 @@
         const chart1 = new Chart(document.getElementById('chart1').getContext('2d'), {
             type: 'pie',
             data: {
-                labels: ["Not opened", "Opened"],
+                labels: ["{_'Not opened'}", "{_'Opened'}"],
                 datasets: [
                     {
-                        label: 'Sent',
+                        label: '{_'Sent'}',
                         data: [{$notOpenedCount}, {$openedCount}],
                         backgroundColor: ['rgba(255, 120, 120, 0.2)', 'rgba(99, 206, 255, 0.3)'],
                         borderColor: ['rgba(255, 120, 120, 0.99)', 'rgba(99, 206, 255, 0.9)'],
@@ -125,7 +125,7 @@
                 aspectRatio: 1.45,
                 title: {
                     display: true,
-                    text: 'Opened mailings'
+                    text: '{_'Opened mailings'}'
                 }
             }
         });
@@ -138,7 +138,7 @@
                 labels: [{foreach $elements as $element}{$element->getTitle()}{sep},{/sep}{/foreach}],
                 datasets: [
                     {
-                        label: 'Links',
+                        label: '{_'Links'}',
                         data: [{foreach $elements as $element}{$element->getConversions()->count()}{sep},{/sep}{/foreach}],
                         backgroundColor: [{foreach $elements as $element}{App\Model\Utils\GraphColors::get($iterator->getCounter0())}{sep},{/sep}{/foreach}],
                     }
@@ -149,7 +149,7 @@
                 legend: {l}display: false{r},
                 title: {
                     display: true,
-                    text: 'Opened links'
+                    text: '{_'Opened links'}'
                 },
             }
         });

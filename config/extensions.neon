@@ -1,2 +1,3 @@
 extensions:
     apiRouter: Contributte\ApiRouter\DI\ApiRouterExtension
+    translation: Contributte\Translation\DI\TranslationExtension

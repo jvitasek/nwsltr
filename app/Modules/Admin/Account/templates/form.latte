@@ -2,7 +2,7 @@
 
 <section class="page-heading">
     <div class="container-fluid">
-        <h1 n:block="title">Account Form</h1>
+        <h1 n:block="title">{_'Account Form'}</h1>
     </div>
 </section>
 
@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card__body">
                 {if $accountEdit && $accountEdit->getLogo()}
-                    <h2 class="heading-primary">Logo:</h2>
+                    <h2 class="heading-primary">{_'Logo'}:</h2>
                     <div class="thumb">
                         <a n:href="deleteLogo! $accountEdit->getId()" class="delete">x</a>
                         <img src="{$accountEdit->getLogo()}" alt="" class="img-fluid">
