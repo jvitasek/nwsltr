@@ -78,11 +78,11 @@ final class AccountPresenter extends BaseAdminPresenter
 			$this->em->persist($account);
 			$this->em->flush();
 
-			$this->flashSuccess('Logo successfully removed');
+			$this->flashSuccess($this->translator->translate('Logo successfully removed'));
 			$this->redirect('this');
 		}
 
-		$this->flashWarning('You are not authorized to do this');
+		$this->flashWarning($this->translator->translate('You are not authorized to do this'));
 		$this->redirect('this');
 	}
 

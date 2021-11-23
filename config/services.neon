@@ -4,6 +4,8 @@ services:
         class: Nette\Application\IRouter
         factory: @App\Model\Router\RouterFactory::create
 
+    translator: App\Model\Localization\Translator
+
     latte.templateFactory:
         class: App\Model\Latte\TemplateFactory
 
@@ -38,7 +40,19 @@ services:
 
     # console
     - {class: App\Model\Console\SendMailingsCommand, tags: {console.command: mailing:send}}
+    - {class: App\Model\Console\GenerateTranslationsCommand, tags: {console.command: app:generateTranslations}}
 
 latte:
     macros:
         - App\Model\Latte\Macros::register
+
+translation:
+    loaders:
+        mo: Symfony\Component\Translation\Loader\MoFileLoader
+    locales:
+        whitelist: [cs, en]
+        default: en
+        fallback: [en]
+    dirs:
+        - %appDir%/Language
+    localeResolvers!: [App\Model\Localization\LanguageResolver]
