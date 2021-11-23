@@ -35,7 +35,7 @@
             text-decoration: none;
         }
 
-        table tr, table td, table th, table {
+        table tr, table td, table th {
             width: 100% !important;
             table-layout:fixed;
             -webkit-text-size-adjust:100%;
@@ -58,6 +58,10 @@
 
         /* responsivity */
         @media screen and (max-width: 700px) {
+            table {
+                width: 100% !important;
+            }
+            
             table[class="wrapper-table"] {
                 width: 100% !important;
             }
