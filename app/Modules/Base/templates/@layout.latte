@@ -42,9 +42,11 @@
 
 <script src="{$basePath}/FrontModule/dist/vendor.js"></script>
 <script src="{$basePath}/FrontModule/dist/app.js"></script>
+{if !$presenter->isLinkCurrent('Unsubscribe:*')}
 {snippet modal}
     {include '@modal.latte'}
 {/snippet}
+{/if}
 <script>
     {foreach $flashes as $flash}
     new Noty({
