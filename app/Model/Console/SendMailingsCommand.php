@@ -160,6 +160,7 @@ class SendMailingsCommand extends Command
 						} else {
 							Debugger::log('Sending failed to: ' . $queue->getEmail(), $logFile);
 						}
+						sleep(2);
 					} else {
 						// this is just for testing purposes
 						// in development environment
