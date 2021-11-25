@@ -158,10 +158,11 @@ class SendMailingsCommand extends Command
 							$queue->setTimeSent(new \DateTime());
 							$queue->setSent(true);
 							$this->em->persist($queue);
+							$this->em->flush();
 						} else {
 							Debugger::log('Sending failed to: ' . $queue->getEmail(), $logFile);
 						}
-						sleep(2);
+						sleep(1);
 					} else {
 						// this is just for testing purposes
 						// in development environment
@@ -170,13 +171,12 @@ class SendMailingsCommand extends Command
 						$queue->setSent(true);
 						$queue->setTimeSent(new \DateTime());
 						$this->em->persist($queue);
+						$this->em->flush();
 					}
 				} else {
 					Debugger::log('E-mail is not valid: ' . $queue->getEmail(), $logFile);
 				}
 			}
-
-			$this->em->flush();
 
 			$mailing->setStatus(Mailing::STATUS_SENT);
 			$sendout->setFinishedSendingAt(new \DateTime());
