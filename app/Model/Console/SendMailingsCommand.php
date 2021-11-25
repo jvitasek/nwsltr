@@ -98,6 +98,10 @@ class SendMailingsCommand extends Command
 			$this->em->persist($sendout);
 			$this->em->flush();
 
+			$logFile = 'sendout-' . $sendout->getId();
+
+			Debugger::log('Started sendout of mailing with ID: ' . $mailing->getId(), $logFile);
+
 			$progress = new ProgressBar($output, $recipients->count());
 			$progress->start();
 
@@ -118,6 +122,8 @@ class SendMailingsCommand extends Command
 				$progress->advance();
 			}
 
+			Debugger::log('Queue filled with ' . $recipients->count() . ' recipients', $logFile);
+
 			$progress->finish();
 			$this->em->flush();
 
@@ -136,6 +142,8 @@ class SendMailingsCommand extends Command
 							$queue->setTimeSent(new \DateTime());
 							$queue->setSent(true);
 							$this->em->persist($queue);
+						} else {
+							Debugger::log('Sending failed to: ' . $queue->getEmail(), $logFile);
 						}
 					} else {
 						// this is just for testing purposes
@@ -146,6 +154,8 @@ class SendMailingsCommand extends Command
 						$queue->setTimeSent(new \DateTime());
 						$this->em->persist($queue);
 					}
+				} else {
+					Debugger::log('E-mail is not valid: ' . $queue->getEmail(), $logFile);
 				}
 			}
 
@@ -159,6 +169,8 @@ class SendMailingsCommand extends Command
 
 			$output->writeln('Finished sending mailing ' . $mailing->getId());
 			$output->writeln('---');
+
+			Debugger::log('Sendout finished', $logFile);
 		}
 
 		return 0;
