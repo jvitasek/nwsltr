@@ -6,14 +6,17 @@ use App\Model\Database\Entity\Queue;
 use App\Model\Database\Entity\Recipient;
 use App\Model\Database\Entity\Unsubscribe;
 use App\Model\Database\Repository\RecipientRepository;
+use App\Modules\Base\BasePresenter;
+use App\Modules\Base\SecuredPresenter;
 use App\Modules\Base\UnsecuredPresenter;
 use App\Modules\Front\BaseFrontPresenter;
 use App\UI\Form\UnsubscribeFormFactory;
 use Nette\Application\BadRequestException;
 use Nette\Application\UI\Form;
+use Nette\Application\UI\Presenter;
 use Nette\DI\Attributes\Inject;
 
-final class UnsubscribePresenter extends UnsecuredPresenter
+final class UnsubscribePresenter extends BasePresenter
 {
 
     #[Inject]

@@ -21,7 +21,7 @@ abstract class SecuredPresenter extends BasePresenter
 	protected ?Account $account;
 
 	#[Persistent]
-	public string $locale;
+	public string $locale = 'en';
 
 	#[Inject]
 	public Translator $translator;
