@@ -16,6 +16,7 @@ use Nette\Application\LinkGenerator;
 use Nette\Mail\Message;
 use Nette\Mail\SmtpException;
 use Nette\Mail\SmtpMailer;
+use Tracy\Debugger;
 
 /**
  * @ORM\Entity(repositoryClass="App\Model\Database\Repository\MailingRepository")
@@ -438,7 +439,7 @@ class Mailing extends AbstractEntity
 
 			return true;
 		} catch (SmtpException $e) {
-			// TODO: log
+			Debugger::log($e->getMessage(), 'smtp');
 		}
 
 		return false;

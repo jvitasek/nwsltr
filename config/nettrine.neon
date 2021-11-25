@@ -21,8 +21,6 @@ extensions:
 nettrine.dbal:
     debug:
         panel: %debugMode%
-    configuration:
-        sqlLogger: Nettrine\DBAL\Logger\PsrLogger(@Monolog\Logger)
     connection:
         driver: %database.driver%
         host: %database.host%
