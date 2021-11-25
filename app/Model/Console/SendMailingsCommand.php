@@ -138,6 +138,7 @@ class SendMailingsCommand extends Command
 				'username' => $account->getSmtpUsername(),
 				'password' => $account->getSmtpPassword(),
 				'secure' => $account->getSmtpSecure(),
+				'persistent' => true
 			];
 			if ($account->getSmtpPort()) {
 				$smtpOptions['port'] = $account->getSmtpPort();
