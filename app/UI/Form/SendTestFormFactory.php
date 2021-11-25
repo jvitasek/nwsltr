@@ -10,6 +10,7 @@ use Contributte\FormsBootstrap\BootstrapForm;
 use JetBrains\PhpStorm\NoReturn;
 use Nette\Application\LinkGenerator;
 use Nette\Application\UI\Form;
+use Nette\Mail\SmtpMailer;
 use Nette\Utils\Validators;
 
 class SendTestFormFactory extends BaseFormFactory
@@ -62,7 +63,18 @@ class SendTestFormFactory extends BaseFormFactory
 		$email = trim($values->email);
 
 		if ($mailing !== null && Validators::isEmail($email) && $mailing->isOkToBeTestSent()) {
-			if ($mailing->send($this->linkGenerator, $email)) {
+			$account = $mailing->getAccount();
+			$smtpOptions = [
+				'host' => $account->getSmtpHost(),
+				'username' => $account->getSmtpUsername(),
+				'password' => $account->getSmtpPassword(),
+				'secure' => $account->getSmtpSecure(),
+			];
+			if ($account->getSmtpPort()) {
+				$smtpOptions['port'] = $account->getSmtpPort();
+			}
+			$mailer = new SmtpMailer($smtpOptions);
+			if ($mailing->send($mailer, $this->linkGenerator, $email)) {
 				$presenter->flashSuccess('Test sendout finished successfully');
 				$presenter->redirect('this');
 			} else {

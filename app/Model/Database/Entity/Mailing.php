@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 use JetBrains\PhpStorm\Pure;
 use Latte\Engine;
 use Nette\Application\LinkGenerator;
+use Nette\Mail\Mailer;
 use Nette\Mail\Message;
 use Nette\Mail\SmtpException;
 use Nette\Mail\SmtpMailer;
@@ -405,19 +406,9 @@ class Mailing extends AbstractEntity
 		return !empty($json['body']);
 	}
 
-	public function send(LinkGenerator $linkGenerator, string $email, ?string $queueHash = null): bool
+	public function send(Mailer $mailer, LinkGenerator $linkGenerator, string $email, ?string $queueHash = null): bool
 	{
 		$account = $this->getAccount();
-		$smtpOptions = [
-			'host' => $account->getSmtpHost(),
-			'username' => $account->getSmtpUsername(),
-			'password' => $account->getSmtpPassword(),
-			'secure' => $account->getSmtpSecure(),
-		];
-		if ($account->getSmtpPort()) {
-			$smtpOptions['port'] = $account->getSmtpPort();
-		}
-		$mailer = new SmtpMailer($smtpOptions);
 		$mail = new Message();
 
 		if ($this->getApiCode()) {

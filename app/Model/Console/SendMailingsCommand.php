@@ -100,6 +100,9 @@ class SendMailingsCommand extends Command
 
 			$logFile = 'sendout-' . $sendout->getId();
 
+			if ($isDebug) {
+				Debugger::log('!!!TEST SENDOUT!!!', $logFile);
+			}
 			Debugger::log('Started sendout of mailing with ID: ' . $mailing->getId(), $logFile);
 
 			$progress = new ProgressBar($output, $recipients->count());
@@ -129,6 +132,18 @@ class SendMailingsCommand extends Command
 
 			$output->writeln('');
 
+			$account = $mailing->getAccount();
+			$smtpOptions = [
+				'host' => $account->getSmtpHost(),
+				'username' => $account->getSmtpUsername(),
+				'password' => $account->getSmtpPassword(),
+				'secure' => $account->getSmtpSecure(),
+			];
+			if ($account->getSmtpPort()) {
+				$smtpOptions['port'] = $account->getSmtpPort();
+			}
+			$mailer = new SmtpMailer($smtpOptions);
+
 			$queueToSend = $this->em->getRepository(Queue::class)->findBy([
 				'sent' => 0,
 				'mailing' => $mailing,
@@ -138,7 +153,7 @@ class SendMailingsCommand extends Command
 			foreach ($queueToSend as $queue) {
 				if (Validators::isEmail($queue->getEmail())) {
 					if (!$isDebug) {
-						if ($queue->getMailing()->send($this->linkGenerator, $queue->getEmail(), $queue->getHash())) {
+						if ($queue->getMailing()->send($mailer, $this->linkGenerator, $queue->getEmail(), $queue->getHash())) {
 							$queue->setTimeSent(new \DateTime());
 							$queue->setSent(true);
 							$this->em->persist($queue);
