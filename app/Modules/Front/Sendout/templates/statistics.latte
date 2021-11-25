@@ -110,10 +110,10 @@
         const chart1 = new Chart(document.getElementById('chart1').getContext('2d'), {
             type: 'pie',
             data: {
-                labels: ["{_'Not opened'}", "{_'Opened'}"],
+                labels: [{_'Not opened'}, {_'Opened'}],
                 datasets: [
                     {
-                        label: '{_'Sent'}',
+                        label: {_'Sent'},
                         data: [{$notOpenedCount}, {$openedCount}],
                         backgroundColor: ['rgba(255, 120, 120, 0.2)', 'rgba(99, 206, 255, 0.3)'],
                         borderColor: ['rgba(255, 120, 120, 0.99)', 'rgba(99, 206, 255, 0.9)'],
@@ -125,7 +125,7 @@
                 aspectRatio: 1.45,
                 title: {
                     display: true,
-                    text: '{_'Opened mailings'}'
+                    text: {_'Opened mailings'}
                 }
             }
         });
@@ -138,7 +138,7 @@
                 labels: [{foreach $elements as $element}{$element->getTitle()}{sep},{/sep}{/foreach}],
                 datasets: [
                     {
-                        label: '{_'Links'}',
+                        label: {_'Links'},
                         data: [{foreach $elements as $element}{$element->getConversions()->count()}{sep},{/sep}{/foreach}],
                         backgroundColor: [{foreach $elements as $element}{App\Model\Utils\GraphColors::get($iterator->getCounter0())}{sep},{/sep}{/foreach}],
                     }
@@ -149,7 +149,7 @@
                 legend: {l}display: false{r},
                 title: {
                     display: true,
-                    text: '{_'Opened links'}'
+                    text: {_'Opened links'}
                 },
             }
         });
