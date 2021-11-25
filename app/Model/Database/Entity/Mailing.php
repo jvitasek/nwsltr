@@ -423,7 +423,7 @@ class Mailing extends AbstractEntity
 			$mail->setHeader('X-CampaignId', $this->getApiCode());
 		}
 
-		$mail->setFrom($this->getEmailFrom() ?: $account->getEmailFrom());
+		$mail->setFrom($this->getEmailFrom() ?: $account->getEmailFrom(), $account->getEmailFromTitle());
 
 		if ($account->getEmailReplyTo()) {
 			$mail->addReplyTo($account->getEmailReplyTo());
