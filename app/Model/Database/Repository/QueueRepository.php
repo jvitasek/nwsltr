@@ -20,6 +20,7 @@ use Tracy\Debugger;
 class QueueRepository extends AbstractRepository
 {
 	public const THROTTLE_MICROSECONDS = 500000;
+	public const MAX_SUCCESSIVE_ERRORS = 4;
 
 	public function emptyQueue(Mailing $mailing, LinkGenerator $linkGenerator, Sendout $sendout): bool
 	{
@@ -43,7 +44,7 @@ class QueueRepository extends AbstractRepository
 				$successiveErrors++;
 			}
 
-			if ($successiveErrors === 3) {
+			if ($successiveErrors === self::MAX_SUCCESSIVE_ERRORS) {
 				Debugger::log(
 					sprintf(
 						'Failing sendout of mailing ID: %s, %s successive errors',
