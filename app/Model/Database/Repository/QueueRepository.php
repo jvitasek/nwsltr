@@ -88,7 +88,7 @@ class QueueRepository extends AbstractRepository
 				Debugger::log('Sending failed to: ' . $queue->getEmail(), $logFile);
 				return false;
 			}
-			sleep(self::THROTTLE_MICROSECONDS);
+			usleep(self::THROTTLE_MICROSECONDS);
 		} else {
 			Debugger::log('E-mail is not valid: ' . $queue->getEmail(), $logFile);
 			// not returning false here because it's not a hard error
