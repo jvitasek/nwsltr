@@ -44,27 +44,11 @@ class SendMailingsCommand extends Command
 	{
 		$this->setName('mailing:send');
 		$this->setDescription('Sends unsent mailings which are set to ready and have a sendout date in the past');
-		$this->addOption('test', 't', InputOption::VALUE_OPTIONAL, 'Runs in test mode (does not send e-mails)', false);
-		$this->addOption('force', 'f', InputOption::VALUE_OPTIONAL, 'Forces production mode (sends e-mails!)', false);
 	}
 
 	protected function execute(InputInterface $input, OutputInterface $output): int
 	{
-		if (!$input->getOption('force')) {
-			$isDebug = false;
-
-			if (!Debugger::$productionMode) {
-				$isDebug = true;
-			} else {
-				if ($input->getOption('test')) {
-					$isDebug = true;
-				}
-			}
-		} else {
-			$isDebug = false;
-		}
-
-		$output->writeln('Starting sendout' . ($isDebug ? ' (DEBUG!)' : ''));
+		$output->writeln('Starting sendout');
 
 		$mailingsToSend = $this->em->getRepository(Mailing::class)
 			->qb()
@@ -100,9 +84,6 @@ class SendMailingsCommand extends Command
 
 			$logFile = 'sendout-' . $sendout->getId();
 
-			if ($isDebug) {
-				Debugger::log('!!!TEST SENDOUT!!!', $logFile);
-			}
 			Debugger::log('Started sendout of mailing with ID: ' . $mailing->getId(), $logFile);
 
 			$progress = new ProgressBar($output, $recipients->count());
@@ -134,12 +115,6 @@ class SendMailingsCommand extends Command
 
 			$queueRepository = $this->em->getRepository(Queue::class);
 			$queueRepository->emptyQueue($mailing, $this->linkGenerator, $sendout);
-
-			$mailing->setStatus(Mailing::STATUS_SENT);
-			$sendout->setFinishedSendingAt(new \DateTime());
-			$this->em->persist($mailing);
-			$this->em->persist($sendout);
-			$this->em->flush();
 
 			$output->writeln('Finished sending mailing ' . $mailing->getId());
 			$output->writeln('---');

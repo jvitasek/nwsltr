@@ -65,6 +65,13 @@ class QueueRepository extends AbstractRepository
 			),
 			$logFile
 		);
+
+		$mailing->setStatus(Mailing::STATUS_SENT);
+		$sendout->setFinishedSendingAt(new \DateTime());
+		$this->getEntityManager()->persist($mailing);
+		$this->getEntityManager()->persist($sendout);
+		$this->getEntityManager()->flush();
+
 		return true;
 	}
 
