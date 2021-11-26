@@ -162,7 +162,7 @@ class SendMailingsCommand extends Command
 						} else {
 							Debugger::log('Sending failed to: ' . $queue->getEmail(), $logFile);
 						}
-						sleep(1);
+						sleep(Mailing::THROTTLE_MICROSECONDS);
 					} else {
 						// this is just for testing purposes
 						// in development environment
