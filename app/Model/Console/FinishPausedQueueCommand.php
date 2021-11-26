@@ -87,10 +87,11 @@ class FinishPausedQueueCommand extends Command
 						$this->em->persist($queue);
 						$this->em->flush();
 						$output->writeln('Sent to ' . $queue->getEmail());
+					} else {
+						$output->writeln('Failed sending to ' . $queue->getEmail());
+						return 1;
 					}
 					usleep(Mailing::THROTTLE_MICROSECONDS);
-				} else {
-					$output->writeln('Failed sending to ' . $queue->getEmail());
 				}
 			}
 		}
