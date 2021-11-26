@@ -132,9 +132,17 @@
                 e.preventDefault()
                 let clipboardText = e.clipboardData.getData('text').split(/\r?\n/)
                 e.target.innerHTML += clipboardText[0]
+                this.component.content = e.target.innerHTML
 
-                for(let i = 1; i <= clipboardText.length; i++) {
-                    this.addParagraph('text', clipboardText[i])
+                this.$nextTick(() => { 
+                    document.execCommand('selectAll', false, null);
+                    document.getSelection().collapseToEnd();
+                })
+
+                if(clipboardText.length > 1) {
+                    for(let i = 1; i <= clipboardText.length; i++) {
+                        this.addParagraph('text', clipboardText[i])
+                    }
                 }
             },
             handleInput(e) {

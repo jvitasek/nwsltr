@@ -234,7 +234,9 @@
                     },
                     lastComponentId: '1',
                     body: []
-                }
+                },
+                recipientsSelect: {},
+                recipients
             }
         },
         computed: {
@@ -252,14 +254,6 @@
                 },
                 set(composerBody) {
                     this.$store.commit('setComposerBody', composerBody)
-                }
-            },
-            recipients: {
-                get() {
-                    return this.$store.getters.getComposer.recipientGroups
-                },
-                set(recipients) {
-                    this.$store.commit('setComposerRecipients', recipients)
                 }
             },
             headingsCounter() {
@@ -436,6 +430,8 @@
                 this.$store.commit('pushComposerItem', newItem)
             },
             send(showPreview) {
+                this.$store.commit('setComposerRecipients', this.recipients)
+
                 const config = {
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -488,11 +484,12 @@
                         console.error('ERROR: ', error.response); 
                     })
             },
-            fetchRecipients() {
+            async fetchRecipients() {
                 axios
                     .get(`/api/recipient-group/read/${this.id}`)
                     .then(response => {
                         this.recipientGroups = response.data
+                        console.log(this.recipientGroups)
                     })
                     .catch(error => {
                         console.error('ERROR: ', error.response); 
@@ -502,10 +499,11 @@
                     .get(`/api/selected-recipient-group/read/${this.id}`)
                     .then(response => {
                         this.recipients = []
+                        let recipientsTemp = []
                         response.data.forEach(item => {
                             this.recipients.push(item.id)
                         })
-                        console.log(this.recipients)
+                        console.log(this.recipients)                        
                     })
                     .catch(error => {
                         console.error('ERROR: ', error.response); 
@@ -594,18 +592,21 @@
             },
             initChoices() {
                 this.$nextTick(() => {
-                    document.querySelectorAll('select[multiple]').forEach(multiSelect => { 
-                        new Choices(multiSelect, {
-                            removeItemButton: true,
-                            loadingText: this.$gettext('Loading...'),
-                            noResultsText: this.$gettext('No results'),
-                            noChoicesText: this.$gettext('No choices'),
-                            itemSelectText: this.$gettext('Click for selection'),
-                            addItemText: this.$gettext('Press enter to add'),
-                            maxItemText: this.$gettext('Only ${maxItemCount} items can be added'),
-                            searchPlaceholderValue: this.$gettext('Search...')
-                        });
-                    })
+                    this.recipientsSelect = new Choices(document.querySelector('select[name="recipients"]'), {
+                        removeItemButton: true,
+                        loadingText: this.$gettext('Loading...'),
+                        noResultsText: this.$gettext('No results'),
+                        noChoicesText: this.$gettext('No choices'),
+                        itemSelectText: this.$gettext('Click for selection'),
+                        addItemText: this.$gettext('Press enter to add'),
+                        maxItemText: this.$gettext('Only ${maxItemCount} items can be added'),
+                        searchPlaceholderValue: this.$gettext('Search...')
+                    });
+                    // this.recipientsSelect.setChoices(
+                    //     [
+                    //         { value: JSON.parse(JSON.stringify(this.recipients)), selected: true },
+                    //     ],
+                    // )
                 });
             }
         },

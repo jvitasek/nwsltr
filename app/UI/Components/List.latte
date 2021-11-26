@@ -11,8 +11,8 @@
                     {if $data['listType'] === 'ul'}
                         {foreach $data['items'] as $item}
                             <tr>
-                                <td>
-                                    <div style="display: block; font-weight: 400; color: #494948 !important; font-size: 16px; text-align: left;">
+                                <td width="35">
+                                    <div width="35" style="display: block; font-weight: 400; color: #494948 !important; font-size: 16px; text-align: left;">
                                         &bull;
                                     </div>
                                 </td>
@@ -25,14 +25,15 @@
                     {elseif $data['listType'] === 'ol'}
                         {foreach $data['items'] as $item}
                             <tr>
-                                <td>
-                                    <div style="display: block; font-weight: 400; color: #494948 !important; font-size: 16px; text-align: left;">{$iterator}
-                                        .
+                                <td width="35">
+                                    <div width="35" style="display: block; font-weight: 400; color: #494948 !important; font-size: 16px; text-align: left;">
+                                        {$iterator}.
                                     </div>
                                 </td>
                                 <td>
                                     <div style="display: block; font-weight: 400; color: #494948 !important; font-size: 16px; text-align: left;">
-                                        <span>{$item}</span></div>
+                                        <span>{$item}</span>
+                                    </div>
                                 </td>
                             </tr>
                         {/foreach}
