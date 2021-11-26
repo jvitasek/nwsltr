@@ -77,7 +77,7 @@ class QueueRepository extends AbstractRepository
 
 	public function sendItem(Queue $queue, Mailer $mailer, LinkGenerator $linkGenerator, string $logFile): bool
 	{
-		if (Validators::isEmail($queue->getEmail())) {
+		if (Validators::isEmail($queue->getEmail()) && !$queue->isSent()) {
 			if ($queue->getMailing()->send($mailer, $linkGenerator, $queue->getEmail(), $queue->getHash())) {
 				$queue->setTimeSent(new \DateTime());
 				$queue->setSent(true);
