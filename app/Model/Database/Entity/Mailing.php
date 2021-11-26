@@ -31,8 +31,6 @@ class Mailing extends AbstractEntity
 	use TUpdatedAt;
 	use TTitle;
 
-	public const THROTTLE_MICROSECONDS = 500000;
-
 	public const STATUS_CONCEPT = 1;
 	public const STATUS_READY = 2;
 	public const STATUS_SENDING = 3;
@@ -446,6 +444,14 @@ class Mailing extends AbstractEntity
 	public function setEmailFrom(?string $emailFrom): void
 	{
 		$this->emailFrom = $emailFrom;
+	}
+
+	public function getLatestSendout(): ?Sendout
+	{
+		if (!$this->getSendouts() || $this->getSendouts()->isEmpty()) {
+			return null;
+		}
+		return $this->getSendouts()->last();
 	}
 
 }

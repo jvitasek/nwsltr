@@ -132,51 +132,8 @@ class SendMailingsCommand extends Command
 
 			$output->writeln('');
 
-			$account = $mailing->getAccount();
-			$smtpOptions = [
-				'host' => $account->getSmtpHost(),
-				'username' => $account->getSmtpUsername(),
-				'password' => $account->getSmtpPassword(),
-				'secure' => $account->getSmtpSecure(),
-				'persistent' => true
-			];
-			if ($account->getSmtpPort()) {
-				$smtpOptions['port'] = $account->getSmtpPort();
-			}
-			$mailer = new SmtpMailer($smtpOptions);
-
-			$queueToSend = $this->em->getRepository(Queue::class)->findBy([
-				'sent' => 0,
-				'mailing' => $mailing,
-			]);
-
-			/** @var Queue $queue */
-			foreach ($queueToSend as $queue) {
-				if (Validators::isEmail($queue->getEmail())) {
-					if (!$isDebug) {
-						if ($queue->getMailing()->send($mailer, $this->linkGenerator, $queue->getEmail(), $queue->getHash())) {
-							$queue->setTimeSent(new \DateTime());
-							$queue->setSent(true);
-							$this->em->persist($queue);
-							$this->em->flush();
-						} else {
-							Debugger::log('Sending failed to: ' . $queue->getEmail(), $logFile);
-						}
-						sleep(Mailing::THROTTLE_MICROSECONDS);
-					} else {
-						// this is just for testing purposes
-						// in development environment
-
-						$output->writeln('Sending e-mail to ' . $queue->getEmail());
-						$queue->setSent(true);
-						$queue->setTimeSent(new \DateTime());
-						$this->em->persist($queue);
-						$this->em->flush();
-					}
-				} else {
-					Debugger::log('E-mail is not valid: ' . $queue->getEmail(), $logFile);
-				}
-			}
+			$queueRepository = $this->em->getRepository(Queue::class);
+			$queueRepository->emptyQueue($mailing, $this->linkGenerator, $sendout);
 
 			$mailing->setStatus(Mailing::STATUS_SENT);
 			$sendout->setFinishedSendingAt(new \DateTime());

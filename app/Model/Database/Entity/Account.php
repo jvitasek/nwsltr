@@ -10,6 +10,7 @@ use App\Model\Database\Entity\Attributes\TUpdatedAt;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Nette\Mail\SmtpMailer;
 
 /**
  * @ORM\Entity(repositoryClass="App\Model\Database\Repository\AccountRepository")
@@ -277,6 +278,21 @@ class Account extends AbstractEntity
 	public function setRecipients(ArrayCollection|Collection $recipients): void
 	{
 		$this->recipients = $recipients;
+	}
+
+	public function createSmtpMailer(): SmtpMailer
+	{
+		$smtpOptions = [
+			'host' => $this->getSmtpHost(),
+			'username' => $this->getSmtpUsername(),
+			'password' => $this->getSmtpPassword(),
+			'secure' => $this->getSmtpSecure(),
+			'persistent' => true
+		];
+		if ($this->getSmtpPort()) {
+			$smtpOptions['port'] = $this->getSmtpPort();
+		}
+		return new SmtpMailer($smtpOptions);
 	}
 
 }
