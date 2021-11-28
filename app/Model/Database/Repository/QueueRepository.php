@@ -19,7 +19,7 @@ use Tracy\Debugger;
  */
 class QueueRepository extends AbstractRepository
 {
-	public const THROTTLE_MICROSECONDS = 500000;
+	public const THROTTLE_MICROSECONDS = 400000;
 	public const MAX_SUCCESSIVE_ERRORS = 4;
 
 	public function emptyQueue(Mailing $mailing, LinkGenerator $linkGenerator, Sendout $sendout): bool
@@ -36,7 +36,7 @@ class QueueRepository extends AbstractRepository
 		$errors = 0;
 		$successiveErrors = 0;
 		foreach ($queueToSend as $queue) {
-			if ($this->sendItem($queue, $mailer, $linkGenerator, $logFile)) {
+			if ($this->sendItem($queue, $mailer, $linkGenerator, $logFile, $sendout)) {
 				$successes++;
 				$successiveErrors = 0;
 			} else {
@@ -45,14 +45,16 @@ class QueueRepository extends AbstractRepository
 			}
 
 			if ($successiveErrors === self::MAX_SUCCESSIVE_ERRORS) {
+				$msg = sprintf(
+					'Failing sendout of mailing ID: %s, %s successive errors',
+					$mailing->getId(),
+					$successiveErrors
+				);
 				Debugger::log(
-					sprintf(
-						'Failing sendout of mailing ID: %s, %s successive errors',
-						$mailing->getId(),
-						$successiveErrors
-					),
+					$msg,
 					$logFile
 				);
+				$sendout->setLogMessage($msg);
 				return false;
 			}
 		}
@@ -76,17 +78,29 @@ class QueueRepository extends AbstractRepository
 		return true;
 	}
 
-	public function sendItem(Queue $queue, Mailer $mailer, LinkGenerator $linkGenerator, string $logFile): bool
+	public function sendItem(
+		Queue $queue,
+		Mailer $mailer,
+		LinkGenerator $linkGenerator,
+		string $logFile,
+		Sendout $sendout
+	): bool
 	{
 		if (Validators::isEmail($queue->getEmail()) && !$queue->isSent()) {
-			if ($queue->getMailing()->send($mailer, $linkGenerator, $queue->getEmail(), $queue->getHash())) {
+			$sendingResult = $queue->getMailing()->send($mailer, $linkGenerator, $queue->getEmail(), $queue->getHash());
+			if ($sendingResult === true) {
 				$queue->setTimeSent(new \DateTime());
 				$queue->setSent(true);
 				$this->getEntityManager()->persist($queue);
 				$this->getEntityManager()->flush();
 				Debugger::log('Sent to: ' . $queue->getEmail(), $logFile);
 			} else {
-				Debugger::log('Sending failed to: ' . $queue->getEmail(), $logFile);
+				if ($sendingResult && is_string($sendingResult)) {
+					$sendout->setLogMessage($sendingResult);
+					$this->getEntityManager()->persist($sendout);
+					$this->getEntityManager()->flush();
+					Debugger::log('Sending failed to: ' . $queue->getEmail() . ' (' . $sendingResult . ')', $logFile);
+				}
 				return false;
 			}
 			usleep(self::THROTTLE_MICROSECONDS);

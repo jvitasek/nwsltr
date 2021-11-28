@@ -406,7 +406,7 @@ class Mailing extends AbstractEntity
 		return !empty($json['body']);
 	}
 
-	public function send(Mailer $mailer, LinkGenerator $linkGenerator, string $email, ?string $queueHash = null): bool
+	public function send(Mailer $mailer, LinkGenerator $linkGenerator, string $email, ?string $queueHash = null)
 	{
 		$account = $this->getAccount();
 		$mail = new Message();
@@ -427,13 +427,11 @@ class Mailing extends AbstractEntity
 
 		try {
 			$mailer->send($mail);
-
 			return true;
 		} catch (SmtpException $e) {
 			Debugger::log($e->getMessage(), 'smtp');
+			return $e->getMessage();
 		}
-
-		return false;
 	}
 
 	public function getEmailFrom(): ?string

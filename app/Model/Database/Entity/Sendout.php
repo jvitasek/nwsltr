@@ -21,19 +21,21 @@ class Sendout extends AbstractEntity
 	use TCreatedAt;
 
     /**
-     * @var Mailing
      * @ORM\ManyToOne(targetEntity="Mailing", inversedBy="sendouts")
      */
     private Mailing $mailing;
 
     /**
-     * @var DateTime|null
      * @ORM\Column(type="datetime", nullable=true, options={"default": NULL})
      */
     private ?DateTime $finishedSendingAt;
 
     /**
-     * @var Collection
+     * @ORM\Column(type="string", nullable=true, options={"default": NULL})
+     */
+    private ?string $logMessage;
+
+    /**
      * @ORM\OneToMany(targetEntity="Queue", mappedBy="sendout")
      */
     private Collection $queueItems;
@@ -101,6 +103,16 @@ class Sendout extends AbstractEntity
 		}
 
 		return $total;
+	}
+
+	public function getLogMessage(): ?string
+	{
+		return $this->logMessage;
+	}
+
+	public function setLogMessage(string $logMessage): void
+	{
+		$this->logMessage = $logMessage;
 	}
 
 }
