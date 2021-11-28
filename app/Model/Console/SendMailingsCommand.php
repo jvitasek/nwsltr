@@ -2,11 +2,13 @@
 
 namespace App\Model\Console;
 
+use App\Model\Database\Entity\Cron;
 use App\Model\Database\Entity\Mailing;
 use App\Model\Database\Entity\Queue;
 use App\Model\Database\Entity\Recipient;
 use App\Model\Database\Entity\Sendout;
 use App\Model\Database\EntityManager;
+use App\Model\Database\Repository\CronRepository;
 use Nette\Application\LinkGenerator;
 use Nette\Mail\Message;
 use Nette\Mail\SmtpException;
@@ -22,6 +24,8 @@ use Tracy\Debugger;
 class SendMailingsCommand extends Command
 {
 
+	public const NAME = 'mailing:send';
+
 	private EntityManager $em;
 	private LinkGenerator $linkGenerator;
 
@@ -32,7 +36,10 @@ class SendMailingsCommand extends Command
 	 * @param EntityManager $em
 	 * @param string|null $name
 	 */
-	public function __construct(LinkGenerator $linkGenerator, EntityManager $em, ?string $name = null)
+	public function __construct(
+		LinkGenerator $linkGenerator,
+		EntityManager $em,
+		?string $name = null)
 	{
 		parent::__construct($name);
 
@@ -42,12 +49,16 @@ class SendMailingsCommand extends Command
 
 	protected function configure(): void
 	{
-		$this->setName('mailing:send');
+		$this->setName(self::NAME);
 		$this->setDescription('Sends unsent mailings which are set to ready and have a sendout date in the past');
 	}
 
 	protected function execute(InputInterface $input, OutputInterface $output): int
 	{
+		/** @var CronRepository $cronRepository */
+		$cronRepository = $this->em->getRepository(Cron::class);
+		$cronRepository->create(self::NAME, 'Started', Cron::TYPE_INFO);
+
 		$output->writeln('Starting sendout');
 
 		$mailingsToSend = $this->em->getRepository(Mailing::class)
@@ -107,6 +118,7 @@ class SendMailingsCommand extends Command
 			}
 
 			Debugger::log('Queue filled with ' . $recipients->count() . ' recipients', $logFile);
+			$cronRepository->create(self::NAME, 'Filling queue', Cron::TYPE_INFO);
 
 			$progress->finish();
 			$this->em->flush();
@@ -122,6 +134,7 @@ class SendMailingsCommand extends Command
 			Debugger::log('Sendout finished', $logFile);
 		}
 
+		$cronRepository->create(self::NAME, 'Finished', Cron::TYPE_SUCCESS);
 		return 0;
 	}
 
