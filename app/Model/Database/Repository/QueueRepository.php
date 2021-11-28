@@ -55,6 +55,8 @@ class QueueRepository extends AbstractRepository
 					$logFile
 				);
 				$sendout->setLogMessage($msg);
+				$this->getEntityManager()->persist($sendout);
+				$this->getEntityManager()->flush();
 				return false;
 			}
 		}
