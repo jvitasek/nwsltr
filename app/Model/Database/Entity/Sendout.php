@@ -69,14 +69,29 @@ class Sendout extends AbstractEntity
 	{
 		if ($this->getFinishedSendingAt()) {
 			$difference = $this->getFinishedSendingAt()->diff($this->getCreatedAt());
+			$result = [];
+			$resultString = '';
+
+			if ($difference->d !== 0) {
+				$result['days'] = $difference->d;
+			}
 
 			if ($difference->h !== 0) {
-				return $difference->h . ' hours ' . $difference->i . ' minutes ' . $difference->s . ' seconds';
-			} elseif ($difference->i !== 0) {
-				return $difference->i . ' minutes ' . $difference->s . ' seconds';
-			} elseif ($difference->s !== 0) {
-				return $difference->s . ' seconds';
+				$result['hours'] = $difference->h;
 			}
+
+			if ($difference->i !== 0) {
+				$result['minutes'] = $difference->i;
+			}
+
+			if ($difference->s !== 0) {
+				$result['seconds'] = $difference->s;
+			}
+
+			foreach ($result as $type => $time) {
+				$resultString .= $time . ' ' . $type . ' ';
+			}
+			return rtrim($resultString, ' ');
 		}
 		return 'Running';
 	}
