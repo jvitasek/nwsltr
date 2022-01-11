@@ -78,6 +78,12 @@
   "config": {
     "platform": {
       "php": "8.0"
+    },
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "phpstan/extension-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "symfony/thanks": true
     }
   },
   "prefer-stable": true,
